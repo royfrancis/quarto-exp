@@ -32,6 +32,7 @@ Display as table.
 ```{ojs}
 viewof raw_table = Inputs.table(ojsdata)
 ```
+
 Computing a new variable using an arrow function. `...` keeps all old variables and the new variable `ratio` is added.
 
 ```{ojs}

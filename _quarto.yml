@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+format:
+  html:
+    theme: materia
+    fig-align: left
+    title-block-banner: true
+    author: "Roy Francis"
+    date:  last-modified
+    date-format: "DD-MMM-YYYY"
+
+knitr:
+  opts_chunk:
+    results: hold
+
+filters:
+  - assets/custom.lua

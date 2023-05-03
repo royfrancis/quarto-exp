@@ -1,0 +1,15 @@
+---
+title: "Quarto experiments"
+description: "Testing quarto documents"
+date: ""
+author: ""
+---
+
+### [OJS and R in Quarto](reports/ojs/index.qmd)
+### [WebR in Quarto using Quarto webr extension](reports/webr/index.qmd)
+
+<br>
+
+---
+
+Updated: <?lua.date?>. Quarto v<?quarto.version?>

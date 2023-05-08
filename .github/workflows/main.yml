@@ -22,6 +22,7 @@ jobs:
           packages: |
             any::rmarkdown
             any::ggplot2
+            any::tinytex
       - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:

@@ -24,6 +24,8 @@ jobs:
             any::ggplot2
       - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
       - run: |
           quarto --version
       - name: Render and publish

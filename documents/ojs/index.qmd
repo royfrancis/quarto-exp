@@ -1,6 +1,14 @@
 ---
 title: ObservableJS in Quarto
 description: "Integrating OJS and R in Quarto"
+format:
+  html:
+    theme: materia
+    fig-align: left
+    title-block-banner: true
+    author: "Roy Francis"
+    date:  last-modified
+    date-format: "DD-MMM-YYYY"
 ---
 
 ## Passing data

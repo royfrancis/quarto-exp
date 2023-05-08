@@ -1,12 +1,11 @@
 ---
 title: "Quarto experiments"
 description: "Testing quarto documents"
-date: ""
-author: ""
 ---
 
-### [OJS and R in Quarto](reports/ojs/index.qmd)
-### [WebR in Quarto using Quarto webr extension](reports/webr/index.qmd)
+### [Parameterized report](documents/para/index.qmd)
+### [OJS and R in Quarto](documents/ojs/index.qmd)
+### [WebR in Quarto using Quarto webr extension](documents/webr/index.qmd)
 
 <br>
 

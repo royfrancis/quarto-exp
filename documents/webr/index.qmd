@@ -6,6 +6,11 @@ number-sections: true
 format:
   html:
     theme: materia
+    fig-align: left
+    title-block-banner: true
+    author: "Roy Francis"
+    date:  last-modified
+    date-format: "DD-MMM-YYYY"
 engine: knitr
 filters:
 - webr

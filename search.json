@@ -119,30 +119,23 @@
     "text": "2 Sample cases\n\n2.1 Fit a linear regression model\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.2 Create a graph with base R\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R):\nLoading\n  webR...\n\n\n  \n\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\nLoading\n  webR...\n\n\n  \n\n\n\n\n\n2.4 Define variables and re-use them in later cells\nLoading\n  webR...\n\n\n  \n\n\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.5 Escape characters in a string\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.6 Anonymous function definition\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.7 Empty code cell\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.8 Prior code cell\n\nLoading\n  webR...\n\n\n  \n\n\n\n\n\n2.9 Pre-rendered code cell\n\nmessage(\"Hello!\")\n\nHello!"
   },
   {
-    "objectID": "documents/theme-title/index.html",
-    "href": "documents/theme-title/index.html",
-    "title": "",
-    "section": "",
-    "text": "title: Testing theme title date: 08-May-2023 format: revealjs"
-  },
-  {
     "objectID": "documents/theme-title/index.html#slide-1",
     "href": "documents/theme-title/index.html#slide-1",
-    "title": "",
+    "title": "Testing theme title",
     "section": "Slide 1",
     "text": "Slide 1\nContent"
   },
   {
     "objectID": "documents/theme-title/index.html#theme",
     "href": "documents/theme-title/index.html#theme",
-    "title": "",
+    "title": "Testing theme title",
     "section": "Theme",
     "text": "Theme\nSome more content"
   },
   {
     "objectID": "documents/theme-title/index.html#bla",
     "href": "documents/theme-title/index.html#bla",
-    "title": "",
+    "title": "Testing theme title",
     "section": "Bla",
     "text": "Bla\nMore stuff here"
   },

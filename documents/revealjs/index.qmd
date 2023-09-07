@@ -2,7 +2,7 @@
 pagetitle: "RevealJS"
 title: '`r paste0(params$name," presentation")`'
 subtitle: "Parameterized presentation"
-author: "John Doe"
+author: "Roy Francis"
 date: last-modified
 format: revealjs
 params:

@@ -27,7 +27,6 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-          fontawesome: true
       - run: |
           quarto --version
       - name: Render and publish

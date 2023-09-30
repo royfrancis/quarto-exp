@@ -18,7 +18,23 @@ filters:
   - webr
 ---
 
-## Demo
+## Installation
+
+Install webr extension for qurto by running:
+
+```bash
+quarto add coatless/quarto-webr
+```
+
+then add to yaml:
+
+```yaml
+webr:
+   channel-type: "post-message"
+engine: knitr
+filters:
+  - webr
+```
 
 webR-enabled code cell are established by using `{webr-r}` in a Quarto HTML document.
 
@@ -44,9 +60,9 @@ plot(pressure)
 ### Packages
 #### Available Packages
 
-You can view what packages are available for webR by either executing the following R code (either with WebR or just R):
+You can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.
 
-```{webr-r}
+```{r,eval=FALSE}
 available.packages(
   repos = "https://repo.r-wasm.org/",
   type = "source"
@@ -107,13 +123,7 @@ add_one(2)
 
 ```
 
-### Prior code cell
-
-```{webr}
-
-```
-
-### Pre-rendered code cell
+### Pre-rendered R code cell
 
 ```{r}
 message("Hello!")

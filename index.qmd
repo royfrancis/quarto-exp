@@ -6,10 +6,10 @@ format:
     title-block-banner: true
 ---
 
-### [Parameterized report](documents/report/index.qmd)
+### [Parameterized html report](documents/report/index.qmd)
+### [Parameterized html revealjs presentation](documents/revealjs/index.qmd)
 ### [Parameterized pdf](documents/pdf/index.pdf)
-### [Parameterized revealjs](documents/revealjs/index.qmd)
-### [OJS and R in Quarto](documents/ojs/index.qmd)
+### [OJS and R](documents/ojs/index.qmd)
 ### [WebR in Quarto using Quarto webr extension](documents/webr/index.qmd)
 ### [FontAwesome](documents/fontawesome/index.qmd)
 

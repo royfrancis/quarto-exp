@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs/editor/editor.main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/editor/editor.main.css">
+
 <style>
   .monaco-editor pre {
     background-color: unset !important;
@@ -102,19 +103,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   .btn-webr {
     background-color: #EEEEEE;
     border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0; /* Extra styling for consistency */
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    -webkit-text-decoration: none;
+    -moz-text-decoration: none;
+    -ms-text-decoration: none;
+    -o-text-decoration: none;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    border-color: #dee2e6;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .btn-webr:hover {
+    color: #000;
+    background-color: #e3e6ea;
+    border-color: #e1e5e9;
+  }
+
+  .btn-webr:disabled,.btn-webr.disabled,fieldset:disabled .btn-webr {
+    pointer-events: none;
+    opacity: .65
   }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs/loader.js"></script>
+
 <script type="module">
-
-  // Configure the Monaco Editor's loader
-  require.config({
-    paths: {
-      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.31.0/min/vs'
-    }
-  });
-
 
   // Start a timer
   const initializeWebRTimerStart = performance.now();
@@ -169,19 +191,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     quartoTitleMeta.appendChild(firstInnerDiv);
 
     // Add new element as last child in header element
-    var header = document.getElementsByTagName("header")[0];
-    header.appendChild(quartoTitleMeta);
+    var header = document.getElementById("title-block-header");
+
+    // Check if the header option is present or missing
+    if(header) {
+      // If present, directly append the child element.
+      header.appendChild(quartoTitleMeta);
+    } else {
+      // Attempt to place the new element inside a header _after_ the Monaco initialization
+      var monacoScript = document.getElementById("webr-monaco-editor-init");
+      var header = document.createElement("header");
+      header.setAttribute("id", "title-block-header");
+      // Now attempt to add the webR area to the title
+      header.appendChild(quartoTitleMeta);
+      // Include the header after the script tag
+      monacoScript.after(header);
+    }
   }
 
   // Retrieve the webr.mjs
-  import { WebR } from "https://webr.r-wasm.org/v0.1.1/webr.mjs";
+  import { WebR, ChannelType } from "https://webr.r-wasm.org/v0.2.1/webr.mjs";
 
   // Populate WebR options with defaults or new values based on 
   // webr meta
   globalThis.webR = new WebR({
     "baseURL": "",
     "serviceWorkerUrl": "",
-    "homedir": "/home/web_user"
+    "homedir": "/home/web_user", 
+    "channelType": ChannelType.PostMessage
   });
 
   // Initialization WebR
@@ -254,6 +291,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs/loader.js"></script>
+<script type="module" id="webr-monaco-editor-init">
+
+  // Configure the Monaco Editor's loader
+  require.config({
+    paths: {
+      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.43.0/min/vs'
+    }
+  });
+</script>
 
 
 
@@ -293,20 +340,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -323,6 +356,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -342,15 +434,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -369,8 +461,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -378,7 +475,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -454,20 +550,6 @@ summary(fit)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -484,6 +566,65 @@ summary(fit)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -503,15 +644,15 @@ summary(fit)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -530,8 +671,13 @@ summary(fit)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -539,7 +685,6 @@ summary(fit)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -612,20 +757,6 @@ summary(fit)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -642,6 +773,65 @@ summary(fit)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -661,15 +851,15 @@ summary(fit)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -688,8 +878,13 @@ summary(fit)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -697,7 +892,6 @@ summary(fit)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -776,20 +970,6 @@ summary(fit)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -806,6 +986,65 @@ summary(fit)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -825,15 +1064,15 @@ summary(fit)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -852,8 +1091,13 @@ summary(fit)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -861,7 +1105,6 @@ summary(fit)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -937,20 +1180,6 @@ summary(fit)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -967,6 +1196,65 @@ summary(fit)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -986,15 +1274,15 @@ summary(fit)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1013,8 +1301,13 @@ summary(fit)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1022,7 +1315,6 @@ summary(fit)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1099,20 +1391,6 @@ p + geom_boxplot()`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1129,6 +1407,65 @@ p + geom_boxplot()`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1148,15 +1485,15 @@ p + geom_boxplot()`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1175,8 +1512,13 @@ p + geom_boxplot()`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1184,7 +1526,6 @@ p + geom_boxplot()`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1259,20 +1600,6 @@ age <- 42`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1289,6 +1616,65 @@ age <- 42`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1308,15 +1694,15 @@ age <- 42`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1335,8 +1721,13 @@ age <- 42`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1344,7 +1735,6 @@ age <- 42`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1414,20 +1804,6 @@ age <- 42`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1444,6 +1820,65 @@ age <- 42`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1463,15 +1898,15 @@ age <- 42`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1490,8 +1925,13 @@ age <- 42`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1499,7 +1939,6 @@ age <- 42`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1573,20 +2012,6 @@ seven_seas`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1603,6 +2028,65 @@ seven_seas`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1622,15 +2106,15 @@ seven_seas`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1649,8 +2133,13 @@ seven_seas`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1658,7 +2147,6 @@ seven_seas`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1732,20 +2220,6 @@ add_one(2)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1762,6 +2236,65 @@ add_one(2)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1781,15 +2314,15 @@ add_one(2)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1808,8 +2341,13 @@ add_one(2)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1817,7 +2355,6 @@ add_one(2)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -1890,20 +2427,6 @@ add_one(2)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1920,6 +2443,65 @@ add_one(2)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -1939,15 +2521,15 @@ add_one(2)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -1966,8 +2548,13 @@ add_one(2)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -1975,7 +2562,6 @@ add_one(2)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -2049,20 +2635,6 @@ add_one(2)`,
       hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
     });
 
-    // Add a keydown event listener for Shift+Enter using the addCommand method
-    editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, function () {
-      // Code to run when Shift+Enter is pressed
-      executeCode(editor.getValue());
-    });
-
-    // Add a keydown event listener for Ctrl+Enter to run selected code
-    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, function () {
-      // Get the selected text from the editor
-      const selectedText = editor.getModel().getValueInRange(editor.getSelection());
-      // Code to run when Ctrl+Enter is pressed (run selected code)
-      executeCode(selectedText);
-    });
-
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -2079,6 +2651,65 @@ add_one(2)`,
         ignoreEvent = false;
       }
     };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        executeCode(editor.getValue());
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          executeCode(currentLine);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          executeCode(selectedText);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
 
     // Register an on change event for when new code is added to the editor window
     editor.onDidContentSizeChange(updateHeight);
@@ -2098,15 +2729,15 @@ add_one(2)`,
     // Initialize webR
     await globalThis.webR.init();
 
-    // Setup a webR canvas
-    await webR.evalRVoid("canvas(width=504, height=360)");
+    // Setup a webR canvas by making a namespace call into the {webr} package
+    await webR.evalRVoid("webr::canvas(width=504, height=360)");
 
     // Capture output data from evaluating the code
     const result = await webRCodeShelter.captureR(codeToRun, {
       withAutoprint: true,
       captureStreams: true,
-      captureConditions: false,
-      env: webR.objs.emptyEnv,
+      captureConditions: false//,
+      // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     });
 
     // Start attempting to parse the result data
@@ -2125,8 +2756,13 @@ add_one(2)`,
 
       // Output each image stored
       msgs.forEach(msg => {
-        if (msg.type === "canvasExec") {
-          if (!canvas) {
+        // Determine if old canvas can be used or a new canvas is required.
+        if (msg.type === 'canvas'){
+          // Add image to the current canvas
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            // Generate a new canvas element
             canvas = document.createElement("canvas");
             canvas.setAttribute("width", 2 * 504);
             canvas.setAttribute("height", 2 * 360);
@@ -2134,7 +2770,6 @@ add_one(2)`,
             canvas.style.display = "block";
             canvas.style.margin = "auto";
           }
-          Function(`this.getContext("2d").${msg.data}`).bind(canvas)();
         }
       });
 
@@ -2182,6 +2817,7 @@ add_one(2)`,
 <pre><code>Hello!</code></pre>
 </div>
 </div>
+<p>webr extension version: 0.3.6</p>
 
 
 </section>

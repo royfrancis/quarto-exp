@@ -11,9 +11,11 @@ format:
     author: "Roy Francis"
     date:  last-modified
     date-format: "DD-MMM-YYYY"
+webr:
+   channel-type: "post-message"
 engine: knitr
 filters:
-- webr
+  - webr
 ---
 
 ## Demo
@@ -39,9 +41,7 @@ summary(fit)
 plot(pressure)
 ```
 
-
 ### Packages
-
 #### Available Packages
 
 You can view what packages are available for webR by either executing the following R code (either with WebR or just R):

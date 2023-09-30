@@ -118,3 +118,5 @@ add_one(2)
 ```{r}
 message("Hello!")
 ```
+
+webr extension version: 0.3.6

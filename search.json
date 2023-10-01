@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Quarto experiments",
     "section": "",
-    "text": "Parameterized html report\n\n\nParameterized html revealjs presentation\n\n\nParameterized pdf\n\n\nOJS and R\n\n\nWebR in Quarto using Quarto webr extension\n\n\nFontAwesome\n\n\nUpdated: 30-09-2023. Quarto v1.3.450"
+    "text": "Parameterized html report\n\n\nParameterized html revealjs presentation\n\n\nParameterized pdf\n\n\nOJS and R\n\n\nWebR in Quarto using Quarto webr extension\n\n\nFontAwesome\n\n\nUpdated: 01-10-2023. Quarto v1.3.450"
   },
   {
     "objectID": "documents/report/index.html",
@@ -39,21 +39,28 @@
     "href": "documents/webr/index.html",
     "title": "webR-enabled code cells",
     "section": "",
-    "text": "Install webr extension for qurto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
   },
   {
     "objectID": "documents/webr/index.html#installation",
     "href": "documents/webr/index.html#installation",
     "title": "webR-enabled code cells",
     "section": "",
-    "text": "Install webr extension for qurto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
   },
   {
     "objectID": "documents/webr/index.html#sample-cases",
     "href": "documents/webr/index.html#sample-cases",
     "title": "webR-enabled code cells",
     "section": "2 Sample cases",
-    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.2 Create a graph with base R\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\nLoading\n  webR...\n\n\n  \n\n\n\n\n\n2.4 Define variables and re-use them in later cells\nLoading\n  webR...\n\n\n  \n\n\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.5 Escape characters in a string\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.6 Anonymous function definition\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.7 Empty code cell\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!\n\n\nwebr extension version: 0.3.6"
+    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.2 Create a graph with base R\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\nLoading\n  webR...\n\n\n  \n\n\n\n\n\n2.4 Define variables and re-use them in later cells\nLoading\n  webR...\n\n\n  \n\n\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.5 Escape characters in a string\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.6 Anonymous function definition\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.7 Empty code cell\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
+  },
+  {
+    "objectID": "documents/webr/index.html#session",
+    "href": "documents/webr/index.html#session",
+    "title": "webR-enabled code cells",
+    "section": "3 Session",
+    "text": "3 Session\nLoading\n  webR...\n\n\n  \n\n\nwebr extension version: 0.3.6"
   },
   {
     "objectID": "documents/ojs/index.html",

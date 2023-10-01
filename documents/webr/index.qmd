@@ -20,7 +20,7 @@ filters:
 
 ## Installation
 
-Install webr extension for qurto by running:
+Install webr extension for quarto by running:
 
 ```bash
 quarto add coatless/quarto-webr
@@ -127,6 +127,12 @@ add_one(2)
 
 ```{r}
 message("Hello!")
+```
+
+## Session
+
+```{webr-r}
+sessionInfo()
 ```
 
 webr extension version: 0.3.6

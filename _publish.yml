@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 8a9eb414-ecaf-481e-922d-4229e3315110
+      url: 'https://rmf.quarto.pub/quarto-exp'

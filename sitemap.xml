@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/index.html</loc>
-    <lastmod>2023-10-01T11:42:52.641Z</lastmod>
+    <lastmod>2023-10-07T09:52:30.537Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/report/index.html</loc>
-    <lastmod>2023-10-01T11:42:52.013Z</lastmod>
+    <lastmod>2023-10-07T09:52:29.957Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/webr/index.html</loc>
-    <lastmod>2023-10-01T11:42:42.765Z</lastmod>
+    <lastmod>2023-10-07T09:52:21.873Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/icons/index.html</loc>
+    <lastmod>2023-10-07T09:52:16.693Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/ojs/index.html</loc>
-    <lastmod>2023-10-01T11:42:37.137Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/fontawesome/index.html</loc>
-    <lastmod>2023-10-01T11:42:34.293Z</lastmod>
+    <lastmod>2023-10-07T09:52:14.813Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/revealjs/index.html</loc>
-    <lastmod>2023-10-01T11:42:40.925Z</lastmod>
+    <lastmod>2023-10-07T09:52:20.165Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/theme-title/index.html</loc>
-    <lastmod>2023-10-01T11:42:52.305Z</lastmod>
+    <lastmod>2023-10-07T09:52:30.225Z</lastmod>
   </url>
 </urlset>

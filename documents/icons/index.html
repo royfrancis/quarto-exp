@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Roy Francis">
+<meta name="dcterms.date" content="2023-10-07">
+
+<title>Icons in Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/bootstrap-icons-1.9.1/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/material-icons-0.14.2/mi.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/iconify-1.0.7/iconify-icon.min.js"></script>
+<script src="../../site_libs/quarto-contrib/lord-icon-bundle-3.4.4/bundle.js"></script>
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Icons in Quarto</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+            <p class="subtitle lead">Icon usage in Quarto</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Roy Francis </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 7, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#fontawesome" id="toc-fontawesome" class="nav-link active" data-scroll-target="#fontawesome"><span class="header-section-number">1</span> FontAwesome</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">1.1</span> Installation</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">1.2</span> Usage</a></li>
+  <li><a href="#sizing" id="toc-sizing" class="nav-link" data-scroll-target="#sizing"><span class="header-section-number">1.3</span> Sizing</a></li>
+  <li><a href="#styling" id="toc-styling" class="nav-link" data-scroll-target="#styling"><span class="header-section-number">1.4</span> Styling</a></li>
+  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label"><span class="header-section-number">1.5</span> Label</a></li>
+  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual"><span class="header-section-number">1.6</span> Manual</a></li>
+  </ul></li>
+  <li><a href="#academicons" id="toc-academicons" class="nav-link" data-scroll-target="#academicons"><span class="header-section-number">2</span> Academicons</a>
+  <ul class="collapse">
+  <li><a href="#installation-1" id="toc-installation-1" class="nav-link" data-scroll-target="#installation-1"><span class="header-section-number">2.1</span> Installation</a></li>
+  <li><a href="#usage-1" id="toc-usage-1" class="nav-link" data-scroll-target="#usage-1"><span class="header-section-number">2.2</span> Usage</a></li>
+  <li><a href="#sizing-1" id="toc-sizing-1" class="nav-link" data-scroll-target="#sizing-1"><span class="header-section-number">2.3</span> Sizing</a></li>
+  <li><a href="#styling-1" id="toc-styling-1" class="nav-link" data-scroll-target="#styling-1"><span class="header-section-number">2.4</span> Styling</a></li>
+  </ul></li>
+  <li><a href="#bsicons" id="toc-bsicons" class="nav-link" data-scroll-target="#bsicons"><span class="header-section-number">3</span> bsicons</a>
+  <ul class="collapse">
+  <li><a href="#installation-2" id="toc-installation-2" class="nav-link" data-scroll-target="#installation-2"><span class="header-section-number">3.1</span> Installation</a></li>
+  <li><a href="#usage-2" id="toc-usage-2" class="nav-link" data-scroll-target="#usage-2"><span class="header-section-number">3.2</span> Usage</a></li>
+  <li><a href="#sizing-2" id="toc-sizing-2" class="nav-link" data-scroll-target="#sizing-2"><span class="header-section-number">3.3</span> Sizing</a></li>
+  <li><a href="#color-options" id="toc-color-options" class="nav-link" data-scroll-target="#color-options"><span class="header-section-number">3.4</span> Color options</a></li>
+  <li><a href="#label-1" id="toc-label-1" class="nav-link" data-scroll-target="#label-1"><span class="header-section-number">3.5</span> Label</a></li>
+  <li><a href="#manual-1" id="toc-manual-1" class="nav-link" data-scroll-target="#manual-1"><span class="header-section-number">3.6</span> Manual</a></li>
+  </ul></li>
+  <li><a href="#material-icons" id="toc-material-icons" class="nav-link" data-scroll-target="#material-icons"><span class="header-section-number">4</span> Material Icons</a>
+  <ul class="collapse">
+  <li><a href="#installation-3" id="toc-installation-3" class="nav-link" data-scroll-target="#installation-3"><span class="header-section-number">4.1</span> Installation</a></li>
+  <li><a href="#usage-3" id="toc-usage-3" class="nav-link" data-scroll-target="#usage-3"><span class="header-section-number">4.2</span> Usage</a></li>
+  <li><a href="#sizing-3" id="toc-sizing-3" class="nav-link" data-scroll-target="#sizing-3"><span class="header-section-number">4.3</span> Sizing</a></li>
+  <li><a href="#styling-2" id="toc-styling-2" class="nav-link" data-scroll-target="#styling-2"><span class="header-section-number">4.4</span> Styling</a></li>
+  </ul></li>
+  <li><a href="#iconify" id="toc-iconify" class="nav-link" data-scroll-target="#iconify"><span class="header-section-number">5</span> Iconify</a>
+  <ul class="collapse">
+  <li><a href="#installation-4" id="toc-installation-4" class="nav-link" data-scroll-target="#installation-4"><span class="header-section-number">5.1</span> Installation</a></li>
+  <li><a href="#usage-4" id="toc-usage-4" class="nav-link" data-scroll-target="#usage-4"><span class="header-section-number">5.2</span> Usage</a></li>
+  <li><a href="#sizing-4" id="toc-sizing-4" class="nav-link" data-scroll-target="#sizing-4"><span class="header-section-number">5.3</span> Sizing</a></li>
+  <li><a href="#styling-3" id="toc-styling-3" class="nav-link" data-scroll-target="#styling-3"><span class="header-section-number">5.4</span> Styling</a></li>
+  <li><a href="#label-2" id="toc-label-2" class="nav-link" data-scroll-target="#label-2"><span class="header-section-number">5.5</span> Label</a></li>
+  </ul></li>
+  <li><a href="#lordicon" id="toc-lordicon" class="nav-link" data-scroll-target="#lordicon"><span class="header-section-number">6</span> Lordicon</a>
+  <ul class="collapse">
+  <li><a href="#installation-5" id="toc-installation-5" class="nav-link" data-scroll-target="#installation-5"><span class="header-section-number">6.1</span> Installation</a></li>
+  <li><a href="#usage-5" id="toc-usage-5" class="nav-link" data-scroll-target="#usage-5"><span class="header-section-number">6.2</span> Usage</a></li>
+  <li><a href="#options" id="toc-options" class="nav-link" data-scroll-target="#options"><span class="header-section-number">6.3</span> Options</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>The complete version of this document is available at <a href="https://github.com/rich-iannone/quarto-icons-examples">https://github.com/rich-iannone/quarto-icons-examples</a>.</p>
+<section id="fontawesome" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="fontawesome"><span class="header-section-number">1</span> FontAwesome</h2>
+<section id="installation" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">1.1</span> Installation</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension quarto-ext/fontawesome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="usage"><span class="header-section-number">1.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>Any of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the ‘brands’ set (e.g., <code>"apple"</code>, <code>"uber"</code>, <code>"github"</code>, etc.) and these need to use the sequence of <code>fa brands &lt;icon-name&gt;</code>. Here are some examples:</p>
+<p><code>{{&lt; fa star &gt;}}</code> <i class="fa-solid fa-star" aria-label="star"></i><br>
+<code>{{&lt; fa image &gt;}}</code> <i class="fa-solid fa-image" aria-label="image"></i><br>
+<code>{{&lt; fa house &gt;}}</code> <i class="fa-solid fa-house" aria-label="house"></i><br>
+<code>{{&lt; fa binoculars &gt;}}</code> <i class="fa-solid fa-binoculars" aria-label="binoculars"></i><br>
+<code>{{&lt; fa brands apple &gt;}}</code> <i class="fa-brands fa-apple" aria-label="apple"></i><br>
+<code>{{&lt; fa brands microsoft &gt;}}</code> <i class="fa-brands fa-microsoft" aria-label="microsoft"></i><br>
+<code>{{&lt; fa battery-half &gt;}}</code> <i class="fa-solid fa-battery-half" aria-label="battery-half"></i><br>
+<code>{{&lt; fa earth-oceania &gt;}}</code> <i class="fa-solid fa-earth-oceania" aria-label="earth-oceania"></i></p>
+<p>The <code>[additional args]</code> allows you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.</p>
+</section>
+<section id="sizing" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="sizing"><span class="header-section-number">1.3</span> Sizing</h3>
+<p>Literal sizing</p>
+<p><code>{{&lt; fa star size=1x &gt;}} {{&lt; fa star size=2x &gt;}} {{&lt; fa star size=3x &gt;}} {{&lt; fa star size=4x &gt;}} {{&lt; fa star size=5x &gt;}}</code></p>
+<p><i class="fa-solid fa-star fa-1x" aria-label="star"></i> <i class="fa-solid fa-star fa-2x" aria-label="star"></i> <i class="fa-solid fa-star fa-3x" aria-label="star"></i> <i class="fa-solid fa-star fa-4x" aria-label="star"></i> <i class="fa-solid fa-star fa-5x" aria-label="star"></i></p>
+<p>Relative sizing</p>
+<p><code>{{&lt; fa star size=2xs &gt;}} {{&lt; fa star size=xs &gt;}} {{&lt; fa star size=sm &gt;}} {{&lt; fa star size=lg &gt;}} {{&lt; fa star size=xl &gt;}} {{&lt; fa star size=2xl &gt;}}</code></p>
+<p><i class="fa-solid fa-star fa-2xs" aria-label="star"></i> <i class="fa-solid fa-star fa-xs" aria-label="star"></i> <i class="fa-solid fa-star fa-sm" aria-label="star"></i> <i class="fa-solid fa-star fa-lg" aria-label="star"></i> <i class="fa-solid fa-star fa-xl" aria-label="star"></i> <i class="fa-solid fa-star fa-2xl" aria-label="star"></i></p>
+</section>
+<section id="styling" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="styling"><span class="header-section-number">1.4</span> Styling</h3>
+<p>Example showing css style.</p>
+<p><code>[{{&lt; fa brands reddit &gt;}}]{style="color: red; font-size: 3em;"}</code></p>
+<p><span style="color: red; font-size: 3em;"><i class="fa-brands fa-reddit" aria-label="reddit"></i></span></p>
+</section>
+<section id="label" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="label"><span class="header-section-number">1.5</span> Label</h3>
+<p>A ‘title’ for a Font Awesome icon is displayed on mouse hover.</p>
+<p><code>{{&lt; fa battery-half size=5x title="Battery: 50%"&gt;}}</code></p>
+<p><i class="fa-solid fa-battery-half fa-5x" title="Battery: 50%" aria-label="battery-half"></i></p>
+</section>
+<section id="manual" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="manual"><span class="header-section-number">1.6</span> Manual</h3>
+<p>Manually inserting icons using html</p>
+<p><code>&lt;i class="fa-brands fa-r-project"&gt;&lt;/i&gt;</code> <i class="fa-brands fa-r-project"></i></p>
+<p>With custom css style:</p>
+<p><code>[&lt;i class="fa-brands fa-r-project"&gt;&lt;/i&gt;]{style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"}</code></p>
+<p><span style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"><i class="fa-brands fa-r-project"></i></span></p>
+</section>
+</section>
+<section id="academicons" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="academicons"><span class="header-section-number">2</span> Academicons</h2>
+<section id="installation-1" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="installation-1"><span class="header-section-number">2.1</span> Installation</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension schochastics/academicons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage-1" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="usage-1"><span class="header-section-number">2.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; ai &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>Some examples</p>
+<p><code>{{&lt; ai jstor &gt;}}</code> <i class="ai  ai-jstor"></i><br>
+<code>{{&lt; ai orcid &gt;}}</code> <i class="ai  ai-orcid"></i><br>
+<code>{{&lt; ai inspire &gt;}}</code> <i class="ai  ai-inspire"></i><br>
+<code>{{&lt; ai open-data &gt;}}</code> <i class="ai  ai-open-data"></i></p>
+<p>The <code>[additional args]</code> allow you to (1) define a size for the icon, and (2) change the color of the icon.</p>
+</section>
+<section id="sizing-1" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="sizing-1"><span class="header-section-number">2.3</span> Sizing</h3>
+<p>Literal sizing</p>
+<p><i class="ai  ai-jstor ai-1x"></i> <i class="ai  ai-jstor ai-2x"></i> <i class="ai  ai-jstor ai-3x"></i> <i class="ai  ai-jstor ai-4x"></i> <i class="ai  ai-jstor ai-5x"></i> <i class="ai  ai-jstor ai-6x"></i> <i class="ai  ai-jstor ai-7x"></i> <i class="ai  ai-jstor ai-8x"></i> <i class="ai  ai-jstor ai-9x"></i> <i class="ai  ai-jstor ai-10x"></i></p>
+<p>Relative sizing</p>
+<p><i class="ai  ai-jstor ai-2xs"></i> <i class="ai  ai-jstor ai-xs"></i> <i class="ai  ai-jstor ai-sm"></i> <i class="ai  ai-jstor ai-lg"></i> <i class="ai  ai-jstor ai-xl"></i> <i class="ai  ai-jstor ai-2xl"></i></p>
+</section>
+<section id="styling-1" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="styling-1"><span class="header-section-number">2.4</span> Styling</h3>
+<p>Custom styling</p>
+<p><code>[{{&lt; ai orcid &gt;}}]{style="color: red; font-size: 3em;"}</code></p>
+<p><span style="color: red; font-size: 3em;"><i class="ai  ai-orcid"></i></span></p>
+</section>
+</section>
+<section id="bsicons" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="bsicons"><span class="header-section-number">3</span> bsicons</h2>
+<section id="installation-2" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="installation-2"><span class="header-section-number">3.1</span> Installation</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension shafayetShafee/bsicons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage-2" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="usage-2"><span class="header-section-number">3.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; bi &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>Examples</p>
+<p><code>{{&lt; bi box-seam &gt;}}</code> <i class="bi-box-seam " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi trophy &gt;}}</code> <i class="bi-trophy " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi x &gt;}}</code> <i class="bi-x " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi robot &gt;}}</code> <i class="bi-robot " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi phone &gt;}}</code> <i class="bi-phone " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi microsoft &gt;}}</code> <i class="bi-microsoft " style="" role="img" aria-hidden="true"></i><br>
+<code>{{&lt; bi image &gt;}}</code> <i class="bi-image " style="" role="img" aria-hidden="true"></i></p>
+<p>The <code>[additional args]</code> allow you to (1) define a size for the icon, (2) change the color of the icon, and (3) add a ‘title’ to the icon.</p>
+</section>
+<section id="sizing-2" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="sizing-2"><span class="header-section-number">3.3</span> Sizing</h3>
+<p>Here is the <code>"stars"</code> icon sized to <code>"20px"</code></p>
+<p><code>{{&lt; bi stars size=20px &gt;}}</code></p>
+<p><i class="bi-stars " style="font-size: 20px;" role="img" aria-hidden="true"></i></p>
+<p>Here is <code>"stars"</code> at <code>"2em"</code>:</p>
+<p><code>{{&lt; bi stars size=2em &gt;}}</code></p>
+<p><i class="bi-stars " style="font-size: 2em;" role="img" aria-hidden="true"></i></p>
+</section>
+<section id="color-options" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="color-options"><span class="header-section-number">3.4</span> Color options</h3>
+<p>The <code>bsicons</code> extension has an argument to change the color of the icon (<code>color</code>). As with the <code>size</code> argument, any type of CSS color declaration (e.g., named colors, hexadecimal colors, RGB or HSL color models, etc.) can be used here.</p>
+<p>Here are some examples</p>
+<p><code>{{&lt; bi twitch color=lightseagreen &gt;}}</code> <i class="bi-twitch " style="color: lightseagreen;" role="img" aria-hidden="true"></i></p>
+<p><code>{{&lt; bi stars color=hsl(15,80%,56%) &gt;}}</code> <i class="bi-stars " style="color: hsl(15,80%,56%);" role="img" aria-hidden="true"></i></p>
+<p><code>{{&lt; bi windows color=#FF6088 &gt;}}</code> <i class="bi-windows " style="color: #FF6088;" role="img" aria-hidden="true"></i></p>
+<p><code>{{&lt; bi alarm-fill color=blue &gt;}}</code> <i class="bi-alarm-fill " style="color: blue;" role="img" aria-hidden="true"></i></p>
+<p><code>{{&lt; bi ubuntu color=rgb(100,0,179) &gt;}}</code> <i class="bi-ubuntu " style="color: rgb(100,0,179);" role="img" aria-hidden="true"></i></p>
+<p><code>{{&lt; bi terminal-fill color=rgba(157,96,50,0.8) &gt;}}</code> <i class="bi-terminal-fill " style="color: rgba(157,96,50,0.8);" role="img" aria-hidden="true"></i></p>
+</section>
+<section id="label-1" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="label-1"><span class="header-section-number">3.5</span> Label</h3>
+<p><code>{{&lt; bi alarm-fill label="This is an alarm"&gt;}}</code></p>
+<p><i class="bi-alarm-fill " style="" role="img" aria-label="This is an alarm"></i></p>
+<p>All of the Bootstrap icons that work with the <code>bsicons</code> Quarto extension are viewable at</p>
+<p><a href="https://icons.getbootstrap.com/#icons" class="uri">https://icons.getbootstrap.com/#icons</a></p>
+</section>
+<section id="manual-1" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="manual-1"><span class="header-section-number">3.6</span> Manual</h3>
+<p>Manually grabbing the <code>&lt;svg&gt;</code> tag directly from the icon page for the icon. This was taken from the icon URL <a href="https://icons.getbootstrap.com/icons/cake/" class="uri">https://icons.getbootstrap.com/icons/cake/</a>:</p>
+<pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"&gt;&lt;path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/&gt;&lt;/svg&gt;</code></pre>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewbox="0 0 16 16">
+<path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"></path>
+</svg>
+<p>Styling up</p>
+<pre><code>[&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"&gt;&lt;path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/&gt;&lt;/svg&gt;]{style="color: red; opacity: 0.75;"}</code></pre>
+<p><span style="color: red; opacity: 0.75;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewbox="0 0 16 16"><path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"></path></svg></span></p>
+</section>
+</section>
+<section id="material-icons" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="material-icons"><span class="header-section-number">4</span> Material Icons</h2>
+<section id="installation-3" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="installation-3"><span class="header-section-number">4.1</span> Installation</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add shafayetShafee/material-icons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage-3" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="usage-3"><span class="header-section-number">4.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; mi &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>Examples</p>
+<p><code>{{&lt; mi bar_chart &gt;}}</code></p>
+<p><span class="material-icons " style="">bar_chart</span></p>
+<p><code>{{&lt; mi account_circle &gt;}}</code></p>
+<p><span class="material-icons " style="">account_circle</span></p>
+<p><code>{{&lt; mi verified_user &gt;}}</code></p>
+<p><span class="material-icons " style="">verified_user</span></p>
+<p><code>{{&lt; mi assignment &gt;}}</code></p>
+<p><span class="material-icons " style="">assignment</span></p>
+<p>The <code>[additional args]</code> allow you to (1) define a size for the icon, (2) change the icon type, (3) change the color of the icon, and (4) define a CSS class for the icon.</p>
+</section>
+<section id="sizing-3" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="sizing-3"><span class="header-section-number">4.3</span> Sizing</h3>
+<p><code>{{&lt; mi assignment size=20px &gt;}}</code></p>
+<p><span class="material-icons " style="font-size: 20px;">assignment</span></p>
+<p><code>{{&lt; mi assignment size=2em &gt;}}</code></p>
+<p><span class="material-icons " style="font-size: 2em;">assignment</span></p>
+</section>
+<section id="styling-2" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="styling-2"><span class="header-section-number">4.4</span> Styling</h3>
+<p>You can style a Material icon in any color. There are styling guidelines available at the <a href="https://www.google.com/design/spec/iconography/system-icons.html">material design icons guidelines</a> page; with active icons they recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.</p>
+<p>You can use predefined CSS classes <code>"md-dark"</code>, <code>"md-light"</code>, or <code>"md-inactive"</code>. Pass one of these classes to the shortcode using <code>class</code> keyword argument. To pass multiple classes, pass them as space separated and wrapped within quotes.</p>
+<p><code>{{&lt; mi insights class=md-dark &gt;}}</code></p>
+<p><span class="material-icons md-dark" style="">insights</span></p>
+<p><code>{{&lt; mi insights class="md-dark md-inactive" &gt;}}</code></p>
+<p><span class="material-icons md-dark md-inactive" style="">insights</span></p>
+<p>You can also provide any valid CSS color using the <code>color</code> keyword argument. Here are some examples of that:</p>
+<p><code>{{&lt; mi bubble_chart color=cornflowerblue &gt;}}</code></p>
+<p><span class="material-icons " style="color: cornflowerblue;">bubble_chart</span></p>
+<p><code>{{&lt; mi bubble_chart color=#E86033 &gt;}}</code></p>
+<p><span class="material-icons " style="color: #E86033;">bubble_chart</span></p>
+<p><code>{{&lt; mi bubble_chart color=rgb(232,96,51) &gt;}}</code></p>
+<p><span class="material-icons " style="color: rgb(132,96,81);">bubble_chart</span></p>
+<p>Material icons comes in five types. These are: (1) <code>filled</code> (the default used for the shortcode), (2) <code>outlined</code>, (3) <code>sharp</code>, (4) <code>two_tone</code>, and (5) <code>round</code>. You can provide this keyword as the second argument to the shortcode (after the icon name).</p>
+<p><code>filled</code> <code>{{&lt; mi analytics &gt;}}</code></p>
+<p><span class="material-icons " style="">analytics</span></p>
+<p><code>outlined</code> <code>{{&lt; mi analytics type=outlined &gt;}}</code></p>
+<p><span class="material-icons-outlined " style="">analytics</span></p>
+<p><code>tow_tone</code> <code>{{&lt; mi analytics type=two_tone &gt;}}</code></p>
+<p><span class="material-icons-two-tone " style="">analytics</span></p>
+<p><code>sharp</code> <code>{{&lt; mi analytics type=sharp &gt;}}</code></p>
+<p><span class="material-icons-sharp " style="">analytics</span></p>
+<p><code>round</code> <code>{{&lt; mi analytics type=round &gt;}}</code></p>
+<p><span class="material-icons-round " style="">analytics</span></p>
+<p>All of the Material icons that work with the <code>material-icons</code> Quarto extension are viewable at</p>
+<p><a href="https://fonts.google.com/icons" class="uri">https://fonts.google.com/icons</a></p>
+</section>
+</section>
+<section id="iconify" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="iconify"><span class="header-section-number">5</span> Iconify</h2>
+<section id="installation-4" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="installation-4"><span class="header-section-number">5.1</span> Installation</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add mcanouil/quarto-iconify</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage-4" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="usage-4"><span class="header-section-number">5.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>Any of the icons from Iconify <code>v1.0.7</code> can be used. Icons are split into sets and the default set is <code>"fluent-emoji"</code>. Explore all of the icons at:</p>
+<p><a href="https://icon-sets.iconify.design" class="uri">https://icon-sets.iconify.design</a></p>
+<p>Examples</p>
+<p><code>{{&lt; iconify axe &gt;}}</code> <iconify-icon inline="" icon="fluent-emoji:axe"></iconify-icon><br>
+<code>{{&lt; iconify chart-increasing &gt;}}</code> <iconify-icon inline="" icon="fluent-emoji:chart-increasing"></iconify-icon><br>
+<code>{{&lt; iconify house &gt;}}</code> <iconify-icon inline="" icon="fluent-emoji:house"></iconify-icon><br>
+<code>{{&lt; iconify worried-face &gt;}}</code> <iconify-icon inline="" icon="fluent-emoji:worried-face"></iconify-icon><br>
+<code>{{&lt; iconify tdesign address-book &gt;}}</code> <iconify-icon inline="" icon="tdesign:address-book"></iconify-icon><br>
+<code>{{&lt; iconify game-icons whistle &gt;}}</code> <iconify-icon inline="" icon="game-icons:whistle"></iconify-icon><br>
+<code>{{&lt; iconify solar airbuds-case-open-outline &gt;}}</code> <iconify-icon inline="" icon="solar:airbuds-case-open-outline"></iconify-icon><br>
+<code>{{&lt; iconify skill-icons mastodon-light &gt;}}</code> <iconify-icon inline="" icon="skill-icons:mastodon-light"></iconify-icon></p>
+<p>The <code>[additional args]</code> allow you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.</p>
+</section>
+<section id="sizing-4" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="sizing-4"><span class="header-section-number">5.3</span> Sizing</h3>
+<p>Literal sizing</p>
+<p><code>{{&lt; iconify house size=1x &gt;}} {{&lt; iconify house size=2x &gt;}} {{&lt; iconify house size=3x &gt;}} {{&lt; iconify house size=4x &gt;}} {{&lt; iconify house size=5x &gt;}} {{&lt; iconify house size=6x &gt;}} {{&lt; iconify house size=7x &gt;}} {{&lt; iconify house size=8x &gt;}} {{&lt; iconify house size=9x &gt;}} {{&lt; iconify house size=10x &gt;}}</code></p>
+<p><iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 1em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 2em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 3em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 4em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 5em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 6em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 7em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 8em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 9em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 10em;"></iconify-icon></p>
+<p>Relative sizing</p>
+<p><code>{{&lt; iconify house size=2xs &gt;}} {{&lt; iconify house size=xs &gt;}} {{&lt; iconify house size=sm &gt;}} {{&lt; iconify house size=lg &gt;}} {{&lt; iconify house size=xl &gt;}} {{&lt; iconify house size=2xl &gt;}}</code></p>
+<p><iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 0.625em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 0.75em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 0.875em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 1.25em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 1.5em;"></iconify-icon> <iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 2em;"></iconify-icon></p>
+</section>
+<section id="styling-3" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="styling-3"><span class="header-section-number">5.4</span> Styling</h3>
+<p><code>[{{&lt; iconify house &gt;}}]{style="color: red; font-size: 3em;"}</code></p>
+<p><span style="color: red; font-size: 3em;"><iconify-icon inline="" icon="fluent-emoji:house"></iconify-icon></span></p>
+</section>
+<section id="label-2" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="label-2"><span class="header-section-number">5.5</span> Label</h3>
+<p><code>{{&lt; iconify house size=5x title="This is my house"&gt;}}</code></p>
+<p><iconify-icon inline="" icon="fluent-emoji:house" style="font-size: 5em;" this="" is="" my="" house=""></iconify-icon></p>
+</section>
+</section>
+<section id="lordicon" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="lordicon"><span class="header-section-number">6</span> Lordicon</h2>
+<section id="installation-5" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="installation-5"><span class="header-section-number">6.1</span> Installation</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add jmgirard/lordicon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usage-5" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="usage-5"><span class="header-section-number">6.2</span> Usage</h3>
+<p>Syntax</p>
+<p><code>{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}</code></p>
+<p>To find icon codes, go to <a href="https://lordicon.com">Lordicon website</a>, hit the <code>Explore Library</code> button and select the <em>Free Icons</em> filter on the left-hand side. You can choose a <em>style</em> for the icon (possiblities are <code>flat</code>, <code>gradient</code>, <code>lineal</code>, and <code>outline</code>).</p>
+<p>Click on any icon, hit the <code>&lt;/&gt; HTML</code> button on the bottom of that info listing and a popover will appear with the <strong>eight-letter code</strong>. You need to transpose that to lowercase as using uppercase letters <em>won’t work</em> :( .</p>
+<p><code>{{&lt; li xxdqfhbi &gt;}}</code></p>
+<p><lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json"></lord-icon></p>
+</section>
+<section id="options" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="options"><span class="header-section-number">6.3</span> Options</h3>
+<p>Each style of icon (<code>flat</code>, <code>gradient</code>, etc.) will have an entirely different eight-letter code.</p>
+<p>The <code>trigger</code> argument controls the icon’s animation type. When using the <code>loop</code> or <code>loop-on-hover</code> triggers, you can also set an optional <code>delay</code> (in ms) between loops.</p>
+<p><code>{{&lt; li xxdqfhbi &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=click &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="click"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=hover &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="hover"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=loop &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="loop"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}}</code> <lord-icon delay="1000" src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="loop"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="loop-on-hover"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}}</code> <lord-icon delay="1000" src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="loop-on-hover"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=morph &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="morph"></lord-icon><br>
+<code>{{&lt; li xxdqfhbi trigger=boomerang &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/xxdqfhbi.json" trigger="boomerang"></lord-icon></p>
+<p>The <code>speed</code> argument controls how quickly the icon’s animation plays.</p>
+<p><code>{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}}</code> <lord-icon speed="0.5" src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop"></lord-icon><br>
+<code>{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}}</code> <lord-icon speed="1.0" src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop"></lord-icon><br>
+<code>{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}}</code> <lord-icon speed="2.0" src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop"></lord-icon></p>
+<p>The <code>colors</code> argument controls the icon’s coloring. Outline icons typically have just a primary and secondary color, but <code>"flat"</code> and <code>"lineal"</code> icons can have many more. Each color should be given in <code>rank:color</code> format (where ranks are <code>"primary"</code>, <code>"secondary"</code>, <code>"tertiary"</code>, etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.</p>
+<p><code>{{&lt; li lupuorrc &gt;}}</code> <lord-icon src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc colors=primary:gold &gt;}}</code> <lord-icon colors="primary:gold" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}}</code> <lord-icon colors="primary:gray,secondary:orange" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}}</code> <lord-icon colors="primary:#4030e8,secondary:#ee66aa" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon></p>
+<p>The <code>stroke</code> argument controls how thick the lines in an icon are.</p>
+<p><code>{{&lt; li lupuorrc stroke=50 &gt;}}</code> <lord-icon stroke="50" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc stroke=100 &gt;}}</code> <lord-icon stroke="100" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc stroke=150 &gt;}}</code> <lord-icon stroke="150" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon></p>
+<p>The <code>scale</code> icon controls how large or zoomed in the icon is.</p>
+<p><code>{{&lt; li lupuorrc scale=25 &gt;}}</code> <lord-icon scale="25" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc scale=50 &gt;}}</code> <lord-icon scale="50" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc scale=100 &gt;}}</code> <lord-icon scale="100" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon></p>
+<p>The <code>x</code> arg controls the horizontal position of the center of the icon.</p>
+<p><code>{{&lt; li lupuorrc x=25 &gt;}}</code> <lord-icon axis-x="25" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc x=50 &gt;}}</code> <lord-icon axis-x="50" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc x=100 &gt;}}</code> <lord-icon axis-x="100" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon></p>
+<p>The <code>y</code> arg controls the vertical position of the center of the icon.</p>
+<p><code>{{&lt; li lupuorrc y=25 &gt;}}</code> <lord-icon axis-y="25" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc y=50 &gt;}}</code> <lord-icon axis-y="50" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon><br>
+<code>{{&lt; li lupuorrc y=100 &gt;}}</code> <lord-icon axis-y="100" src="https://cdn.lordicon.com/lupuorrc.json"></lord-icon></p>
+<p>The complete version of this document is available at <a href="https://github.com/rich-iannone/quarto-icons-examples">https://github.com/rich-iannone/quarto-icons-examples</a>.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Icons in Quarto"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Icon usage in Quarto"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Roy Francis"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    title-block-banner: true</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: pulse</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight: kate</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-align: left</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>The complete version of this document is available at <span class="co">[</span><span class="ot">https://github.com/rich-iannone/quarto-icons-examples</span><span class="co">](https://github.com/rich-iannone/quarto-icons-examples)</span>.</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## FontAwesome</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension quarto-ext/fontawesome</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>Any of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the 'brands' set (e.g., <span class="in">`"apple"`</span>, <span class="in">`"uber"`</span>, <span class="in">`"github"`</span>, etc.) and these need to use the sequence of <span class="in">`fa brands &lt;icon-name&gt;`</span>. Here are some examples:</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa star &gt;}}}`</span>  {{&lt; fa star &gt;}}  </span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa image &gt;}}}`</span>  {{&lt; fa image &gt;}}  </span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa house &gt;}}}`</span>  {{&lt; fa house &gt;}}  </span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa binoculars &gt;}}}`</span>  {{&lt; fa binoculars &gt;}}  </span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa brands apple &gt;}}}`</span>  {{&lt; fa brands apple &gt;}}  </span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa brands microsoft &gt;}}}`</span>  {{&lt; fa brands microsoft &gt;}}  </span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa battery-half &gt;}}}`</span>  {{&lt; fa battery-half &gt;}}  </span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa earth-oceania &gt;}}}`</span>  {{&lt; fa earth-oceania &gt;}}  </span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>The <span class="in">`[additional args]`</span> allows you to (1) define a size for the icon, and (2) add a 'title' to the icon.</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sizing</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>Literal sizing</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa star size=1x &gt;}}} {{{&lt; fa star size=2x &gt;}}} {{{&lt; fa star size=3x &gt;}}} {{{&lt; fa star size=4x &gt;}}} {{{&lt; fa star size=5x &gt;}}}`</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>{{&lt; fa star size=1x &gt;}} {{&lt; fa star size=2x &gt;}} {{&lt; fa star size=3x &gt;}} {{&lt; fa star size=4x &gt;}} {{&lt; fa star size=5x &gt;}}</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>Relative sizing</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa star size=2xs &gt;}}} {{{&lt; fa star size=xs &gt;}}} {{{&lt; fa star size=sm &gt;}}} {{{&lt; fa star size=lg &gt;}}} {{{&lt; fa star size=xl &gt;}}} {{{&lt; fa star size=2xl &gt;}}}`</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>{{&lt; fa star size=2xs &gt;}} {{&lt; fa star size=xs &gt;}} {{&lt; fa star size=sm &gt;}} {{&lt; fa star size=lg &gt;}} {{&lt; fa star size=xl &gt;}} {{&lt; fa star size=2xl &gt;}}</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>Example showing css style.</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="in">`[{{{&lt; fa brands reddit &gt;}}}]{style="color: red; font-size: 3em;"}`</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">{{&lt; fa brands reddit &gt;}}</span><span class="co">]</span>{style="color: red; font-size: 3em;"}</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### Label</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>A 'title' for a Font Awesome icon is displayed on mouse hover.</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; fa battery-half size=5x title="Battery: 50%"&gt;}}}`</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>{{&lt; fa battery-half size=5x title="Battery: 50%"&gt;}}</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Manual</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>Manually inserting icons using html</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="in">`&lt;i class="fa-brands fa-r-project"&gt;&lt;/i&gt;`</span> <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-brands fa-r-project"</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>With custom css style:</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a><span class="in">`[&lt;i class="fa-brands fa-r-project"&gt;&lt;/i&gt;]{style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"}`</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">&lt;i class="fa-brands fa-r-project"&gt;&lt;/i&gt;</span><span class="co">]</span>{style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"}</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Academicons</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension schochastics/academicons</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; ai &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>Some examples</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; ai jstor &gt;}}}`</span>  {{&lt; ai jstor &gt;}}  </span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; ai orcid &gt;}}}`</span>  {{&lt; ai orcid &gt;}}  </span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; ai inspire &gt;}}}`</span>  {{&lt; ai inspire &gt;}}  </span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; ai open-data &gt;}}}`</span>  {{&lt; ai open-data &gt;}}  </span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>The <span class="in">`[additional args]`</span> allow you to (1) define a size for the icon, and (2) change the color of the icon.</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sizing</span></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>Literal sizing</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>{{&lt; ai jstor size=1x &gt;}} {{&lt; ai jstor size=2x &gt;}} {{&lt; ai jstor size=3x &gt;}} {{&lt; ai jstor size=4x &gt;}} {{&lt; ai jstor size=5x &gt;}} {{&lt; ai jstor size=6x &gt;}} {{&lt; ai jstor size=7x &gt;}} {{&lt; ai jstor size=8x &gt;}} {{&lt; ai jstor size=9x &gt;}} {{&lt; ai jstor size=10x &gt;}}</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>Relative sizing</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a>{{&lt; ai jstor size=2xs &gt;}} {{&lt; ai jstor size=xs &gt;}} {{&lt; ai jstor size=sm &gt;}} {{&lt; ai jstor size=lg &gt;}} {{&lt; ai jstor size=xl &gt;}} {{&lt; ai jstor size=2xl &gt;}}</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling</span></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>Custom styling</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="in">`[{{{&lt; ai orcid &gt;}}}]{style="color: red; font-size: 3em;"}`</span></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">{{&lt; ai orcid &gt;}}</span><span class="co">]</span>{style="color: red; font-size: 3em;"}</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## bsicons</span></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension shafayetShafee/bsicons</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>Examples</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi box-seam &gt;}}}`</span>  {{&lt; bi box-seam &gt;}}  </span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi trophy &gt;}}}`</span>  {{&lt; bi trophy &gt;}}  </span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi x &gt;}}}`</span>  {{&lt; bi x &gt;}}  </span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi robot &gt;}}}`</span>  {{&lt; bi robot &gt;}}  </span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi phone &gt;}}}`</span>  {{&lt; bi phone &gt;}}  </span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi microsoft &gt;}}}`</span>  {{&lt; bi microsoft &gt;}}  </span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi image &gt;}}}`</span>  {{&lt; bi image &gt;}}  </span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>The <span class="in">`[additional args]`</span> allow you to (1) define a size for the icon, (2) change the color of the icon, and (3) add a 'title' to the icon.</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sizing</span></span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>Here is the <span class="in">`"stars"`</span> icon sized to <span class="in">`"20px"`</span></span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi stars size=20px &gt;}}}`</span></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>{{&lt; bi stars size=20px &gt;}}</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>Here is <span class="in">`"stars"`</span> at <span class="in">`"2em"`</span>:</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi stars size=2em &gt;}}}`</span></span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>{{&lt; bi stars size=2em &gt;}}</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="fu">### Color options</span></span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>The <span class="in">`bsicons`</span> extension has an argument to change the color of the icon (<span class="in">`color`</span>). As with the <span class="in">`size`</span> argument, any type of CSS color declaration (e.g., named colors, hexadecimal colors, RGB or HSL color models, etc.) can be used here.</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>Here are some examples</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi twitch color=lightseagreen &gt;}}}`</span> {{&lt; bi twitch color=lightseagreen &gt;}}</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi stars color=hsl(15,80%,56%) &gt;}}}`</span> {{&lt; bi stars color=hsl(15,80%,56%) &gt;}}</span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi windows color=#FF6088 &gt;}}}`</span> {{&lt; bi windows color=#FF6088 &gt;}}</span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi alarm-fill color=blue &gt;}}}`</span> {{&lt; bi alarm-fill color=blue &gt;}}</span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi ubuntu color=rgb(100,0,179) &gt;}}}`</span> {{&lt; bi ubuntu color=rgb(100,0,179) &gt;}}</span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi terminal-fill color=rgba(157,96,50,0.8) &gt;}}}`</span> {{&lt; bi terminal-fill color=rgba(157,96,50,0.8) &gt;}}</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### Label</span></span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; bi alarm-fill label="This is an alarm"&gt;}}}`</span></span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>{{&lt; bi alarm-fill label="This is an alarm"&gt;}}</span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a>All of the Bootstrap icons that work with the <span class="in">`bsicons`</span> Quarto extension are viewable at </span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://icons.getbootstrap.com/#icons&gt;</span></span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a><span class="fu">### Manual</span></span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>Manually grabbing the <span class="in">`&lt;svg&gt;`</span> tag directly from the icon page for the icon. This was taken from the icon URL <span class="ot">&lt;https://icons.getbootstrap.com/icons/cake/&gt;</span>:</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"&gt;&lt;path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/&gt;&lt;/svg&gt;</span></span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;svg</span> <span class="er">xmlns</span><span class="ot">=</span><span class="st">"http://www.w3.org/2000/svg"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"16"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"16"</span> <span class="er">fill</span><span class="ot">=</span><span class="st">"currentColor"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"bi bi-cake"</span> <span class="er">viewBox</span><span class="ot">=</span><span class="st">"0 0 16 16"</span><span class="kw">&gt;&lt;path</span> <span class="er">d</span><span class="ot">=</span><span class="st">"m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"</span><span class="kw">/&gt;&lt;/svg&gt;</span></span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>Styling up</span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a><span class="in">[&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"&gt;&lt;path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/&gt;&lt;/svg&gt;]{style="color: red; opacity: 0.75;"}</span></span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">&lt;svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"&gt;&lt;path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/&gt;&lt;/svg&gt;</span><span class="co">]</span>{style="color: red; opacity: 0.75;"}</span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Material Icons</span></span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add shafayetShafee/material-icons</span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a>Examples</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi bar_chart &gt;}}}`</span></span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a>{{&lt; mi bar_chart &gt;}}  </span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi account_circle &gt;}}}`</span></span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a>{{&lt; mi account_circle &gt;}}  </span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi verified_user &gt;}}}`</span></span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a>{{&lt; mi verified_user &gt;}}  </span>
+<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi assignment &gt;}}}`</span></span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a>{{&lt; mi assignment &gt;}}  </span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a>The <span class="in">`[additional args]`</span> allow you to (1) define a size for the icon, (2) change the icon type, (3) change the color of the icon, and (4) define a CSS class for the icon.</span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sizing</span></span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi assignment size=20px &gt;}}}`</span></span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>{{&lt; mi assignment size=20px &gt;}}</span>
+<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi assignment size=2em &gt;}}}`</span></span>
+<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a>{{&lt; mi assignment size=2em &gt;}}</span>
+<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling</span></span>
+<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>You can style a Material icon in any color. There are styling guidelines available at the <span class="co">[</span><span class="ot">material design icons guidelines</span><span class="co">](https://www.google.com/design/spec/iconography/system-icons.html)</span> page; with active icons they recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.</span>
+<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a>You can use predefined CSS classes <span class="in">`"md-dark"`</span>, <span class="in">`"md-light"`</span>, or <span class="in">`"md-inactive"`</span>. Pass one of these classes to the shortcode using <span class="in">`class`</span> keyword argument. To pass multiple classes, pass them as space separated and wrapped within quotes.</span>
+<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi insights class=md-dark &gt;}}}`</span></span>
+<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>{{&lt; mi insights class=md-dark &gt;}}  </span>
+<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi insights class="md-dark md-inactive" &gt;}}}`</span></span>
+<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a>{{&lt; mi insights class="md-dark md-inactive" &gt;}}  </span>
+<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a>You can also provide any valid CSS color using the <span class="in">`color`</span> keyword argument.</span>
+<span id="cb9-274"><a href="#cb9-274" aria-hidden="true" tabindex="-1"></a>Here are some examples of that:</span>
+<span id="cb9-275"><a href="#cb9-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-276"><a href="#cb9-276" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi bubble_chart color=cornflowerblue &gt;}}}`</span></span>
+<span id="cb9-277"><a href="#cb9-277" aria-hidden="true" tabindex="-1"></a>{{&lt; mi bubble_chart color=cornflowerblue &gt;}}  </span>
+<span id="cb9-278"><a href="#cb9-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-279"><a href="#cb9-279" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi bubble_chart color=#E86033 &gt;}}}`</span></span>
+<span id="cb9-280"><a href="#cb9-280" aria-hidden="true" tabindex="-1"></a>{{&lt; mi bubble_chart color=#E86033 &gt;}}  </span>
+<span id="cb9-281"><a href="#cb9-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-282"><a href="#cb9-282" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; mi bubble_chart color=rgb(232,96,51) &gt;}}}`</span></span>
+<span id="cb9-283"><a href="#cb9-283" aria-hidden="true" tabindex="-1"></a>{{&lt; mi bubble_chart color=rgb(132,96,81) &gt;}}  </span>
+<span id="cb9-284"><a href="#cb9-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-285"><a href="#cb9-285" aria-hidden="true" tabindex="-1"></a>Material icons comes in five types. These are: (1) <span class="in">`filled`</span> (the default used for the shortcode), (2) <span class="in">`outlined`</span>, (3) <span class="in">`sharp`</span>, (4) <span class="in">`two_tone`</span>, and (5) <span class="in">`round`</span>. You can provide this keyword as the second argument to the shortcode (after the icon name).</span>
+<span id="cb9-286"><a href="#cb9-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-287"><a href="#cb9-287" aria-hidden="true" tabindex="-1"></a><span class="in">`filled`</span>  <span class="in">`{{{&lt; mi analytics &gt;}}}`</span></span>
+<span id="cb9-288"><a href="#cb9-288" aria-hidden="true" tabindex="-1"></a>{{&lt; mi analytics &gt;}}  </span>
+<span id="cb9-289"><a href="#cb9-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-290"><a href="#cb9-290" aria-hidden="true" tabindex="-1"></a><span class="in">`outlined`</span> <span class="in">`{{{&lt; mi analytics type=outlined &gt;}}}`</span></span>
+<span id="cb9-291"><a href="#cb9-291" aria-hidden="true" tabindex="-1"></a>{{&lt; mi analytics type=outlined &gt;}}  </span>
+<span id="cb9-292"><a href="#cb9-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-293"><a href="#cb9-293" aria-hidden="true" tabindex="-1"></a><span class="in">`tow_tone`</span> <span class="in">`{{{&lt; mi analytics type=two_tone &gt;}}}`</span></span>
+<span id="cb9-294"><a href="#cb9-294" aria-hidden="true" tabindex="-1"></a>{{&lt; mi analytics type=two_tone &gt;}}  </span>
+<span id="cb9-295"><a href="#cb9-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-296"><a href="#cb9-296" aria-hidden="true" tabindex="-1"></a><span class="in">`sharp`</span> <span class="in">`{{{&lt; mi analytics type=sharp &gt;}}}`</span></span>
+<span id="cb9-297"><a href="#cb9-297" aria-hidden="true" tabindex="-1"></a>{{&lt; mi analytics type=sharp &gt;}}  </span>
+<span id="cb9-298"><a href="#cb9-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-299"><a href="#cb9-299" aria-hidden="true" tabindex="-1"></a><span class="in">`round`</span> <span class="in">`{{{&lt; mi analytics type=round &gt;}}}`</span></span>
+<span id="cb9-300"><a href="#cb9-300" aria-hidden="true" tabindex="-1"></a>{{&lt; mi analytics type=round &gt;}}  </span>
+<span id="cb9-301"><a href="#cb9-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>All of the Material icons that work with the <span class="in">`material-icons`</span> Quarto extension are viewable at </span>
+<span id="cb9-303"><a href="#cb9-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-304"><a href="#cb9-304" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://fonts.google.com/icons&gt;</span></span>
+<span id="cb9-305"><a href="#cb9-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-306"><a href="#cb9-306" aria-hidden="true" tabindex="-1"></a><span class="fu">## Iconify</span></span>
+<span id="cb9-307"><a href="#cb9-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-308"><a href="#cb9-308" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-309"><a href="#cb9-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-310"><a href="#cb9-310" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-311"><a href="#cb9-311" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add mcanouil/quarto-iconify</span>
+<span id="cb9-312"><a href="#cb9-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-313"><a href="#cb9-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-314"><a href="#cb9-314" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-315"><a href="#cb9-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-316"><a href="#cb9-316" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-317"><a href="#cb9-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-318"><a href="#cb9-318" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-319"><a href="#cb9-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-320"><a href="#cb9-320" aria-hidden="true" tabindex="-1"></a>Any of the icons from Iconify <span class="in">`v1.0.7`</span> can be used. Icons are split into sets and the default set is <span class="in">`"fluent-emoji"`</span>. Explore all of the icons at:</span>
+<span id="cb9-321"><a href="#cb9-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-322"><a href="#cb9-322" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://icon-sets.iconify.design&gt;</span></span>
+<span id="cb9-323"><a href="#cb9-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-324"><a href="#cb9-324" aria-hidden="true" tabindex="-1"></a>Examples</span>
+<span id="cb9-325"><a href="#cb9-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-326"><a href="#cb9-326" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify axe &gt;}}}`</span>  {{&lt; iconify axe &gt;}}  </span>
+<span id="cb9-327"><a href="#cb9-327" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify chart-increasing &gt;}}}`</span> {{&lt; iconify chart-increasing &gt;}}  </span>
+<span id="cb9-328"><a href="#cb9-328" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify house &gt;}}}`</span>  {{&lt; iconify house &gt;}}  </span>
+<span id="cb9-329"><a href="#cb9-329" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify worried-face &gt;}}}`</span>  {{&lt; iconify worried-face &gt;}}  </span>
+<span id="cb9-330"><a href="#cb9-330" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify tdesign address-book &gt;}}}`</span> {{&lt; iconify tdesign address-book &gt;}}  </span>
+<span id="cb9-331"><a href="#cb9-331" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify game-icons whistle &gt;}}}`</span> {{&lt; iconify game-icons whistle &gt;}}  </span>
+<span id="cb9-332"><a href="#cb9-332" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify solar airbuds-case-open-outline &gt;}}}`</span>  {{&lt; iconify solar airbuds-case-open-outline &gt;}}  </span>
+<span id="cb9-333"><a href="#cb9-333" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify skill-icons mastodon-light &gt;}}}`</span>  {{&lt; iconify skill-icons mastodon-light &gt;}}  </span>
+<span id="cb9-334"><a href="#cb9-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-335"><a href="#cb9-335" aria-hidden="true" tabindex="-1"></a>The <span class="in">`[additional args]`</span> allow you to (1) define a size for the icon, and (2) add a 'title' to the icon.</span>
+<span id="cb9-336"><a href="#cb9-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-337"><a href="#cb9-337" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sizing</span></span>
+<span id="cb9-338"><a href="#cb9-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-339"><a href="#cb9-339" aria-hidden="true" tabindex="-1"></a>Literal sizing</span>
+<span id="cb9-340"><a href="#cb9-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-341"><a href="#cb9-341" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify house size=1x &gt;}}} {{{&lt; iconify house size=2x &gt;}}} {{{&lt; iconify house size=3x &gt;}}} {{{&lt; iconify house size=4x &gt;}}} {{{&lt; iconify house size=5x &gt;}}} {{{&lt; iconify house size=6x &gt;}}} {{{&lt; iconify house size=7x &gt;}}} {{{&lt; iconify house size=8x &gt;}}} {{{&lt; iconify house size=9x &gt;}}} {{{&lt; iconify house size=10x &gt;}}}`</span></span>
+<span id="cb9-342"><a href="#cb9-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-343"><a href="#cb9-343" aria-hidden="true" tabindex="-1"></a>{{&lt; iconify house size=1x &gt;}} {{&lt; iconify house size=2x &gt;}} {{&lt; iconify house size=3x &gt;}} {{&lt; iconify house size=4x &gt;}} {{&lt; iconify house size=5x &gt;}} {{&lt; iconify house size=6x &gt;}} {{&lt; iconify house size=7x &gt;}} {{&lt; iconify house size=8x &gt;}} {{&lt; iconify house size=9x &gt;}} {{&lt; iconify house size=10x &gt;}}</span>
+<span id="cb9-344"><a href="#cb9-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-345"><a href="#cb9-345" aria-hidden="true" tabindex="-1"></a>Relative sizing</span>
+<span id="cb9-346"><a href="#cb9-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-347"><a href="#cb9-347" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify house size=2xs &gt;}}} {{{&lt; iconify house size=xs &gt;}}} {{{&lt; iconify house size=sm &gt;}}} {{{&lt; iconify house size=lg &gt;}}} {{{&lt; iconify house size=xl &gt;}}} {{{&lt; iconify house size=2xl &gt;}}}`</span></span>
+<span id="cb9-348"><a href="#cb9-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-349"><a href="#cb9-349" aria-hidden="true" tabindex="-1"></a>{{&lt; iconify house size=2xs &gt;}} {{&lt; iconify house size=xs &gt;}} {{&lt; iconify house size=sm &gt;}} {{&lt; iconify house size=lg &gt;}} {{&lt; iconify house size=xl &gt;}} {{&lt; iconify house size=2xl &gt;}}</span>
+<span id="cb9-350"><a href="#cb9-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-351"><a href="#cb9-351" aria-hidden="true" tabindex="-1"></a><span class="fu">### Styling</span></span>
+<span id="cb9-352"><a href="#cb9-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-353"><a href="#cb9-353" aria-hidden="true" tabindex="-1"></a><span class="in">`[{{{&lt; iconify house &gt;}}}]{style="color: red; font-size: 3em;"}`</span></span>
+<span id="cb9-354"><a href="#cb9-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-355"><a href="#cb9-355" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">{{&lt; iconify house &gt;}}</span><span class="co">]</span>{style="color: red; font-size: 3em;"}</span>
+<span id="cb9-356"><a href="#cb9-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-357"><a href="#cb9-357" aria-hidden="true" tabindex="-1"></a><span class="fu">### Label</span></span>
+<span id="cb9-358"><a href="#cb9-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-359"><a href="#cb9-359" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; iconify house size=5x title="This is my house"&gt;}}}`</span></span>
+<span id="cb9-360"><a href="#cb9-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-361"><a href="#cb9-361" aria-hidden="true" tabindex="-1"></a>{{&lt; iconify house size=5x title="This is my house"&gt;}}</span>
+<span id="cb9-362"><a href="#cb9-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-363"><a href="#cb9-363" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lordicon</span></span>
+<span id="cb9-364"><a href="#cb9-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-365"><a href="#cb9-365" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installation</span></span>
+<span id="cb9-366"><a href="#cb9-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-367"><a href="#cb9-367" aria-hidden="true" tabindex="-1"></a><span class="in">```sh</span></span>
+<span id="cb9-368"><a href="#cb9-368" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add jmgirard/lordicon</span>
+<span id="cb9-369"><a href="#cb9-369" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-370"><a href="#cb9-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-371"><a href="#cb9-371" aria-hidden="true" tabindex="-1"></a><span class="fu">### Usage</span></span>
+<span id="cb9-372"><a href="#cb9-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-373"><a href="#cb9-373" aria-hidden="true" tabindex="-1"></a>Syntax</span>
+<span id="cb9-374"><a href="#cb9-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-375"><a href="#cb9-375" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}}`</span></span>
+<span id="cb9-376"><a href="#cb9-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-377"><a href="#cb9-377" aria-hidden="true" tabindex="-1"></a>To find icon codes, go to <span class="co">[</span><span class="ot">Lordicon website</span><span class="co">](https://lordicon.com)</span>, hit the <span class="in">`Explore Library`</span> button and select the *Free Icons* filter on the left-hand side. You can choose a *style* for the icon (possiblities are <span class="in">`flat`</span>, <span class="in">`gradient`</span>, <span class="in">`lineal`</span>, and <span class="in">`outline`</span>).</span>
+<span id="cb9-378"><a href="#cb9-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-379"><a href="#cb9-379" aria-hidden="true" tabindex="-1"></a>Click on any icon, hit the <span class="in">`&lt;/&gt; HTML`</span> button on the bottom of that info listing and a popover will appear with the **eight-letter code**. You need to transpose that to lowercase as using uppercase letters *won't work* :( .</span>
+<span id="cb9-380"><a href="#cb9-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-381"><a href="#cb9-381" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi &gt;}}} `</span></span>
+<span id="cb9-382"><a href="#cb9-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-383"><a href="#cb9-383" aria-hidden="true" tabindex="-1"></a>{{&lt; li xxdqfhbi &gt;}} </span>
+<span id="cb9-384"><a href="#cb9-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-385"><a href="#cb9-385" aria-hidden="true" tabindex="-1"></a><span class="fu">### Options</span></span>
+<span id="cb9-386"><a href="#cb9-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-387"><a href="#cb9-387" aria-hidden="true" tabindex="-1"></a>Each style of icon (<span class="in">`flat`</span>, <span class="in">`gradient`</span>, etc.) will have an entirely different eight-letter code.</span>
+<span id="cb9-388"><a href="#cb9-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-389"><a href="#cb9-389" aria-hidden="true" tabindex="-1"></a>The <span class="in">`trigger`</span> argument controls the icon's animation type. When using the <span class="in">`loop`</span> or <span class="in">`loop-on-hover`</span> triggers, you can also set an optional <span class="in">`delay`</span> (in ms) between loops.</span>
+<span id="cb9-390"><a href="#cb9-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-391"><a href="#cb9-391" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi &gt;}}}`</span>  {{&lt; li xxdqfhbi &gt;}}  </span>
+<span id="cb9-392"><a href="#cb9-392" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=click &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=click &gt;}}  </span>
+<span id="cb9-393"><a href="#cb9-393" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=hover &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=hover &gt;}}  </span>
+<span id="cb9-394"><a href="#cb9-394" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=loop &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=loop &gt;}}  </span>
+<span id="cb9-395"><a href="#cb9-395" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}}  </span>
+<span id="cb9-396"><a href="#cb9-396" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}}  </span>
+<span id="cb9-397"><a href="#cb9-397" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}}  </span>
+<span id="cb9-398"><a href="#cb9-398" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=morph &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=morph &gt;}}  </span>
+<span id="cb9-399"><a href="#cb9-399" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li xxdqfhbi trigger=boomerang &gt;}}}`</span> {{&lt; li xxdqfhbi trigger=boomerang &gt;}}  </span>
+<span id="cb9-400"><a href="#cb9-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-401"><a href="#cb9-401" aria-hidden="true" tabindex="-1"></a>The <span class="in">`speed`</span> argument controls how quickly the icon's animation plays.</span>
+<span id="cb9-402"><a href="#cb9-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-403"><a href="#cb9-403" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}}}`</span>  {{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}}  </span>
+<span id="cb9-404"><a href="#cb9-404" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}}}`</span>  {{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}}  </span>
+<span id="cb9-405"><a href="#cb9-405" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}}}`</span>  {{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}}  </span>
+<span id="cb9-406"><a href="#cb9-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-407"><a href="#cb9-407" aria-hidden="true" tabindex="-1"></a>The <span class="in">`colors`</span> argument controls the icon's coloring. Outline icons typically have just a primary and secondary color, but <span class="in">`"flat"`</span> and <span class="in">`"lineal"`</span> icons can have many more. Each color should be given in <span class="in">`rank:color`</span> format (where ranks are <span class="in">`"primary"`</span>, <span class="in">`"secondary"`</span>, <span class="in">`"tertiary"`</span>, etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.</span>
+<span id="cb9-408"><a href="#cb9-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-409"><a href="#cb9-409" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc &gt;}}}`</span>  {{&lt; li lupuorrc &gt;}}  </span>
+<span id="cb9-410"><a href="#cb9-410" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc colors=primary:gold &gt;}}}`</span>   {{&lt; li lupuorrc colors=primary:gold &gt;}}  </span>
+<span id="cb9-411"><a href="#cb9-411" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}}}`</span>   {{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}}  </span>
+<span id="cb9-412"><a href="#cb9-412" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}}}`</span>   {{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}}  </span>
+<span id="cb9-413"><a href="#cb9-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-414"><a href="#cb9-414" aria-hidden="true" tabindex="-1"></a>The <span class="in">`stroke`</span> argument controls how thick the lines in an icon are.</span>
+<span id="cb9-415"><a href="#cb9-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-416"><a href="#cb9-416" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc stroke=50 &gt;}}}`</span>  {{&lt; li lupuorrc stroke=50 &gt;}}  </span>
+<span id="cb9-417"><a href="#cb9-417" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc stroke=100 &gt;}}}`</span> {{&lt; li lupuorrc stroke=100 &gt;}}  </span>
+<span id="cb9-418"><a href="#cb9-418" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc stroke=150 &gt;}}}`</span> {{&lt; li lupuorrc stroke=150 &gt;}}  </span>
+<span id="cb9-419"><a href="#cb9-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-420"><a href="#cb9-420" aria-hidden="true" tabindex="-1"></a>The <span class="in">`scale`</span> icon controls how large or zoomed in the icon is.</span>
+<span id="cb9-421"><a href="#cb9-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-422"><a href="#cb9-422" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc scale=25 &gt;}}}`</span>  {{&lt; li lupuorrc scale=25 &gt;}}  </span>
+<span id="cb9-423"><a href="#cb9-423" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc scale=50 &gt;}}}`</span>  {{&lt; li lupuorrc scale=50 &gt;}}  </span>
+<span id="cb9-424"><a href="#cb9-424" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc scale=100 &gt;}}}`</span>  {{&lt; li lupuorrc scale=100 &gt;}}  </span>
+<span id="cb9-425"><a href="#cb9-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-426"><a href="#cb9-426" aria-hidden="true" tabindex="-1"></a>The <span class="in">`x`</span> arg controls the horizontal position of the center of the icon.</span>
+<span id="cb9-427"><a href="#cb9-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-428"><a href="#cb9-428" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc x=25 &gt;}}}`</span>   {{&lt; li lupuorrc x=25 &gt;}}  </span>
+<span id="cb9-429"><a href="#cb9-429" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc x=50 &gt;}}}`</span>   {{&lt; li lupuorrc x=50 &gt;}}  </span>
+<span id="cb9-430"><a href="#cb9-430" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc x=100 &gt;}}}`</span>  {{&lt; li lupuorrc x=100 &gt;}}  </span>
+<span id="cb9-431"><a href="#cb9-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-432"><a href="#cb9-432" aria-hidden="true" tabindex="-1"></a>The <span class="in">`y`</span> arg controls the vertical position of the center of the icon.</span>
+<span id="cb9-433"><a href="#cb9-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-434"><a href="#cb9-434" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc y=25 &gt;}}}`</span>     {{&lt; li lupuorrc y=25 &gt;}}  </span>
+<span id="cb9-435"><a href="#cb9-435" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc y=50 &gt;}}}`</span>     {{&lt; li lupuorrc y=50 &gt;}}  </span>
+<span id="cb9-436"><a href="#cb9-436" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc y=100 &gt;}}}`</span>    {{&lt; li lupuorrc y=100 &gt;}}  </span>
+<span id="cb9-437"><a href="#cb9-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-438"><a href="#cb9-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-439"><a href="#cb9-439" aria-hidden="true" tabindex="-1"></a>The complete version of this document is available at <span class="co">[</span><span class="ot">https://github.com/rich-iannone/quarto-icons-examples</span><span class="co">](https://github.com/rich-iannone/quarto-icons-examples)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

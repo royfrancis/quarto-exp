@@ -11,7 +11,7 @@ format:
 ### [Parameterized pdf](documents/pdf/index.pdf)
 ### [OJS and R](documents/ojs/index.qmd)
 ### [WebR in Quarto using Quarto webr extension](documents/webr/index.qmd)
-### [FontAwesome](documents/fontawesome/index.qmd)
+### [Icons](documents/icons/index.qmd)
 
 <br>
 

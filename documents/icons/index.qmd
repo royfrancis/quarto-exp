@@ -1,0 +1,440 @@
+---
+title: "Icons in Quarto"
+subtitle: "Icon usage in Quarto"
+author: "Roy Francis"
+date: last-modified
+format:
+  html:
+    title-block-banner: true
+    toc: true
+    number-sections: true
+    theme: pulse
+    highlight: kate
+    code-tools: true
+    fig-align: left
+
+execute:
+  echo: true
+---
+
+
+The complete version of this document is available at [https://github.com/rich-iannone/quarto-icons-examples](https://github.com/rich-iannone/quarto-icons-examples).
+
+## FontAwesome
+
+### Installation
+
+```sh
+quarto install extension quarto-ext/fontawesome
+```
+
+### Usage
+
+Syntax
+
+`{{{< fa [brands] <icon-name> [additional args] >}}}`
+
+Any of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the 'brands' set (e.g., `"apple"`, `"uber"`, `"github"`, etc.) and these need to use the sequence of `fa brands <icon-name>`. Here are some examples:
+
+
+`{{{< fa star >}}}`  {{< fa star >}}  
+`{{{< fa image >}}}`  {{< fa image >}}  
+`{{{< fa house >}}}`  {{< fa house >}}  
+`{{{< fa binoculars >}}}`  {{< fa binoculars >}}  
+`{{{< fa brands apple >}}}`  {{< fa brands apple >}}  
+`{{{< fa brands microsoft >}}}`  {{< fa brands microsoft >}}  
+`{{{< fa battery-half >}}}`  {{< fa battery-half >}}  
+`{{{< fa earth-oceania >}}}`  {{< fa earth-oceania >}}  
+
+The `[additional args]` allows you to (1) define a size for the icon, and (2) add a 'title' to the icon.
+
+### Sizing
+
+Literal sizing
+
+`{{{< fa star size=1x >}}} {{{< fa star size=2x >}}} {{{< fa star size=3x >}}} {{{< fa star size=4x >}}} {{{< fa star size=5x >}}}`
+
+{{< fa star size=1x >}} {{< fa star size=2x >}} {{< fa star size=3x >}} {{< fa star size=4x >}} {{< fa star size=5x >}}
+
+Relative sizing
+
+`{{{< fa star size=2xs >}}} {{{< fa star size=xs >}}} {{{< fa star size=sm >}}} {{{< fa star size=lg >}}} {{{< fa star size=xl >}}} {{{< fa star size=2xl >}}}`
+
+{{< fa star size=2xs >}} {{< fa star size=xs >}} {{< fa star size=sm >}} {{< fa star size=lg >}} {{< fa star size=xl >}} {{< fa star size=2xl >}}
+
+### Styling
+
+Example showing css style.
+
+`[{{{< fa brands reddit >}}}]{style="color: red; font-size: 3em;"}`
+
+[{{< fa brands reddit >}}]{style="color: red; font-size: 3em;"}
+
+### Label
+
+A 'title' for a Font Awesome icon is displayed on mouse hover.
+
+`{{{< fa battery-half size=5x title="Battery: 50%">}}}`
+
+{{< fa battery-half size=5x title="Battery: 50%">}}
+
+### Manual
+
+Manually inserting icons using html
+
+`<i class="fa-brands fa-r-project"></i>` <i class="fa-brands fa-r-project"></i>
+
+With custom css style:
+
+`[<i class="fa-brands fa-r-project"></i>]{style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"}`
+
+[<i class="fa-brands fa-r-project"></i>]{style="color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;"}
+
+
+## Academicons
+
+### Installation
+
+```sh
+quarto install extension schochastics/academicons
+```
+
+### Usage
+
+Syntax
+
+`{{{< ai <icon-name> [additional args] >}}}`
+
+Some examples
+
+`{{{< ai jstor >}}}`  {{< ai jstor >}}  
+`{{{< ai orcid >}}}`  {{< ai orcid >}}  
+`{{{< ai inspire >}}}`  {{< ai inspire >}}  
+`{{{< ai open-data >}}}`  {{< ai open-data >}}  
+
+The `[additional args]` allow you to (1) define a size for the icon, and (2) change the color of the icon.
+
+### Sizing
+
+Literal sizing
+
+{{< ai jstor size=1x >}} {{< ai jstor size=2x >}} {{< ai jstor size=3x >}} {{< ai jstor size=4x >}} {{< ai jstor size=5x >}} {{< ai jstor size=6x >}} {{< ai jstor size=7x >}} {{< ai jstor size=8x >}} {{< ai jstor size=9x >}} {{< ai jstor size=10x >}}
+
+Relative sizing
+
+{{< ai jstor size=2xs >}} {{< ai jstor size=xs >}} {{< ai jstor size=sm >}} {{< ai jstor size=lg >}} {{< ai jstor size=xl >}} {{< ai jstor size=2xl >}}
+
+### Styling
+
+Custom styling
+
+`[{{{< ai orcid >}}}]{style="color: red; font-size: 3em;"}`
+
+[{{< ai orcid >}}]{style="color: red; font-size: 3em;"}
+
+## bsicons
+
+### Installation
+
+```sh
+quarto install extension shafayetShafee/bsicons
+```
+
+### Usage
+
+Syntax
+
+`{{{< bi <icon-name> [additional args] >}}}`
+
+Examples
+
+`{{{< bi box-seam >}}}`  {{< bi box-seam >}}  
+`{{{< bi trophy >}}}`  {{< bi trophy >}}  
+`{{{< bi x >}}}`  {{< bi x >}}  
+`{{{< bi robot >}}}`  {{< bi robot >}}  
+`{{{< bi phone >}}}`  {{< bi phone >}}  
+`{{{< bi microsoft >}}}`  {{< bi microsoft >}}  
+`{{{< bi image >}}}`  {{< bi image >}}  
+
+The `[additional args]` allow you to (1) define a size for the icon, (2) change the color of the icon, and (3) add a 'title' to the icon.
+
+### Sizing
+
+Here is the `"stars"` icon sized to `"20px"`
+
+`{{{< bi stars size=20px >}}}`
+
+{{< bi stars size=20px >}}
+
+Here is `"stars"` at `"2em"`:
+
+`{{{< bi stars size=2em >}}}`
+
+{{< bi stars size=2em >}}
+
+### Color options
+
+The `bsicons` extension has an argument to change the color of the icon (`color`). As with the `size` argument, any type of CSS color declaration (e.g., named colors, hexadecimal colors, RGB or HSL color models, etc.) can be used here.
+
+Here are some examples
+
+`{{{< bi twitch color=lightseagreen >}}}` {{< bi twitch color=lightseagreen >}}
+
+`{{{< bi stars color=hsl(15,80%,56%) >}}}` {{< bi stars color=hsl(15,80%,56%) >}}
+
+`{{{< bi windows color=#FF6088 >}}}` {{< bi windows color=#FF6088 >}}
+
+`{{{< bi alarm-fill color=blue >}}}` {{< bi alarm-fill color=blue >}}
+
+`{{{< bi ubuntu color=rgb(100,0,179) >}}}` {{< bi ubuntu color=rgb(100,0,179) >}}
+
+`{{{< bi terminal-fill color=rgba(157,96,50,0.8) >}}}` {{< bi terminal-fill color=rgba(157,96,50,0.8) >}}
+
+### Label
+
+`{{{< bi alarm-fill label="This is an alarm">}}}`
+
+{{< bi alarm-fill label="This is an alarm">}}
+
+All of the Bootstrap icons that work with the `bsicons` Quarto extension are viewable at 
+
+<https://icons.getbootstrap.com/#icons>
+
+### Manual
+
+Manually grabbing the `<svg>` tag directly from the icon page for the icon. This was taken from the icon URL <https://icons.getbootstrap.com/icons/cake/>:
+
+```
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"><path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/></svg>
+```
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"><path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/></svg>
+
+Styling up
+
+```
+[<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"><path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/></svg>]{style="color: red; opacity: 0.75;"}
+```
+
+[<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16"><path d="m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z"/></svg>]{style="color: red; opacity: 0.75;"}
+
+## Material Icons
+
+### Installation
+
+```sh
+quarto add shafayetShafee/material-icons
+```
+
+### Usage
+
+Syntax
+
+`{{{< mi <icon-name> [additional args] >}}}`
+
+Examples
+
+`{{{< mi bar_chart >}}}`
+{{< mi bar_chart >}}  
+
+`{{{< mi account_circle >}}}`
+{{< mi account_circle >}}  
+
+`{{{< mi verified_user >}}}`
+{{< mi verified_user >}}  
+
+`{{{< mi assignment >}}}`
+{{< mi assignment >}}  
+
+The `[additional args]` allow you to (1) define a size for the icon, (2) change the icon type, (3) change the color of the icon, and (4) define a CSS class for the icon.
+
+### Sizing
+
+`{{{< mi assignment size=20px >}}}`
+
+{{< mi assignment size=20px >}}
+
+`{{{< mi assignment size=2em >}}}`
+
+{{< mi assignment size=2em >}}
+
+### Styling
+
+You can style a Material icon in any color. There are styling guidelines available at the [material design icons guidelines](https://www.google.com/design/spec/iconography/system-icons.html) page; with active icons they recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.
+
+You can use predefined CSS classes `"md-dark"`, `"md-light"`, or `"md-inactive"`. Pass one of these classes to the shortcode using `class` keyword argument. To pass multiple classes, pass them as space separated and wrapped within quotes.
+
+`{{{< mi insights class=md-dark >}}}`
+{{< mi insights class=md-dark >}}  
+
+`{{{< mi insights class="md-dark md-inactive" >}}}`
+{{< mi insights class="md-dark md-inactive" >}}  
+
+You can also provide any valid CSS color using the `color` keyword argument.
+Here are some examples of that:
+
+`{{{< mi bubble_chart color=cornflowerblue >}}}`
+{{< mi bubble_chart color=cornflowerblue >}}  
+
+`{{{< mi bubble_chart color=#E86033 >}}}`
+{{< mi bubble_chart color=#E86033 >}}  
+
+`{{{< mi bubble_chart color=rgb(232,96,51) >}}}`
+{{< mi bubble_chart color=rgb(132,96,81) >}}  
+
+Material icons comes in five types. These are: (1) `filled` (the default used for the shortcode), (2) `outlined`, (3) `sharp`, (4) `two_tone`, and (5) `round`. You can provide this keyword as the second argument to the shortcode (after the icon name).
+
+`filled`  `{{{< mi analytics >}}}`
+{{< mi analytics >}}  
+
+`outlined` `{{{< mi analytics type=outlined >}}}`
+{{< mi analytics type=outlined >}}  
+
+`tow_tone` `{{{< mi analytics type=two_tone >}}}`
+{{< mi analytics type=two_tone >}}  
+
+`sharp` `{{{< mi analytics type=sharp >}}}`
+{{< mi analytics type=sharp >}}  
+
+`round` `{{{< mi analytics type=round >}}}`
+{{< mi analytics type=round >}}  
+
+All of the Material icons that work with the `material-icons` Quarto extension are viewable at 
+
+<https://fonts.google.com/icons>
+
+## Iconify
+
+### Installation
+
+```sh
+quarto add mcanouil/quarto-iconify
+```
+
+### Usage
+
+Syntax
+
+`{{{< iconify <set> <icon-name> [additional args] >}}}`
+
+Any of the icons from Iconify `v1.0.7` can be used. Icons are split into sets and the default set is `"fluent-emoji"`. Explore all of the icons at:
+
+<https://icon-sets.iconify.design>
+
+Examples
+
+`{{{< iconify axe >}}}`  {{< iconify axe >}}  
+`{{{< iconify chart-increasing >}}}` {{< iconify chart-increasing >}}  
+`{{{< iconify house >}}}`  {{< iconify house >}}  
+`{{{< iconify worried-face >}}}`  {{< iconify worried-face >}}  
+`{{{< iconify tdesign address-book >}}}` {{< iconify tdesign address-book >}}  
+`{{{< iconify game-icons whistle >}}}` {{< iconify game-icons whistle >}}  
+`{{{< iconify solar airbuds-case-open-outline >}}}`  {{< iconify solar airbuds-case-open-outline >}}  
+`{{{< iconify skill-icons mastodon-light >}}}`  {{< iconify skill-icons mastodon-light >}}  
+
+The `[additional args]` allow you to (1) define a size for the icon, and (2) add a 'title' to the icon.
+
+### Sizing
+
+Literal sizing
+
+`{{{< iconify house size=1x >}}} {{{< iconify house size=2x >}}} {{{< iconify house size=3x >}}} {{{< iconify house size=4x >}}} {{{< iconify house size=5x >}}} {{{< iconify house size=6x >}}} {{{< iconify house size=7x >}}} {{{< iconify house size=8x >}}} {{{< iconify house size=9x >}}} {{{< iconify house size=10x >}}}`
+
+{{< iconify house size=1x >}} {{< iconify house size=2x >}} {{< iconify house size=3x >}} {{< iconify house size=4x >}} {{< iconify house size=5x >}} {{< iconify house size=6x >}} {{< iconify house size=7x >}} {{< iconify house size=8x >}} {{< iconify house size=9x >}} {{< iconify house size=10x >}}
+
+Relative sizing
+
+`{{{< iconify house size=2xs >}}} {{{< iconify house size=xs >}}} {{{< iconify house size=sm >}}} {{{< iconify house size=lg >}}} {{{< iconify house size=xl >}}} {{{< iconify house size=2xl >}}}`
+
+{{< iconify house size=2xs >}} {{< iconify house size=xs >}} {{< iconify house size=sm >}} {{< iconify house size=lg >}} {{< iconify house size=xl >}} {{< iconify house size=2xl >}}
+
+### Styling
+
+`[{{{< iconify house >}}}]{style="color: red; font-size: 3em;"}`
+
+[{{< iconify house >}}]{style="color: red; font-size: 3em;"}
+
+### Label
+
+`{{{< iconify house size=5x title="This is my house">}}}`
+
+{{< iconify house size=5x title="This is my house">}}
+
+## Lordicon
+
+### Installation
+
+```sh
+quarto add jmgirard/lordicon
+```
+
+### Usage
+
+Syntax
+
+`{{{< li <icon-name> [additional args] >}}}`
+
+To find icon codes, go to [Lordicon website](https://lordicon.com), hit the `Explore Library` button and select the *Free Icons* filter on the left-hand side. You can choose a *style* for the icon (possiblities are `flat`, `gradient`, `lineal`, and `outline`).
+
+Click on any icon, hit the `</> HTML` button on the bottom of that info listing and a popover will appear with the **eight-letter code**. You need to transpose that to lowercase as using uppercase letters *won't work* :( .
+
+`{{{< li xxdqfhbi >}}} `
+
+{{< li xxdqfhbi >}} 
+
+### Options
+
+Each style of icon (`flat`, `gradient`, etc.) will have an entirely different eight-letter code.
+
+The `trigger` argument controls the icon's animation type. When using the `loop` or `loop-on-hover` triggers, you can also set an optional `delay` (in ms) between loops.
+
+`{{{< li xxdqfhbi >}}}`  {{< li xxdqfhbi >}}  
+`{{{< li xxdqfhbi trigger=click >}}}` {{< li xxdqfhbi trigger=click >}}  
+`{{{< li xxdqfhbi trigger=hover >}}}` {{< li xxdqfhbi trigger=hover >}}  
+`{{{< li xxdqfhbi trigger=loop >}}}` {{< li xxdqfhbi trigger=loop >}}  
+`{{{< li xxdqfhbi trigger=loop delay=1000 >}}}` {{< li xxdqfhbi trigger=loop delay=1000 >}}  
+`{{{< li xxdqfhbi trigger=loop-on-hover >}}}` {{< li xxdqfhbi trigger=loop-on-hover >}}  
+`{{{< li xxdqfhbi trigger=loop-on-hover delay=1000 >}}}` {{< li xxdqfhbi trigger=loop-on-hover delay=1000 >}}  
+`{{{< li xxdqfhbi trigger=morph >}}}` {{< li xxdqfhbi trigger=morph >}}  
+`{{{< li xxdqfhbi trigger=boomerang >}}}` {{< li xxdqfhbi trigger=boomerang >}}  
+
+The `speed` argument controls how quickly the icon's animation plays.
+
+`{{{< li lupuorrc trigger=loop speed=0.5 >}}}`  {{< li lupuorrc trigger=loop speed=0.5 >}}  
+`{{{< li lupuorrc trigger=loop speed=1.0 >}}}`  {{< li lupuorrc trigger=loop speed=1.0 >}}  
+`{{{< li lupuorrc trigger=loop speed=2.0 >}}}`  {{< li lupuorrc trigger=loop speed=2.0 >}}  
+
+The `colors` argument controls the icon's coloring. Outline icons typically have just a primary and secondary color, but `"flat"` and `"lineal"` icons can have many more. Each color should be given in `rank:color` format (where ranks are `"primary"`, `"secondary"`, `"tertiary"`, etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.
+
+`{{{< li lupuorrc >}}}`  {{< li lupuorrc >}}  
+`{{{< li lupuorrc colors=primary:gold >}}}`   {{< li lupuorrc colors=primary:gold >}}  
+`{{{< li lupuorrc colors=primary:gray,secondary:orange >}}}`   {{< li lupuorrc colors=primary:gray,secondary:orange >}}  
+`{{{< li lupuorrc colors=primary:#4030e8,secondary:#ee66aa >}}}`   {{< li lupuorrc colors=primary:#4030e8,secondary:#ee66aa >}}  
+
+The `stroke` argument controls how thick the lines in an icon are.
+
+`{{{< li lupuorrc stroke=50 >}}}`  {{< li lupuorrc stroke=50 >}}  
+`{{{< li lupuorrc stroke=100 >}}}` {{< li lupuorrc stroke=100 >}}  
+`{{{< li lupuorrc stroke=150 >}}}` {{< li lupuorrc stroke=150 >}}  
+
+The `scale` icon controls how large or zoomed in the icon is.
+
+`{{{< li lupuorrc scale=25 >}}}`  {{< li lupuorrc scale=25 >}}  
+`{{{< li lupuorrc scale=50 >}}}`  {{< li lupuorrc scale=50 >}}  
+`{{{< li lupuorrc scale=100 >}}}`  {{< li lupuorrc scale=100 >}}  
+
+The `x` arg controls the horizontal position of the center of the icon.
+
+`{{{< li lupuorrc x=25 >}}}`   {{< li lupuorrc x=25 >}}  
+`{{{< li lupuorrc x=50 >}}}`   {{< li lupuorrc x=50 >}}  
+`{{{< li lupuorrc x=100 >}}}`  {{< li lupuorrc x=100 >}}  
+
+The `y` arg controls the vertical position of the center of the icon.
+
+`{{{< li lupuorrc y=25 >}}}`     {{< li lupuorrc y=25 >}}  
+`{{{< li lupuorrc y=50 >}}}`     {{< li lupuorrc y=50 >}}  
+`{{{< li lupuorrc y=100 >}}}`    {{< li lupuorrc y=100 >}}  
+
+
+The complete version of this document is available at [https://github.com/rich-iannone/quarto-icons-examples](https://github.com/rich-iannone/quarto-icons-examples).
+

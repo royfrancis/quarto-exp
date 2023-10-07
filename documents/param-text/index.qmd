@@ -1,0 +1,51 @@
+---
+title: "Parameterized report"
+description: "Report with parameterized text/code from external yaml"
+author: "Roy Francis"
+date: 08-Oct-2023
+format:
+  html:
+    title-block-banner: true
+    theme: pulse
+    highlight: kate
+    code-tools: true
+
+params:
+  dfr: virginica
+---
+
+In this parameterized report, code parameters are specified in an external yaml file named `params.yml`.
+
+```{bash}
+#| eval: false
+#| filename: params.yml
+dfr: "setosa"
+```
+
+Text metadata is specified in an external yaml file named `metadata.yml`.
+
+```{bash}
+#| eval: false
+#| filename: metadata.yml
+section: "Section A"
+block: "This is the first part of the **analysis**. More information. bla bla."
+```
+
+`index.qmd` is this file. See code-tools icons at the top of this document to see the code.
+
+The document is rendered as such
+
+`quarto render index.qmd --execute-params params.yml --metadata-file metadata.yml`
+
+## {{< meta section >}}
+
+{{< meta block >}}
+
+
+The `r params$dfr` species is subsetted from the data.
+
+```{r}
+#| filename: R
+head(subset(iris, iris$Species == params$dfr))
+```
+

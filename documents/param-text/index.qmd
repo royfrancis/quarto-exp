@@ -12,32 +12,45 @@ format:
 
 params:
   dfr: virginica
+
+metadata-files:
+  - _metadata.yml
 ---
 
-In this parameterized report, code parameters are specified in an external yaml file named `params.yml`.
+In this parameterized report, code parameters are specified in an external yaml file named `_params.yml`.
 
 ```{bash}
 #| eval: false
-#| filename: params.yml
+#| filename: _params.yml
 dfr: "setosa"
 ```
 
-Text metadata is specified in an external yaml file named `metadata.yml`.
+Text metadata is specified in an external yaml file named `_metadata.yml`.
 
 ```{bash}
 #| eval: false
-#| filename: metadata.yml
-section: "Section A"
-block: "This is the first part of the **analysis**. More information. bla bla."
+#| filename: _metadata.yml
+topic: "Topic A"
+block: |
+  This is a multiline block. the first part of the **analysis**. More information. bla bla.
 ```
 
 `index.qmd` is this file. See code-tools icons at the top of this document to see the code.
 
-The document is rendered as such
+The document is rendered in the following ways:
 
-`quarto render index.qmd --execute-params params.yml --metadata-file metadata.yml`
+```
+# uses default params declared in the qmd yaml
+quarto render index.qmd
 
-## {{< meta section >}}
+# uses params defined in _params.yml
+quarto render index.qmd --execute-params _params.yml
+
+# uses params defined in _params.yml and merges metadata from _metadata.yml
+quarto render index.qmd --execute-params _params.yml --metadata-file _metadata.yml
+```
+
+## {{< meta topic >}}
 
 {{< meta block >}}
 

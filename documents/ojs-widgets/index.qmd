@@ -1,0 +1,302 @@
+---
+title: ObservableJS in Quarto
+description: Demonstration of widgets, upload and download
+author: "Roy Francis"
+date:  last-modified
+date-format: "DD-MMM-YYYY"
+format:
+  html:
+    theme: materia
+    fig-align: left
+    title-block-banner: true
+---
+
+See the [official OJS documentation](https://observablehq.com/documentation/inputs/overview).
+
+## Input widgets
+
+### Text
+
+```{ojs}
+viewof name = Inputs.text({label: "Name", placeholder: "What’s your name?"})
+```
+
+Your input is ${name}.
+
+### Text area input
+
+```{ojs}
+viewof bio = Inputs.textarea({label: "Biography", placeholder: "What’s your story?"})
+```
+
+Your input is ${bio}.
+
+### Numeric
+
+```{ojs}
+viewof gain = Inputs.range([0, 11], {value: 5, step: 0.1, label: "Gain"})
+```
+
+The current gain is ${gain.toFixed(1)}.
+
+### Button
+
+```{ojs}
+viewof clicks = Inputs.button("Click me")
+```
+
+Number of clicks: ${clicks}.
+
+### Toggle button
+
+
+```{ojs}
+viewof mute = Inputs.toggle({label: "Mute"})
+```
+
+Current state: ${mute}.
+
+### Radio button
+
+```{ojs}
+viewof flavor = Inputs.radio(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavor"})
+```
+
+Selected item: ${flavor}.
+
+### Checkbox
+
+```{ojs}
+viewof flavors = Inputs.checkbox(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors"})
+```
+
+Selected items: ${flavors}.
+
+### Dropdown selection
+
+```{ojs}
+viewof dflavors = Inputs.select(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors", multiple: true})
+```
+
+Selected items: ${dflavors}.
+
+### Date
+
+```{ojs}
+viewof birthday = Inputs.date({label: "Select date"})
+```
+
+Selected date: ${birthday}.
+
+### Color
+
+```{ojs}
+viewof color = Inputs.color({label: "Favorite color", value: "#4682b4"})
+```
+
+Selected color: ${color}.
+
+### File upload
+
+```{ojs}
+viewof file = Inputs.file({label: "Upload a CSV file:", accept: ".csv", required: true})
+data1 = file.csv({typed: true})
+viewof raw_table = Inputs.table(data1)
+```
+
+## Output widgets
+
+```{ojs}
+data = [
+  {
+    name: "Switzerland",
+    hdi: "0.962"
+  },
+  {
+    name: "Norway",
+    hdi: "0.961"
+  },
+  {
+    name: "Iceland",
+    hdi: "0.959"
+  },
+  {
+    name: "Hong Kong",
+    hdi: "0.952"
+  },
+  {
+    name: "Australia",
+    hdi: "0.951"
+  },
+  {
+    name: "Denmark",
+    hdi: "0.948"
+  },
+  {
+    name: "Sweden",
+    hdi: "0.947"
+  },
+  {
+    name: "Ireland",
+    hdi: "0.945"
+  },
+  {
+    name: "Germany",
+    hdi: "0.942"
+  },
+  {
+    name: "Netherlands",
+    hdi: "0.941"
+  },
+  {
+    name: "Finland",
+    hdi: "0.940"
+  },
+  {
+    name: "Singapore",
+    hdi: "0.939"
+  },
+  {
+    name: "Belgium",
+    hdi: "0.937"
+  },
+  {
+    name: "New Zealand",
+    hdi: "0.937"
+  },
+  {
+    name: "Canada",
+    hdi: "0.936"
+  }
+]
+```
+
+### Table
+
+```{ojs}
+viewof table = Inputs.table(data)
+```
+
+### Plot
+
+```{ojs}
+//| label: barplot
+
+Plot.plot({
+  marginLeft: 100,
+  y: {
+
+  },
+  marks: [
+    Plot.barX(data, {
+      x: "hdi",
+      y: "name",
+      title: (d) =>
+        `Country: ${d.name}`
+    })
+  ],
+  grid: true
+})
+```
+
+## Downloads
+
+### Text download
+
+```{ojs}
+button = (data, filename = 'data.csv') => {
+  if (!data) throw new Error('Array of data required as first argument');
+
+  let downloadData;
+  if (filename.includes('.csv')) {
+    downloadData = new Blob([d3.csvFormat(data)], { type: "text/csv" });
+  } else {
+    downloadData = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json"
+    });
+  }
+
+  const size = (downloadData.size / 1024).toFixed(0);
+  const button = DOM.download(
+    downloadData,
+    filename,
+    `Download ${filename} (~${size} KB)`
+  );
+  return button;
+}
+```
+
+```{ojs}
+button(data, 'hdi.csv')
+```
+
+### Image download
+
+```{ojs}
+FileSaver = (await import("https://cdn.skypack.dev/file-saver@2.0.5?min"))
+  .default
+
+html2canvas = (await import("https://esm.sh/html2canvas@1.4.1")).default
+
+async function canvas2blob(canvas) {
+  let resolve, reject;
+  const promise = new Promise((y, n) => ((resolve = y), (reject = n)));
+  canvas.toBlob((blob) => {
+    if (blob == null) {
+      return reject();
+    }
+    resolve(blob);
+  });
+  return promise;
+}
+
+function generateDownloader(el, options) {
+  return async function () {
+    let resolve, reject;
+    const { filename = "untitled", ...html2canvasOptions } = options;
+    const canvas = await html2canvas(el, html2canvasOptions);
+    const blob = await canvas2blob(canvas);
+    FileSaver(blob, filename);
+  };
+}
+
+function downloadHtmlAsImage(el, options) {
+  const { label, ...restOptions } = Object.assign(
+    { label: "Download as PNG", scale: window.devicePixelRatio },
+    options
+  );
+  const ui = Inputs.button(label, {
+    value: null,
+    reduce: generateDownloader(el, restOptions)
+  });
+  return ui;
+}
+```
+
+```{ojs}
+downloadHtmlAsImage(barplot)
+```
+
+```{ojs}
+downloadHtmlAsImage(barplot, {
+	label: "Download 4X PNG",
+	filename: "scaled_4x",
+	scale: 4
+})
+```
+
+### Zip download
+
+```{ojs}
+JSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')
+zip = {
+  const zip = new JSZip()
+  const folder = zip.folder('website')
+  folder.file('data.txt', data)
+  return zip.generateAsync({type: 'blob'})
+}
+```
+
+```{ojs}
+DOM.download(zip, 'website.zip')
+```

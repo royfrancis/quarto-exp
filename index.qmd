@@ -1,18 +1,27 @@
 ---
 title: "Quarto experiments"
-description: "Testing quarto documents"
+subtitle: "Testing quarto documents"
 format:
   html:
     title-block-banner: true
+    toc: true
 ---
 
+## Parameterized outputs
 ### [Parameterized html report](documents/report/index.qmd)
 ### [Parameterized html revealjs presentation](documents/revealjs/index.qmd)
 ### [Parameterized pdf](documents/pdf/index.pdf)
 ### [Parameterized html report from external file](documents/param-text/index.qmd)
+
+## OJS
 ### [OJS and R](documents/ojs/index.qmd)
+### [OJS widgets, upload and download](documents/ojs-widgets/index.qmd)
+
+## WebR
 ### [WebR in Quarto using Quarto webr extension](documents/webr/index.qmd)
-### [Icons](documents/icons/index.qmd)
+
+## Other
+### [Icons in quarto](documents/icons/index.qmd)
 
 <br>
 

@@ -1,6 +1,6 @@
 ---
 title: ObservableJS in Quarto
-description: Demonstration of widgets, upload and download
+subtitle: Demonstration of widgets, upload and download
 author: "Roy Francis"
 date:  last-modified
 date-format: "DD-MMM-YYYY"
@@ -9,6 +9,8 @@ format:
     theme: materia
     fig-align: left
     title-block-banner: true
+    toc: true
+    number-sections: true
 ---
 
 See the [official OJS documentation](https://observablehq.com/documentation/inputs/overview).

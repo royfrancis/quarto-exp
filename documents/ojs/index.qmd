@@ -1,14 +1,15 @@
 ---
 title: ObservableJS in Quarto
-description: "Integrating OJS and R in Quarto"
+subtitle: "Integrating OJS and R in Quarto"
+author: "Roy Francis"
+date:  last-modified
+date-format: "DD-MMM-YYYY"
 format:
   html:
     theme: materia
     fig-align: left
     title-block-banner: true
-    author: "Roy Francis"
-    date:  last-modified
-    date-format: "DD-MMM-YYYY"
+    toc: true
 ---
 
 ## Passing data
@@ -16,6 +17,7 @@ format:
 Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.
 
 ```{r}
+#| filename: R code
 irism <- iris
 colnames(irism) <- gsub("[.]","_",tolower(colnames(irism)))
 ojs_define(ojsd = irism)

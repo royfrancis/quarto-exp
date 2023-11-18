@@ -1,16 +1,16 @@
 ---
 title: "webR-enabled code cells"
-date: today
-title-block-banner: true
-number-sections: true
+subtitle: Live R in quarto documents using web-r quarto extension
+author: "Roy Francis"
+date:  last-modified
+date-format: "DD-MMM-YYYY"
 format:
   html:
     theme: materia
     fig-align: left
     title-block-banner: true
-    author: "Roy Francis"
-    date:  last-modified
-    date-format: "DD-MMM-YYYY"
+    toc: true
+    number-sections: true
 webr:
    channel-type: "post-message"
 engine: knitr

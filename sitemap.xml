@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/royfrancis/quarto-exp/index.html</loc>
-    <lastmod>2023-10-07T23:14:18.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/param-text/index.html</loc>
-    <lastmod>2023-10-07T23:14:17.624Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/revealjs/index.html</loc>
-    <lastmod>2023-10-07T23:14:05.068Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/ojs/index.html</loc>
-    <lastmod>2023-10-07T23:13:59.372Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/icons/index.html</loc>
-    <lastmod>2023-10-07T23:14:01.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/webr/index.html</loc>
-    <lastmod>2023-10-07T23:14:06.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/royfrancis/quarto-exp/documents/report/index.html</loc>
-    <lastmod>2023-10-07T23:14:16.112Z</lastmod>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/ojs-widgets/index.html</loc>
+    <lastmod>2023-11-18T21:31:26.342Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/royfrancis/quarto-exp/documents/theme-title/index.html</loc>
-    <lastmod>2023-10-07T23:14:17.908Z</lastmod>
+    <lastmod>2023-11-18T21:31:17.958Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/revealjs/index.html</loc>
+    <lastmod>2023-11-18T21:31:16.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/param-text/index.html</loc>
+    <lastmod>2023-11-18T21:31:12.058Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/index.html</loc>
+    <lastmod>2023-11-18T21:31:10.362Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/report/index.html</loc>
+    <lastmod>2023-11-18T21:31:13.974Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/icons/index.html</loc>
+    <lastmod>2023-11-18T21:31:17.694Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/webr/index.html</loc>
+    <lastmod>2023-11-18T21:31:19.198Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/royfrancis/quarto-exp/documents/ojs/index.html</loc>
+    <lastmod>2023-11-18T21:31:25.678Z</lastmod>
   </url>
 </urlset>

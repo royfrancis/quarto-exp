@@ -1,0 +1,76 @@
+---
+pagetitle: "RevealJS"
+title: "WebR in Quarto presentation"
+subtitle: "Live R code in RevealJS"
+author: "Roy Francis"
+date: last-modified
+format: revealjs
+params:
+  name: setosa
+filters:
+  - webr
+engine: knitr
+webr:
+   show-startup-message: true
+   channel-type: "post-message"
+   packages: ["ggplot2"]
+execute:
+  eval: true
+---
+
+## Load packages
+
+```{webr-r}
+library(ggplot2)
+```
+
+## Table
+
+```{webr-r}
+head(iris)
+```
+
+::: aside
+The iris dataset is included in base R.
+:::
+
+## Plot
+
+This is ggplot2.
+
+```{webr-r}
+#| label: fig-scatterplot
+#| fig-cap: Scatterplot of iris species
+
+ggplot(iris,aes(Sepal.Length,Petal.Length,col=Species))+
+    geom_point()+
+    labs(title="Scatterplot")
+```
+
+## Image
+
+This is an image.
+
+![This is iris species.](assets/setosa.jpg){#fig-setosa}
+
+## Code highlighting
+
+```{webr-r}
+#| echo: true
+#| label: fig-scatterplot-size
+#| fig-cap: Scatterplot of iris species
+#| code-line-numbers: "2"
+
+ggplot(iris,aes(Sepal.Length,Petal.Length,col=Species))+
+    geom_point(aes(size=Petal.Width))
+```
+
+::: {.notes}
+The figure is updated to show petal widths.
+:::
+
+## Session
+
+```{webr-r}
+sessionInfo()
+```

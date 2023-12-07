@@ -16,6 +16,8 @@ format:
 ## OJS
 ### [OJS and R](documents/ojs/index.qmd)
 ### [OJS widgets, upload and download](documents/ojs-widgets/index.qmd)
+### [OJS and ggplot plots](documents/ojs-plots/index.qmd)
+### [OJS linked plots](documents/ojs-linked/index.qmd)
 
 ## WebR
 ### [WebR in Quarto using Quarto webr extension](documents/webr/index.qmd)

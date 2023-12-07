@@ -9,6 +9,8 @@ format:
     theme: materia
     fig-align: left
     title-block-banner: true
+    code-tools: true
+    code-fold: true
     toc: true
 ---
 

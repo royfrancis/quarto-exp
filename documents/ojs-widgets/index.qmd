@@ -11,6 +11,8 @@ format:
     title-block-banner: true
     toc: true
     number-sections: true
+    code-tools: true
+    code-fold: true
 ---
 
 See the [official OJS documentation](https://observablehq.com/documentation/inputs/overview).

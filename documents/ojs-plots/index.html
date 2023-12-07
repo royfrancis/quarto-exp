@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.521">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -95,7 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-
 <script type="ojs-define">
 {"contents":[{"name":"ojs_mtcars","value":{"mpg":[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],"cyl":[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],"disp":[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],"hp":[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],"drat":[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],"wt":[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],"qsec":[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],"vs":[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],"am":[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],"gear":[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],"carb":[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2],"_row":["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"]}}]}
 </script>
@@ -185,6 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <p>This is recreated from <a href="https://rud.is/wpe-plot/">here</a>.</p>
 <div class="cell">
 <div class="code-with-filename">
@@ -264,7 +271,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">nudge_x =</span> <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -305,7 +316,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(cyl)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -353,7 +368,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -414,7 +433,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">fill =</span> drv))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -459,7 +482,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -504,7 +531,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -551,7 +582,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> density))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -613,7 +648,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_2d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -660,7 +699,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -728,7 +771,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -790,7 +837,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -836,7 +887,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -873,9 +928,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </section>
 
 </main> <!-- /main -->
-
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"mtcars = transpose(ojs_mtcars)\nmtcars\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"viewof tbl_mtcars = Inputs.table(mtcars)\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.text(\n      mtcars,\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", textAnchor: \"start\" }\n    )\n  ],\n  grid: true\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\nPlot.plot({\n  color: {\n    type: \"ordinal\",\n    range: [ \"#88a2bc\", \"#d99477\", \"#586c5c\"],\n    legend: true\n  },\n  marks: [\n    Plot.text(\n      mtcars.map(d => { d.cyl = `${d.cyl}`; return d }),\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", fill: \"cyl\" }\n    )\n  ],\n  grid: true\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"mpg = transpose(ojs_mpg)\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, mark: \"bar\" })\n  ],\n  y: {\n    grid: true,\n  }\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"\nPlot.plot({\n  color: {\n    legend: true\n  },\n  y: {\n    grid: true,\n  },\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, color: \"drv\", mark: \"bar\" })\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-8","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.boxY(\n      mpg,\n      { x: \"class\", y: \"hwy\" }\n    )\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-9","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.dot(\n      mpg,\n      { x: \"displ\", y: \"hwy\" }\n    ),\n    Plot.linearRegressionY(\n      mpg, {\n      x: \"displ\",\n      y: \"hwy\",\n      stroke: \"red\",\n    }),\n  ],\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-10","inline":false,"source":"faithfuld = transpose(ojs_faithfuld)\n"},{"methodName":"interpret","cellName":"ojs-cell-11","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.raster(\n      faithfuld,\n      { x: \"waiting\", y: \"eruptions\", fill: \"density\", interpolate: \"nearest\" }\n    )\n  ]\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-12","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.density(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\"  }\n    ),\n    Plot.dot(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\" }\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-13","inline":false,"source":"diamonds = transpose(ojs_diamonds)\n"},{"methodName":"interpret","cellName":"ojs-cell-14","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.hexgrid(),\n    Plot.dot(\n      diamonds,\n      Plot.hexbin(\n        { r: \"count\" },\n        { x: \"carat\", y: \"price\", fill: \"currentColor\" }\n      )\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-15","inline":false,"source":"economics = transpose(ojs_economics)\n"},{"methodName":"interpret","cellName":"ojs-cell-16","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"unemploy\" }\n    )\n  ],\n  grid: true\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-17","inline":false,"source":"\nPlot.plot({\n  color: {\n    legend: true\n  },\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"value01\", stroke: \"variable\" }\n    )\n  ],\n  grid: true\n})\n"},{"methodName":"interpret","cellName":"ojs-cell-18","inline":false,"source":"\nPlot.plot({\n  marks: [\n    Plot.line(economics, {\n      x: (d) => d.unemploy / d.pop,\n      y: \"psavert\",\n      z: null,\n      stroke: (d) => d.date\n    })\n  ],\n  grid: true,\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('tbl_mtcars')"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im10Y2FycyA9IHRyYW5zcG9zZShvanNfbXRjYXJzKVxubXRjYXJzXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgdGJsX210Y2FycyA9IElucHV0cy50YWJsZShtdGNhcnMpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC50ZXh0KFxuICAgICAgbXRjYXJzLFxuICAgICAgeyB4OiBcInd0XCIsIHk6IFwibXBnXCIsIHRleHQ6IFwidmVoaWNsZVwiLCB0ZXh0QW5jaG9yOiBcInN0YXJ0XCIgfVxuICAgIClcbiAgXSxcbiAgZ3JpZDogdHJ1ZVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgY29sb3I6IHtcbiAgICB0eXBlOiBcIm9yZGluYWxcIixcbiAgICByYW5nZTogWyBcIiM4OGEyYmNcIiwgXCIjZDk5NDc3XCIsIFwiIzU4NmM1Y1wiXSxcbiAgICBsZWdlbmQ6IHRydWVcbiAgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LnRleHQoXG4gICAgICBtdGNhcnMubWFwKGQgPT4geyBkLmN5bCA9IGAke2QuY3lsfWA7IHJldHVybiBkIH0pLFxuICAgICAgeyB4OiBcInd0XCIsIHk6IFwibXBnXCIsIHRleHQ6IFwidmVoaWNsZVwiLCBmaWxsOiBcImN5bFwiIH1cbiAgICApXG4gIF0sXG4gIGdyaWQ6IHRydWVcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtcGcgPSB0cmFuc3Bvc2Uob2pzX21wZylcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmF1dG8obXBnLCB7IHg6IFwiY2xhc3NcIiwgeTogeyByZWR1Y2U6IFwiY291bnRcIiB9LCBtYXJrOiBcImJhclwiIH0pXG4gIF0sXG4gIHk6IHtcbiAgICBncmlkOiB0cnVlLFxuICB9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5QbG90LnBsb3Qoe1xuICBjb2xvcjoge1xuICAgIGxlZ2VuZDogdHJ1ZVxuICB9LFxuICB5OiB7XG4gICAgZ3JpZDogdHJ1ZSxcbiAgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmF1dG8obXBnLCB7IHg6IFwiY2xhc3NcIiwgeTogeyByZWR1Y2U6IFwiY291bnRcIiB9LCBjb2xvcjogXCJkcnZcIiwgbWFyazogXCJiYXJcIiB9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuYm94WShcbiAgICAgIG1wZyxcbiAgICAgIHsgeDogXCJjbGFzc1wiLCB5OiBcImh3eVwiIH1cbiAgICApXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5kb3QoXG4gICAgICBtcGcsXG4gICAgICB7IHg6IFwiZGlzcGxcIiwgeTogXCJod3lcIiB9XG4gICAgKSxcbiAgICBQbG90LmxpbmVhclJlZ3Jlc3Npb25ZKFxuICAgICAgbXBnLCB7XG4gICAgICB4OiBcImRpc3BsXCIsXG4gICAgICB5OiBcImh3eVwiLFxuICAgICAgc3Ryb2tlOiBcInJlZFwiLFxuICAgIH0pLFxuICBdLFxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJmYWl0aGZ1bGQgPSB0cmFuc3Bvc2Uob2pzX2ZhaXRoZnVsZClcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTEiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblBsb3QucGxvdCh7XG4gIG1hcmtzOiBbXG4gICAgUGxvdC5yYXN0ZXIoXG4gICAgICBmYWl0aGZ1bGQsXG4gICAgICB7IHg6IFwid2FpdGluZ1wiLCB5OiBcImVydXB0aW9uc1wiLCBmaWxsOiBcImRlbnNpdHlcIiwgaW50ZXJwb2xhdGU6IFwibmVhcmVzdFwiIH1cbiAgICApXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEyIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QuZGVuc2l0eShcbiAgICAgIGZhaXRoZnVsZCxcbiAgICAgIHsgeDogXCJlcnVwdGlvbnNcIiwgeTogXCJ3YWl0aW5nXCIgIH1cbiAgICApLFxuICAgIFBsb3QuZG90KFxuICAgICAgZmFpdGhmdWxkLFxuICAgICAgeyB4OiBcImVydXB0aW9uc1wiLCB5OiBcIndhaXRpbmdcIiB9XG4gICAgKSxcbiAgXSxcbiAgbWFyZ2luTGVmdDogNTAsXG4gIG1hcmdpbkJvdHRvbTogNTBcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEzIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZGlhbW9uZHMgPSB0cmFuc3Bvc2Uob2pzX2RpYW1vbmRzKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmhleGdyaWQoKSxcbiAgICBQbG90LmRvdChcbiAgICAgIGRpYW1vbmRzLFxuICAgICAgUGxvdC5oZXhiaW4oXG4gICAgICAgIHsgcjogXCJjb3VudFwiIH0sXG4gICAgICAgIHsgeDogXCJjYXJhdFwiLCB5OiBcInByaWNlXCIsIGZpbGw6IFwiY3VycmVudENvbG9yXCIgfVxuICAgICAgKVxuICAgICksXG4gIF0sXG4gIG1hcmdpbkxlZnQ6IDUwLFxuICBtYXJnaW5Cb3R0b206IDUwXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImVjb25vbWljcyA9IHRyYW5zcG9zZShvanNfZWNvbm9taWNzKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmxpbmUoXG4gICAgICBlY29ub21pY3MsXG4gICAgICB7IHg6IFwiZGF0ZVwiLCB5OiBcInVuZW1wbG95XCIgfVxuICAgIClcbiAgXSxcbiAgZ3JpZDogdHJ1ZVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblBsb3QucGxvdCh7XG4gIGNvbG9yOiB7XG4gICAgbGVnZW5kOiB0cnVlXG4gIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5saW5lKFxuICAgICAgZWNvbm9taWNzLFxuICAgICAgeyB4OiBcImRhdGVcIiwgeTogXCJ2YWx1ZTAxXCIsIHN0cm9rZTogXCJ2YXJpYWJsZVwiIH1cbiAgICApXG4gIF0sXG4gIGdyaWQ6IHRydWVcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE4IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5QbG90LnBsb3Qoe1xuICBtYXJrczogW1xuICAgIFBsb3QubGluZShlY29ub21pY3MsIHtcbiAgICAgIHg6IChkKSA9PiBkLnVuZW1wbG95IC8gZC5wb3AsXG4gICAgICB5OiBcInBzYXZlcnRcIixcbiAgICAgIHo6IG51bGwsXG4gICAgICBzdHJva2U6IChkKSA9PiBkLmRhdGVcbiAgICB9KVxuICBdLFxuICBncmlkOiB0cnVlLFxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndGJsX210Y2FycycpIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1015,10 +1069,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1028,8 +1081,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1042,6 +1104,135 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        typesetMath(container);
+        return container.innerHTML
+      } else {
+        typesetMath(note);
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      typesetMath(note);
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1085,6 +1276,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1110,6 +1302,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1207,15 +1425,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a>Transpose JS object. Preview of JSON object.</span>
 <span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
-<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a>mtcars <span class="op">=</span> <span class="fu">transpose</span>(ojs_mtcars)</span>
-<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>mtcars</span>
+<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
+<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars = transpose(ojs_mtcars)</span></span>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a><span class="in">mtcars</span></span>
 <span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Table</span></span>
 <span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-54"><a href="#cb39-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-55"><a href="#cb39-55" aria-hidden="true" tabindex="-1"></a>viewof tbl_mtcars <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">table</span>(mtcars)</span>
+<span id="cb39-55"><a href="#cb39-55" aria-hidden="true" tabindex="-1"></a><span class="in">viewof tbl_mtcars = Inputs.table(mtcars)</span></span>
 <span id="cb39-56"><a href="#cb39-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-57"><a href="#cb39-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-58"><a href="#cb39-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scatterplot</span></span>
@@ -1235,17 +1453,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-74"><a href="#cb39-74" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-75"><a href="#cb39-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-78"><a href="#cb39-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-79"><a href="#cb39-79" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-79"><a href="#cb39-79" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-80"><a href="#cb39-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-81"><a href="#cb39-81" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-82"><a href="#cb39-82" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-83"><a href="#cb39-83" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(</span>
-<span id="cb39-84"><a href="#cb39-84" aria-hidden="true" tabindex="-1"></a>      mtcars<span class="op">,</span></span>
-<span id="cb39-85"><a href="#cb39-85" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"wt"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"mpg"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"vehicle"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span> }</span>
-<span id="cb39-86"><a href="#cb39-86" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-87"><a href="#cb39-87" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-88"><a href="#cb39-88" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-89"><a href="#cb39-89" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-81"><a href="#cb39-81" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-82"><a href="#cb39-82" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-83"><a href="#cb39-83" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.text(</span></span>
+<span id="cb39-84"><a href="#cb39-84" aria-hidden="true" tabindex="-1"></a><span class="in">      mtcars,</span></span>
+<span id="cb39-85"><a href="#cb39-85" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "wt", y: "mpg", text: "vehicle", textAnchor: "start" }</span></span>
+<span id="cb39-86"><a href="#cb39-86" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-87"><a href="#cb39-87" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-88"><a href="#cb39-88" aria-hidden="true" tabindex="-1"></a><span class="in">  grid: true</span></span>
+<span id="cb39-89"><a href="#cb39-89" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-90"><a href="#cb39-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-91"><a href="#cb39-91" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-92"><a href="#cb39-92" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1268,22 +1486,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-111"><a href="#cb39-111" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-112"><a href="#cb39-112" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-115"><a href="#cb39-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-116"><a href="#cb39-116" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-116"><a href="#cb39-116" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-117"><a href="#cb39-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-118"><a href="#cb39-118" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-119"><a href="#cb39-119" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb39-120"><a href="#cb39-120" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">"ordinal"</span><span class="op">,</span></span>
-<span id="cb39-121"><a href="#cb39-121" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> [ <span class="st">"#88a2bc"</span><span class="op">,</span> <span class="st">"#d99477"</span><span class="op">,</span> <span class="st">"#586c5c"</span>]<span class="op">,</span></span>
-<span id="cb39-122"><a href="#cb39-122" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-123"><a href="#cb39-123" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb39-124"><a href="#cb39-124" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-125"><a href="#cb39-125" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(</span>
-<span id="cb39-126"><a href="#cb39-126" aria-hidden="true" tabindex="-1"></a>      mtcars<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> { d<span class="op">.</span><span class="at">cyl</span> <span class="op">=</span> <span class="vs">`</span><span class="sc">${</span>d<span class="op">.</span><span class="at">cyl</span><span class="sc">}</span><span class="vs">`</span><span class="op">;</span> <span class="cf">return</span> d })<span class="op">,</span></span>
-<span id="cb39-127"><a href="#cb39-127" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"wt"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"mpg"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"vehicle"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"cyl"</span> }</span>
-<span id="cb39-128"><a href="#cb39-128" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-129"><a href="#cb39-129" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-130"><a href="#cb39-130" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-131"><a href="#cb39-131" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-118"><a href="#cb39-118" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-119"><a href="#cb39-119" aria-hidden="true" tabindex="-1"></a><span class="in">  color: {</span></span>
+<span id="cb39-120"><a href="#cb39-120" aria-hidden="true" tabindex="-1"></a><span class="in">    type: "ordinal",</span></span>
+<span id="cb39-121"><a href="#cb39-121" aria-hidden="true" tabindex="-1"></a><span class="in">    range: [ "#88a2bc", "#d99477", "#586c5c"],</span></span>
+<span id="cb39-122"><a href="#cb39-122" aria-hidden="true" tabindex="-1"></a><span class="in">    legend: true</span></span>
+<span id="cb39-123"><a href="#cb39-123" aria-hidden="true" tabindex="-1"></a><span class="in">  },</span></span>
+<span id="cb39-124"><a href="#cb39-124" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-125"><a href="#cb39-125" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.text(</span></span>
+<span id="cb39-126"><a href="#cb39-126" aria-hidden="true" tabindex="-1"></a><span class="in">      mtcars.map(d =&gt; { d.cyl = `${d.cyl}`; return d }),</span></span>
+<span id="cb39-127"><a href="#cb39-127" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "wt", y: "mpg", text: "vehicle", fill: "cyl" }</span></span>
+<span id="cb39-128"><a href="#cb39-128" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-129"><a href="#cb39-129" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-130"><a href="#cb39-130" aria-hidden="true" tabindex="-1"></a><span class="in">  grid: true</span></span>
+<span id="cb39-131"><a href="#cb39-131" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-132"><a href="#cb39-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-133"><a href="#cb39-133" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-134"><a href="#cb39-134" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1310,21 +1528,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-159"><a href="#cb39-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-160"><a href="#cb39-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-163"><a href="#cb39-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-164"><a href="#cb39-164" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
-<span id="cb39-165"><a href="#cb39-165" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> <span class="fu">transpose</span>(ojs_mpg)</span>
+<span id="cb39-164"><a href="#cb39-164" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
+<span id="cb39-165"><a href="#cb39-165" aria-hidden="true" tabindex="-1"></a><span class="in">mpg = transpose(ojs_mpg)</span></span>
 <span id="cb39-166"><a href="#cb39-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-167"><a href="#cb39-167" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-170"><a href="#cb39-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-171"><a href="#cb39-171" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-171"><a href="#cb39-171" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-172"><a href="#cb39-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-173"><a href="#cb39-173" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-174"><a href="#cb39-174" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-175"><a href="#cb39-175" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">auto</span>(mpg<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"class"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> { <span class="dt">reduce</span><span class="op">:</span> <span class="st">"count"</span> }<span class="op">,</span> <span class="dt">mark</span><span class="op">:</span> <span class="st">"bar"</span> })</span>
-<span id="cb39-176"><a href="#cb39-176" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-177"><a href="#cb39-177" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb39-178"><a href="#cb39-178" aria-hidden="true" tabindex="-1"></a>    <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb39-179"><a href="#cb39-179" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb39-180"><a href="#cb39-180" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-173"><a href="#cb39-173" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-174"><a href="#cb39-174" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-175"><a href="#cb39-175" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.auto(mpg, { x: "class", y: { reduce: "count" }, mark: "bar" })</span></span>
+<span id="cb39-176"><a href="#cb39-176" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-177"><a href="#cb39-177" aria-hidden="true" tabindex="-1"></a><span class="in">  y: {</span></span>
+<span id="cb39-178"><a href="#cb39-178" aria-hidden="true" tabindex="-1"></a><span class="in">    grid: true,</span></span>
+<span id="cb39-179"><a href="#cb39-179" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb39-180"><a href="#cb39-180" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-181"><a href="#cb39-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-182"><a href="#cb39-182" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-183"><a href="#cb39-183" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1346,19 +1564,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-201"><a href="#cb39-201" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-202"><a href="#cb39-202" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-205"><a href="#cb39-205" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-206"><a href="#cb39-206" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-206"><a href="#cb39-206" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-207"><a href="#cb39-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-208"><a href="#cb39-208" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-209"><a href="#cb39-209" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb39-210"><a href="#cb39-210" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-211"><a href="#cb39-211" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb39-212"><a href="#cb39-212" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {</span>
-<span id="cb39-213"><a href="#cb39-213" aria-hidden="true" tabindex="-1"></a>    <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb39-214"><a href="#cb39-214" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb39-215"><a href="#cb39-215" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-216"><a href="#cb39-216" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">auto</span>(mpg<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"class"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> { <span class="dt">reduce</span><span class="op">:</span> <span class="st">"count"</span> }<span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">"drv"</span><span class="op">,</span> <span class="dt">mark</span><span class="op">:</span> <span class="st">"bar"</span> })</span>
-<span id="cb39-217"><a href="#cb39-217" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb39-218"><a href="#cb39-218" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-208"><a href="#cb39-208" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-209"><a href="#cb39-209" aria-hidden="true" tabindex="-1"></a><span class="in">  color: {</span></span>
+<span id="cb39-210"><a href="#cb39-210" aria-hidden="true" tabindex="-1"></a><span class="in">    legend: true</span></span>
+<span id="cb39-211"><a href="#cb39-211" aria-hidden="true" tabindex="-1"></a><span class="in">  },</span></span>
+<span id="cb39-212"><a href="#cb39-212" aria-hidden="true" tabindex="-1"></a><span class="in">  y: {</span></span>
+<span id="cb39-213"><a href="#cb39-213" aria-hidden="true" tabindex="-1"></a><span class="in">    grid: true,</span></span>
+<span id="cb39-214"><a href="#cb39-214" aria-hidden="true" tabindex="-1"></a><span class="in">  },</span></span>
+<span id="cb39-215"><a href="#cb39-215" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-216"><a href="#cb39-216" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.auto(mpg, { x: "class", y: { reduce: "count" }, color: "drv", mark: "bar" })</span></span>
+<span id="cb39-217"><a href="#cb39-217" aria-hidden="true" tabindex="-1"></a><span class="in">  ]</span></span>
+<span id="cb39-218"><a href="#cb39-218" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-219"><a href="#cb39-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-220"><a href="#cb39-220" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-221"><a href="#cb39-221" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1380,16 +1598,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-239"><a href="#cb39-239" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-240"><a href="#cb39-240" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-243"><a href="#cb39-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-244"><a href="#cb39-244" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-244"><a href="#cb39-244" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-245"><a href="#cb39-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-246"><a href="#cb39-246" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-247"><a href="#cb39-247" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-248"><a href="#cb39-248" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">boxY</span>(</span>
-<span id="cb39-249"><a href="#cb39-249" aria-hidden="true" tabindex="-1"></a>      mpg<span class="op">,</span></span>
-<span id="cb39-250"><a href="#cb39-250" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"class"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"hwy"</span> }</span>
-<span id="cb39-251"><a href="#cb39-251" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-252"><a href="#cb39-252" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb39-253"><a href="#cb39-253" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-246"><a href="#cb39-246" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-247"><a href="#cb39-247" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-248"><a href="#cb39-248" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.boxY(</span></span>
+<span id="cb39-249"><a href="#cb39-249" aria-hidden="true" tabindex="-1"></a><span class="in">      mpg,</span></span>
+<span id="cb39-250"><a href="#cb39-250" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "class", y: "hwy" }</span></span>
+<span id="cb39-251"><a href="#cb39-251" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-252"><a href="#cb39-252" aria-hidden="true" tabindex="-1"></a><span class="in">  ]</span></span>
+<span id="cb39-253"><a href="#cb39-253" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-254"><a href="#cb39-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-255"><a href="#cb39-255" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-256"><a href="#cb39-256" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1412,22 +1630,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-275"><a href="#cb39-275" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-276"><a href="#cb39-276" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-279"><a href="#cb39-279" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-280"><a href="#cb39-280" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-280"><a href="#cb39-280" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-281"><a href="#cb39-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-282"><a href="#cb39-282" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-283"><a href="#cb39-283" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-284"><a href="#cb39-284" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(</span>
-<span id="cb39-285"><a href="#cb39-285" aria-hidden="true" tabindex="-1"></a>      mpg<span class="op">,</span></span>
-<span id="cb39-286"><a href="#cb39-286" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"displ"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"hwy"</span> }</span>
-<span id="cb39-287"><a href="#cb39-287" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb39-288"><a href="#cb39-288" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">linearRegressionY</span>(</span>
-<span id="cb39-289"><a href="#cb39-289" aria-hidden="true" tabindex="-1"></a>      mpg<span class="op">,</span> {</span>
-<span id="cb39-290"><a href="#cb39-290" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"displ"</span><span class="op">,</span></span>
-<span id="cb39-291"><a href="#cb39-291" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"hwy"</span><span class="op">,</span></span>
-<span id="cb39-292"><a href="#cb39-292" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"red"</span><span class="op">,</span></span>
-<span id="cb39-293"><a href="#cb39-293" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb39-294"><a href="#cb39-294" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-295"><a href="#cb39-295" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-282"><a href="#cb39-282" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-283"><a href="#cb39-283" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-284"><a href="#cb39-284" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.dot(</span></span>
+<span id="cb39-285"><a href="#cb39-285" aria-hidden="true" tabindex="-1"></a><span class="in">      mpg,</span></span>
+<span id="cb39-286"><a href="#cb39-286" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "displ", y: "hwy" }</span></span>
+<span id="cb39-287"><a href="#cb39-287" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb39-288"><a href="#cb39-288" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.linearRegressionY(</span></span>
+<span id="cb39-289"><a href="#cb39-289" aria-hidden="true" tabindex="-1"></a><span class="in">      mpg, {</span></span>
+<span id="cb39-290"><a href="#cb39-290" aria-hidden="true" tabindex="-1"></a><span class="in">      x: "displ",</span></span>
+<span id="cb39-291"><a href="#cb39-291" aria-hidden="true" tabindex="-1"></a><span class="in">      y: "hwy",</span></span>
+<span id="cb39-292"><a href="#cb39-292" aria-hidden="true" tabindex="-1"></a><span class="in">      stroke: "red",</span></span>
+<span id="cb39-293"><a href="#cb39-293" aria-hidden="true" tabindex="-1"></a><span class="in">    }),</span></span>
+<span id="cb39-294"><a href="#cb39-294" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-295"><a href="#cb39-295" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-296"><a href="#cb39-296" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-297"><a href="#cb39-297" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-298"><a href="#cb39-298" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1454,21 +1672,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-323"><a href="#cb39-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-324"><a href="#cb39-324" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-327"><a href="#cb39-327" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-328"><a href="#cb39-328" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
-<span id="cb39-329"><a href="#cb39-329" aria-hidden="true" tabindex="-1"></a>faithfuld <span class="op">=</span> <span class="fu">transpose</span>(ojs_faithfuld)</span>
+<span id="cb39-328"><a href="#cb39-328" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
+<span id="cb39-329"><a href="#cb39-329" aria-hidden="true" tabindex="-1"></a><span class="in">faithfuld = transpose(ojs_faithfuld)</span></span>
 <span id="cb39-330"><a href="#cb39-330" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-331"><a href="#cb39-331" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-334"><a href="#cb39-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-335"><a href="#cb39-335" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-335"><a href="#cb39-335" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-336"><a href="#cb39-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-337"><a href="#cb39-337" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-338"><a href="#cb39-338" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-339"><a href="#cb39-339" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">raster</span>(</span>
-<span id="cb39-340"><a href="#cb39-340" aria-hidden="true" tabindex="-1"></a>      faithfuld<span class="op">,</span></span>
-<span id="cb39-341"><a href="#cb39-341" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"waiting"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"eruptions"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"density"</span><span class="op">,</span> <span class="dt">interpolate</span><span class="op">:</span> <span class="st">"nearest"</span> }</span>
-<span id="cb39-342"><a href="#cb39-342" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-343"><a href="#cb39-343" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb39-344"><a href="#cb39-344" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-337"><a href="#cb39-337" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-338"><a href="#cb39-338" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-339"><a href="#cb39-339" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.raster(</span></span>
+<span id="cb39-340"><a href="#cb39-340" aria-hidden="true" tabindex="-1"></a><span class="in">      faithfuld,</span></span>
+<span id="cb39-341"><a href="#cb39-341" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "waiting", y: "eruptions", fill: "density", interpolate: "nearest" }</span></span>
+<span id="cb39-342"><a href="#cb39-342" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-343"><a href="#cb39-343" aria-hidden="true" tabindex="-1"></a><span class="in">  ]</span></span>
+<span id="cb39-344"><a href="#cb39-344" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-345"><a href="#cb39-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-346"><a href="#cb39-346" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-347"><a href="#cb39-347" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1490,22 +1708,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-365"><a href="#cb39-365" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-366"><a href="#cb39-366" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-369"><a href="#cb39-369" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-370"><a href="#cb39-370" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-370"><a href="#cb39-370" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-371"><a href="#cb39-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-372"><a href="#cb39-372" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-373"><a href="#cb39-373" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-374"><a href="#cb39-374" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">density</span>(</span>
-<span id="cb39-375"><a href="#cb39-375" aria-hidden="true" tabindex="-1"></a>      faithfuld<span class="op">,</span></span>
-<span id="cb39-376"><a href="#cb39-376" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"eruptions"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"waiting"</span>  }</span>
-<span id="cb39-377"><a href="#cb39-377" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb39-378"><a href="#cb39-378" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(</span>
-<span id="cb39-379"><a href="#cb39-379" aria-hidden="true" tabindex="-1"></a>      faithfuld<span class="op">,</span></span>
-<span id="cb39-380"><a href="#cb39-380" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"eruptions"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"waiting"</span> }</span>
-<span id="cb39-381"><a href="#cb39-381" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb39-382"><a href="#cb39-382" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-383"><a href="#cb39-383" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
-<span id="cb39-384"><a href="#cb39-384" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">50</span></span>
-<span id="cb39-385"><a href="#cb39-385" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-372"><a href="#cb39-372" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-373"><a href="#cb39-373" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-374"><a href="#cb39-374" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.density(</span></span>
+<span id="cb39-375"><a href="#cb39-375" aria-hidden="true" tabindex="-1"></a><span class="in">      faithfuld,</span></span>
+<span id="cb39-376"><a href="#cb39-376" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "eruptions", y: "waiting"  }</span></span>
+<span id="cb39-377"><a href="#cb39-377" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb39-378"><a href="#cb39-378" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.dot(</span></span>
+<span id="cb39-379"><a href="#cb39-379" aria-hidden="true" tabindex="-1"></a><span class="in">      faithfuld,</span></span>
+<span id="cb39-380"><a href="#cb39-380" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "eruptions", y: "waiting" }</span></span>
+<span id="cb39-381"><a href="#cb39-381" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb39-382"><a href="#cb39-382" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-383"><a href="#cb39-383" aria-hidden="true" tabindex="-1"></a><span class="in">  marginLeft: 50,</span></span>
+<span id="cb39-384"><a href="#cb39-384" aria-hidden="true" tabindex="-1"></a><span class="in">  marginBottom: 50</span></span>
+<span id="cb39-385"><a href="#cb39-385" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-386"><a href="#cb39-386" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-387"><a href="#cb39-387" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-388"><a href="#cb39-388" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1532,27 +1750,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-413"><a href="#cb39-413" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-414"><a href="#cb39-414" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-417"><a href="#cb39-417" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-418"><a href="#cb39-418" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
-<span id="cb39-419"><a href="#cb39-419" aria-hidden="true" tabindex="-1"></a>diamonds <span class="op">=</span> <span class="fu">transpose</span>(ojs_diamonds)</span>
+<span id="cb39-418"><a href="#cb39-418" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
+<span id="cb39-419"><a href="#cb39-419" aria-hidden="true" tabindex="-1"></a><span class="in">diamonds = transpose(ojs_diamonds)</span></span>
 <span id="cb39-420"><a href="#cb39-420" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-421"><a href="#cb39-421" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-424"><a href="#cb39-424" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-425"><a href="#cb39-425" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-425"><a href="#cb39-425" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-426"><a href="#cb39-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-427"><a href="#cb39-427" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-428"><a href="#cb39-428" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-429"><a href="#cb39-429" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">hexgrid</span>()<span class="op">,</span></span>
-<span id="cb39-430"><a href="#cb39-430" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(</span>
-<span id="cb39-431"><a href="#cb39-431" aria-hidden="true" tabindex="-1"></a>      diamonds<span class="op">,</span></span>
-<span id="cb39-432"><a href="#cb39-432" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">hexbin</span>(</span>
-<span id="cb39-433"><a href="#cb39-433" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">r</span><span class="op">:</span> <span class="st">"count"</span> }<span class="op">,</span></span>
-<span id="cb39-434"><a href="#cb39-434" aria-hidden="true" tabindex="-1"></a>        { <span class="dt">x</span><span class="op">:</span> <span class="st">"carat"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"price"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"currentColor"</span> }</span>
-<span id="cb39-435"><a href="#cb39-435" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb39-436"><a href="#cb39-436" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb39-437"><a href="#cb39-437" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-438"><a href="#cb39-438" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
-<span id="cb39-439"><a href="#cb39-439" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">50</span></span>
-<span id="cb39-440"><a href="#cb39-440" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-427"><a href="#cb39-427" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-428"><a href="#cb39-428" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-429"><a href="#cb39-429" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.hexgrid(),</span></span>
+<span id="cb39-430"><a href="#cb39-430" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.dot(</span></span>
+<span id="cb39-431"><a href="#cb39-431" aria-hidden="true" tabindex="-1"></a><span class="in">      diamonds,</span></span>
+<span id="cb39-432"><a href="#cb39-432" aria-hidden="true" tabindex="-1"></a><span class="in">      Plot.hexbin(</span></span>
+<span id="cb39-433"><a href="#cb39-433" aria-hidden="true" tabindex="-1"></a><span class="in">        { r: "count" },</span></span>
+<span id="cb39-434"><a href="#cb39-434" aria-hidden="true" tabindex="-1"></a><span class="in">        { x: "carat", y: "price", fill: "currentColor" }</span></span>
+<span id="cb39-435"><a href="#cb39-435" aria-hidden="true" tabindex="-1"></a><span class="in">      )</span></span>
+<span id="cb39-436"><a href="#cb39-436" aria-hidden="true" tabindex="-1"></a><span class="in">    ),</span></span>
+<span id="cb39-437"><a href="#cb39-437" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-438"><a href="#cb39-438" aria-hidden="true" tabindex="-1"></a><span class="in">  marginLeft: 50,</span></span>
+<span id="cb39-439"><a href="#cb39-439" aria-hidden="true" tabindex="-1"></a><span class="in">  marginBottom: 50</span></span>
+<span id="cb39-440"><a href="#cb39-440" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-441"><a href="#cb39-441" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-442"><a href="#cb39-442" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-443"><a href="#cb39-443" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1580,22 +1798,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-469"><a href="#cb39-469" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-470"><a href="#cb39-470" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-473"><a href="#cb39-473" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-474"><a href="#cb39-474" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
-<span id="cb39-475"><a href="#cb39-475" aria-hidden="true" tabindex="-1"></a>economics <span class="op">=</span> <span class="fu">transpose</span>(ojs_economics)</span>
+<span id="cb39-474"><a href="#cb39-474" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
+<span id="cb39-475"><a href="#cb39-475" aria-hidden="true" tabindex="-1"></a><span class="in">economics = transpose(ojs_economics)</span></span>
 <span id="cb39-476"><a href="#cb39-476" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-477"><a href="#cb39-477" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-480"><a href="#cb39-480" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-481"><a href="#cb39-481" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-481"><a href="#cb39-481" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-482"><a href="#cb39-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-483"><a href="#cb39-483" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-484"><a href="#cb39-484" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-485"><a href="#cb39-485" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(</span>
-<span id="cb39-486"><a href="#cb39-486" aria-hidden="true" tabindex="-1"></a>      economics<span class="op">,</span></span>
-<span id="cb39-487"><a href="#cb39-487" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"unemploy"</span> }</span>
-<span id="cb39-488"><a href="#cb39-488" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-489"><a href="#cb39-489" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-490"><a href="#cb39-490" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-491"><a href="#cb39-491" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-483"><a href="#cb39-483" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-484"><a href="#cb39-484" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-485"><a href="#cb39-485" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.line(</span></span>
+<span id="cb39-486"><a href="#cb39-486" aria-hidden="true" tabindex="-1"></a><span class="in">      economics,</span></span>
+<span id="cb39-487"><a href="#cb39-487" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "date", y: "unemploy" }</span></span>
+<span id="cb39-488"><a href="#cb39-488" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-489"><a href="#cb39-489" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-490"><a href="#cb39-490" aria-hidden="true" tabindex="-1"></a><span class="in">  grid: true</span></span>
+<span id="cb39-491"><a href="#cb39-491" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-492"><a href="#cb39-492" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-493"><a href="#cb39-493" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-494"><a href="#cb39-494" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1617,20 +1835,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-512"><a href="#cb39-512" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-513"><a href="#cb39-513" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-516"><a href="#cb39-516" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-517"><a href="#cb39-517" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-517"><a href="#cb39-517" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-518"><a href="#cb39-518" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-519"><a href="#cb39-519" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-520"><a href="#cb39-520" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb39-521"><a href="#cb39-521" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-522"><a href="#cb39-522" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb39-523"><a href="#cb39-523" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-524"><a href="#cb39-524" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(</span>
-<span id="cb39-525"><a href="#cb39-525" aria-hidden="true" tabindex="-1"></a>      economics<span class="op">,</span></span>
-<span id="cb39-526"><a href="#cb39-526" aria-hidden="true" tabindex="-1"></a>      { <span class="dt">x</span><span class="op">:</span> <span class="st">"date"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"value01"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"variable"</span> }</span>
-<span id="cb39-527"><a href="#cb39-527" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb39-528"><a href="#cb39-528" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-529"><a href="#cb39-529" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb39-530"><a href="#cb39-530" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-519"><a href="#cb39-519" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-520"><a href="#cb39-520" aria-hidden="true" tabindex="-1"></a><span class="in">  color: {</span></span>
+<span id="cb39-521"><a href="#cb39-521" aria-hidden="true" tabindex="-1"></a><span class="in">    legend: true</span></span>
+<span id="cb39-522"><a href="#cb39-522" aria-hidden="true" tabindex="-1"></a><span class="in">  },</span></span>
+<span id="cb39-523"><a href="#cb39-523" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-524"><a href="#cb39-524" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.line(</span></span>
+<span id="cb39-525"><a href="#cb39-525" aria-hidden="true" tabindex="-1"></a><span class="in">      economics,</span></span>
+<span id="cb39-526"><a href="#cb39-526" aria-hidden="true" tabindex="-1"></a><span class="in">      { x: "date", y: "value01", stroke: "variable" }</span></span>
+<span id="cb39-527"><a href="#cb39-527" aria-hidden="true" tabindex="-1"></a><span class="in">    )</span></span>
+<span id="cb39-528"><a href="#cb39-528" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-529"><a href="#cb39-529" aria-hidden="true" tabindex="-1"></a><span class="in">  grid: true</span></span>
+<span id="cb39-530"><a href="#cb39-530" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-531"><a href="#cb39-531" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-532"><a href="#cb39-532" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-533"><a href="#cb39-533" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -1652,25 +1870,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb39-551"><a href="#cb39-551" aria-hidden="true" tabindex="-1"></a>::: {.g-col-6}</span>
 <span id="cb39-552"><a href="#cb39-552" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-555"><a href="#cb39-555" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb39-556"><a href="#cb39-556" aria-hidden="true" tabindex="-1"></a><span class="co">//| filename: OJS</span></span>
+<span id="cb39-556"><a href="#cb39-556" aria-hidden="true" tabindex="-1"></a><span class="in">//| filename: OJS</span></span>
 <span id="cb39-557"><a href="#cb39-557" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-558"><a href="#cb39-558" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb39-559"><a href="#cb39-559" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb39-560"><a href="#cb39-560" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(economics<span class="op">,</span> {</span>
-<span id="cb39-561"><a href="#cb39-561" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">unemploy</span> <span class="op">/</span> d<span class="op">.</span><span class="at">pop</span><span class="op">,</span></span>
-<span id="cb39-562"><a href="#cb39-562" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"psavert"</span><span class="op">,</span></span>
-<span id="cb39-563"><a href="#cb39-563" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
-<span id="cb39-564"><a href="#cb39-564" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">date</span></span>
-<span id="cb39-565"><a href="#cb39-565" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb39-566"><a href="#cb39-566" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb39-567"><a href="#cb39-567" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb39-568"><a href="#cb39-568" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-558"><a href="#cb39-558" aria-hidden="true" tabindex="-1"></a><span class="in">Plot.plot({</span></span>
+<span id="cb39-559"><a href="#cb39-559" aria-hidden="true" tabindex="-1"></a><span class="in">  marks: [</span></span>
+<span id="cb39-560"><a href="#cb39-560" aria-hidden="true" tabindex="-1"></a><span class="in">    Plot.line(economics, {</span></span>
+<span id="cb39-561"><a href="#cb39-561" aria-hidden="true" tabindex="-1"></a><span class="in">      x: (d) =&gt; d.unemploy / d.pop,</span></span>
+<span id="cb39-562"><a href="#cb39-562" aria-hidden="true" tabindex="-1"></a><span class="in">      y: "psavert",</span></span>
+<span id="cb39-563"><a href="#cb39-563" aria-hidden="true" tabindex="-1"></a><span class="in">      z: null,</span></span>
+<span id="cb39-564"><a href="#cb39-564" aria-hidden="true" tabindex="-1"></a><span class="in">      stroke: (d) =&gt; d.date</span></span>
+<span id="cb39-565"><a href="#cb39-565" aria-hidden="true" tabindex="-1"></a><span class="in">    })</span></span>
+<span id="cb39-566"><a href="#cb39-566" aria-hidden="true" tabindex="-1"></a><span class="in">  ],</span></span>
+<span id="cb39-567"><a href="#cb39-567" aria-hidden="true" tabindex="-1"></a><span class="in">  grid: true,</span></span>
+<span id="cb39-568"><a href="#cb39-568" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
 <span id="cb39-569"><a href="#cb39-569" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb39-570"><a href="#cb39-570" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb39-571"><a href="#cb39-571" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 

@@ -1,1 +1,1 @@
-Sitemap: https://github.com/royfrancis/quarto-exp/sitemap.xml
+Sitemap: https://royfrancis.github.io/quarto-exp/sitemap.xml

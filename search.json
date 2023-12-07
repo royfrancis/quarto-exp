@@ -25,63 +25,63 @@
     "href": "documents/ojs-plots/index.html#scatterplot",
     "title": "ObservableJS in Quarto",
     "section": "Scatterplot",
-    "text": "Scatterplot\n\n\n\n\n\nR\n\nggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + \n  geom_text(nudge_x = 0.05)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.text(\n      mtcars,\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", textAnchor: \"start\" }\n    )\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + \n  geom_text(aes(colour = factor(cyl)))\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    type: \"ordinal\",\n    range: [ \"#88a2bc\", \"#d99477\", \"#586c5c\"],\n    legend: true\n  },\n  marks: [\n    Plot.text(\n      mtcars.map(d =&gt; { d.cyl = `${d.cyl}`; return d }),\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", fill: \"cyl\" }\n    )\n  ],\n  grid: true\n})"
+    "text": "Scatterplot\n\n\n\n\n\nR\n\nggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + \n  geom_text(nudge_x = 0.05)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.text(\n      mtcars,\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", textAnchor: \"start\" }\n    )\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + \n  geom_text(aes(colour = factor(cyl)))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    type: \"ordinal\",\n    range: [ \"#88a2bc\", \"#d99477\", \"#586c5c\"],\n    legend: true\n  },\n  marks: [\n    Plot.text(\n      mtcars.map(d =&gt; { d.cyl = `${d.cyl}`; return d }),\n      { x: \"wt\", y: \"mpg\", text: \"vehicle\", fill: \"cyl\" }\n    )\n  ],\n  grid: true\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#barplot",
     "href": "documents/ojs-plots/index.html#barplot",
     "title": "ObservableJS in Quarto",
     "section": "Barplot",
-    "text": "Barplot\n\n\n\n\n\nR\n\nggplot(mpg, aes(class)) + \n  geom_bar()\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_mpg = mpg)\n\n\n\n\n\nOJS\n\nmpg = transpose(ojs_mpg)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, mark: \"bar\" })\n  ],\n  y: {\n    grid: true,\n  }\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(mpg, aes(class)) + \n  geom_bar(aes(fill = drv))\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    legend: true\n  },\n  y: {\n    grid: true,\n  },\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, color: \"drv\", mark: \"bar\" })\n  ]\n})"
+    "text": "Barplot\n\n\n\n\n\nR\n\nggplot(mpg, aes(class)) + \n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_mpg = mpg)\n\n\n\n\n\nOJS\n\nmpg = transpose(ojs_mpg)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, mark: \"bar\" })\n  ],\n  y: {\n    grid: true,\n  }\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(mpg, aes(class)) + \n  geom_bar(aes(fill = drv))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    legend: true\n  },\n  y: {\n    grid: true,\n  },\n  marks: [\n    Plot.auto(mpg, { x: \"class\", y: { reduce: \"count\" }, color: \"drv\", mark: \"bar\" })\n  ]\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#boxplot",
     "href": "documents/ojs-plots/index.html#boxplot",
     "title": "ObservableJS in Quarto",
     "section": "Boxplot",
-    "text": "Boxplot\n\n\n\n\n\nR\n\nggplot(mpg, aes(class, hwy)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.boxY(\n      mpg,\n      { x: \"class\", y: \"hwy\" }\n    )\n  ]\n})"
+    "text": "Boxplot\n\n\n\n\n\nR\n\nggplot(mpg, aes(class, hwy)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.boxY(\n      mpg,\n      { x: \"class\", y: \"hwy\" }\n    )\n  ]\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#regression",
     "href": "documents/ojs-plots/index.html#regression",
     "title": "ObservableJS in Quarto",
     "section": "Regression",
-    "text": "Regression\n\n\n\n\n\nR\n\nggplot(mpg, aes(displ, hwy)) + \n  geom_point() + \n  geom_smooth(method=\"lm\")\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.dot(\n      mpg,\n      { x: \"displ\", y: \"hwy\" }\n    ),\n    Plot.linearRegressionY(\n      mpg, {\n      x: \"displ\",\n      y: \"hwy\",\n      stroke: \"red\",\n    }),\n  ],\n})"
+    "text": "Regression\n\n\n\n\n\nR\n\nggplot(mpg, aes(displ, hwy)) + \n  geom_point() + \n  geom_smooth(method=\"lm\")\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.dot(\n      mpg,\n      { x: \"displ\", y: \"hwy\" }\n    ),\n    Plot.linearRegressionY(\n      mpg, {\n      x: \"displ\",\n      y: \"hwy\",\n      stroke: \"red\",\n    }),\n  ],\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#tileraster",
     "href": "documents/ojs-plots/index.html#tileraster",
     "title": "ObservableJS in Quarto",
     "section": "Tile/Raster",
-    "text": "Tile/Raster\n\n\n\n\n\nR\n\nggplot(faithfuld, aes(waiting, eruptions)) + \n  geom_tile(aes(fill = density))\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_faithfuld = faithfuld)\n\n\n\n\n\nOJS\n\nfaithfuld = transpose(ojs_faithfuld)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.raster(\n      faithfuld,\n      { x: \"waiting\", y: \"eruptions\", fill: \"density\", interpolate: \"nearest\" }\n    )\n  ]\n})"
+    "text": "Tile/Raster\n\n\n\n\n\nR\n\nggplot(faithfuld, aes(waiting, eruptions)) + \n  geom_tile(aes(fill = density))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_faithfuld = faithfuld)\n\n\n\n\n\nOJS\n\nfaithfuld = transpose(ojs_faithfuld)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.raster(\n      faithfuld,\n      { x: \"waiting\", y: \"eruptions\", fill: \"density\", interpolate: \"nearest\" }\n    )\n  ]\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#d-density",
     "href": "documents/ojs-plots/index.html#d-density",
     "title": "ObservableJS in Quarto",
     "section": "2D density",
-    "text": "2D density\n\n\n\n\n\nR\n\nggplot(faithfuld, aes(waiting, eruptions)) + \n  geom_density_2d()\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.density(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\"  }\n    ),\n    Plot.dot(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\" }\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})"
+    "text": "2D density\n\n\n\n\n\nR\n\nggplot(faithfuld, aes(waiting, eruptions)) + \n  geom_density_2d()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.density(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\"  }\n    ),\n    Plot.dot(\n      faithfuld,\n      { x: \"eruptions\", y: \"waiting\" }\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#hex",
     "href": "documents/ojs-plots/index.html#hex",
     "title": "ObservableJS in Quarto",
     "section": "Hex",
-    "text": "Hex\n\n\n\n\n\nR\n\nggplot(diamonds, aes(carat, price)) + \n  geom_hex()\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_diamonds = diamonds)\n\n\n\n\n\nOJS\n\ndiamonds = transpose(ojs_diamonds)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.hexgrid(),\n    Plot.dot(\n      diamonds,\n      Plot.hexbin(\n        { r: \"count\" },\n        { x: \"carat\", y: \"price\", fill: \"currentColor\" }\n      )\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})"
+    "text": "Hex\n\n\n\n\n\nR\n\nggplot(diamonds, aes(carat, price)) + \n  geom_hex()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_diamonds = diamonds)\n\n\n\n\n\nOJS\n\ndiamonds = transpose(ojs_diamonds)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.hexgrid(),\n    Plot.dot(\n      diamonds,\n      Plot.hexbin(\n        { r: \"count\" },\n        { x: \"carat\", y: \"price\", fill: \"currentColor\" }\n      )\n    ),\n  ],\n  marginLeft: 50,\n  marginBottom: 50\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#line",
     "href": "documents/ojs-plots/index.html#line",
     "title": "ObservableJS in Quarto",
     "section": "Line",
-    "text": "Line\n\n\n\n\n\nR\n\nggplot(economics, aes(date, unemploy)) + \n  geom_line()\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_economics = economics)\n\n\n\n\n\nOJS\n\neconomics = transpose(ojs_economics)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"unemploy\" }\n    )\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(economics_long, aes(date, value01, colour = variable)) + \n  geom_line()\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    legend: true\n  },\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"value01\", stroke: \"variable\" }\n    )\n  ],\n  grid: true\n})"
+    "text": "Line\n\n\n\n\n\nR\n\nggplot(economics, aes(date, unemploy)) + \n  geom_line()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\nojs_define(ojs_economics = economics)\n\n\n\n\n\nOJS\n\neconomics = transpose(ojs_economics)\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"unemploy\" }\n    )\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\n\nWith categorical colors\n\n\n\n\n\nR\n\nggplot(economics_long, aes(date, value01, colour = variable)) + \n  geom_line()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  color: {\n    legend: true\n  },\n  marks: [\n    Plot.line(\n      economics,\n      { x: \"date\", y: \"value01\", stroke: \"variable\" }\n    )\n  ],\n  grid: true\n})"
   },
   {
     "objectID": "documents/ojs-plots/index.html#path",
     "href": "documents/ojs-plots/index.html#path",
     "title": "ObservableJS in Quarto",
     "section": "Path",
-    "text": "Path\n\n\n\n\n\nR\n\nggplot(economics, aes(unemploy/pop, psavert)) + \n  geom_path()\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.line(economics, {\n      x: (d) =&gt; d.unemploy / d.pop,\n      y: \"psavert\",\n      z: null,\n      stroke: (d) =&gt; d.date\n    })\n  ],\n  grid: true,\n})"
+    "text": "Path\n\n\n\n\n\nR\n\nggplot(economics, aes(unemploy/pop, psavert)) + \n  geom_path()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.line(economics, {\n      x: (d) =&gt; d.unemploy / d.pop,\n      y: \"psavert\",\n      z: null,\n      stroke: (d) =&gt; d.date\n    })\n  ],\n  grid: true,\n})"
   },
   {
     "objectID": "documents/report/index.html",
@@ -102,14 +102,14 @@
     "href": "documents/report/index.html#plots",
     "title": "setosa report",
     "section": "2 Plots",
-    "text": "2 Plots\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+\n    geom_point()+\n    labs(title=params$name)\n\n\n\n\nFigure 1: Scatterplot of setosa species."
+    "text": "2 Plots\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+\n    geom_point()+\n    labs(title=params$name)\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species."
   },
   {
     "objectID": "documents/report/index.html#image",
     "href": "documents/report/index.html#image",
     "title": "setosa report",
     "section": "3 Image",
-    "text": "3 Image\n\n\n\n\n\nFigure 2: Photograph of setosa species."
+    "text": "3 Image\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
   },
   {
     "objectID": "documents/theme-title/index.html#slide-1",
@@ -144,56 +144,70 @@
     "href": "documents/icons/index.html#fontawesome",
     "title": "Icons in Quarto",
     "section": "1 FontAwesome",
-    "text": "1 FontAwesome\n\n1.1 Installation\nquarto install extension quarto-ext/fontawesome\n\n\n1.2 Usage\nSyntax\n{{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}}\nAny of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the ‘brands’ set (e.g., \"apple\", \"uber\", \"github\", etc.) and these need to use the sequence of fa brands &lt;icon-name&gt;. Here are some examples:\n{{&lt; fa star &gt;}} \n{{&lt; fa image &gt;}} \n{{&lt; fa house &gt;}} \n{{&lt; fa binoculars &gt;}} \n{{&lt; fa brands apple &gt;}} \n{{&lt; fa brands microsoft &gt;}} \n{{&lt; fa battery-half &gt;}} \n{{&lt; fa earth-oceania &gt;}} \nThe [additional args] allows you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.\n\n\n1.3 Sizing\nLiteral sizing\n{{&lt; fa star size=1x &gt;}} {{&lt; fa star size=2x &gt;}} {{&lt; fa star size=3x &gt;}} {{&lt; fa star size=4x &gt;}} {{&lt; fa star size=5x &gt;}}\n    \nRelative sizing\n{{&lt; fa star size=2xs &gt;}} {{&lt; fa star size=xs &gt;}} {{&lt; fa star size=sm &gt;}} {{&lt; fa star size=lg &gt;}} {{&lt; fa star size=xl &gt;}} {{&lt; fa star size=2xl &gt;}}\n     \n\n\n1.4 Styling\nExample showing css style.\n[{{&lt; fa brands reddit &gt;}}]{style=\"color: red; font-size: 3em;\"}\n\n\n\n1.5 Label\nA ‘title’ for a Font Awesome icon is displayed on mouse hover.\n{{&lt; fa battery-half size=5x title=\"Battery: 50%\"&gt;}}\n\n\n\n1.6 Manual\nManually inserting icons using html\n&lt;i class=\"fa-brands fa-r-project\"&gt;&lt;/i&gt; \nWith custom css style:\n[&lt;i class=\"fa-brands fa-r-project\"&gt;&lt;/i&gt;]{style=\"color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;\"}"
+    "text": "1 FontAwesome\n\n1.1 Installation\nquarto install extension quarto-ext/fontawesome\n\n\n1.2 Usage\nSyntax\n{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}\nAny of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the ‘brands’ set (e.g., \"apple\", \"uber\", \"github\", etc.) and these need to use the sequence of fa brands &lt;icon-name&gt;. Here are some examples:\n{{&lt; fa star &gt;}} \n{{&lt; fa image &gt;}} \n{{&lt; fa house &gt;}} \n{{&lt; fa binoculars &gt;}} \n{{&lt; fa brands apple &gt;}} \n{{&lt; fa brands microsoft &gt;}} \n{{&lt; fa battery-half &gt;}} \n{{&lt; fa earth-oceania &gt;}} \nThe [additional args] allows you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.\n\n\n1.3 Sizing\nLiteral sizing\n{{&lt; fa star size=1x &gt;}} {{&lt; fa star size=2x &gt;}} {{&lt; fa star size=3x &gt;}} {{&lt; fa star size=4x &gt;}} {{&lt; fa star size=5x &gt;}}\n    \nRelative sizing\n{{&lt; fa star size=2xs &gt;}} {{&lt; fa star size=xs &gt;}} {{&lt; fa star size=sm &gt;}} {{&lt; fa star size=lg &gt;}} {{&lt; fa star size=xl &gt;}} {{&lt; fa star size=2xl &gt;}}\n     \n\n\n1.4 Styling\nExample showing css style.\n[{{&lt; fa brands reddit &gt;}}]{style=\"color: red; font-size: 3em;\"}\n\n\n\n1.5 Label\nA ‘title’ for a Font Awesome icon is displayed on mouse hover.\n{{&lt; fa battery-half size=5x title=\"Battery: 50%\"&gt;}}\n\n\n\n1.6 Manual\nManually inserting icons using html\n&lt;i class=\"fa-brands fa-r-project\"&gt;&lt;/i&gt; \nWith custom css style:\n[&lt;i class=\"fa-brands fa-r-project\"&gt;&lt;/i&gt;]{style=\"color: red; font-size: 3em; opacity: 0.75; text-shadow: 1px 1px 2px blue;\"}"
   },
   {
     "objectID": "documents/icons/index.html#academicons",
     "href": "documents/icons/index.html#academicons",
     "title": "Icons in Quarto",
     "section": "2 Academicons",
-    "text": "2 Academicons\n\n2.1 Installation\nquarto install extension schochastics/academicons\n\n\n2.2 Usage\nSyntax\n{{&lt; ai &lt;icon-name&gt; [additional args] &gt;}}\nSome examples\n{{&lt; ai jstor &gt;}} \n{{&lt; ai orcid &gt;}} \n{{&lt; ai inspire &gt;}} \n{{&lt; ai open-data &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, and (2) change the color of the icon.\n\n\n2.3 Sizing\nLiteral sizing\n         \nRelative sizing\n     \n\n\n2.4 Styling\nCustom styling\n[{{&lt; ai orcid &gt;}}]{style=\"color: red; font-size: 3em;\"}"
+    "text": "2 Academicons\n\n2.1 Installation\nquarto install extension schochastics/academicons\n\n\n2.2 Usage\nSyntax\n{&lt; ai &lt;icon-name&gt; [additional args] &gt;}\nSome examples\n{{&lt; ai jstor &gt;}} \n{{&lt; ai orcid &gt;}} \n{{&lt; ai inspire &gt;}} \n{{&lt; ai open-data &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, and (2) change the color of the icon.\n\n\n2.3 Sizing\nLiteral sizing\n         \nRelative sizing\n     \n\n\n2.4 Styling\nCustom styling\n[{{&lt; ai orcid &gt;}}]{style=\"color: red; font-size: 3em;\"}"
   },
   {
     "objectID": "documents/icons/index.html#bsicons",
     "href": "documents/icons/index.html#bsicons",
     "title": "Icons in Quarto",
     "section": "3 bsicons",
-    "text": "3 bsicons\n\n3.1 Installation\nquarto install extension shafayetShafee/bsicons\n\n\n3.2 Usage\nSyntax\n{{&lt; bi &lt;icon-name&gt; [additional args] &gt;}}\nExamples\n{{&lt; bi box-seam &gt;}} \n{{&lt; bi trophy &gt;}} \n{{&lt; bi x &gt;}} \n{{&lt; bi robot &gt;}} \n{{&lt; bi phone &gt;}} \n{{&lt; bi microsoft &gt;}} \n{{&lt; bi image &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, (2) change the color of the icon, and (3) add a ‘title’ to the icon.\n\n\n3.3 Sizing\nHere is the \"stars\" icon sized to \"20px\"\n{{&lt; bi stars size=20px &gt;}}\n\nHere is \"stars\" at \"2em\":\n{{&lt; bi stars size=2em &gt;}}\n\n\n\n3.4 Color options\nThe bsicons extension has an argument to change the color of the icon (color). As with the size argument, any type of CSS color declaration (e.g., named colors, hexadecimal colors, RGB or HSL color models, etc.) can be used here.\nHere are some examples\n{{&lt; bi twitch color=lightseagreen &gt;}} \n{{&lt; bi stars color=hsl(15,80%,56%) &gt;}} \n{{&lt; bi windows color=#FF6088 &gt;}} \n{{&lt; bi alarm-fill color=blue &gt;}} \n{{&lt; bi ubuntu color=rgb(100,0,179) &gt;}} \n{{&lt; bi terminal-fill color=rgba(157,96,50,0.8) &gt;}} \n\n\n3.5 Label\n{{&lt; bi alarm-fill label=\"This is an alarm\"&gt;}}\n\nAll of the Bootstrap icons that work with the bsicons Quarto extension are viewable at\nhttps://icons.getbootstrap.com/#icons\n\n\n3.6 Manual\nManually grabbing the &lt;svg&gt; tag directly from the icon page for the icon. This was taken from the icon URL https://icons.getbootstrap.com/icons/cake/:\n&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-cake\" viewBox=\"0 0 16 16\"&gt;&lt;path d=\"m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z\"/&gt;&lt;/svg&gt;\n\n\n\nStyling up\n[&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-cake\" viewBox=\"0 0 16 16\"&gt;&lt;path d=\"m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z\"/&gt;&lt;/svg&gt;]{style=\"color: red; opacity: 0.75;\"}"
+    "text": "3 bsicons\n\n3.1 Installation\nquarto install extension shafayetShafee/bsicons\n\n\n3.2 Usage\nSyntax\n{&lt; bi &lt;icon-name&gt; [additional args] &gt;}\nExamples\n{{&lt; bi box-seam &gt;}} \n{{&lt; bi trophy &gt;}} \n{{&lt; bi x &gt;}} \n{{&lt; bi robot &gt;}} \n{{&lt; bi phone &gt;}} \n{{&lt; bi microsoft &gt;}} \n{{&lt; bi image &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, (2) change the color of the icon, and (3) add a ‘title’ to the icon.\n\n\n3.3 Sizing\nHere is the \"stars\" icon sized to \"20px\"\n{{&lt; bi stars size=20px &gt;}}\n\nHere is \"stars\" at \"2em\":\n{{&lt; bi stars size=2em &gt;}}\n\n\n\n3.4 Color options\nThe bsicons extension has an argument to change the color of the icon (color). As with the size argument, any type of CSS color declaration (e.g., named colors, hexadecimal colors, RGB or HSL color models, etc.) can be used here.\nHere are some examples\n{{&lt; bi twitch color=lightseagreen &gt;}} \n{{&lt; bi stars color=hsl(15,80%,56%) &gt;}} \n{{&lt; bi windows color=#FF6088 &gt;}} \n{{&lt; bi alarm-fill color=blue &gt;}} \n{{&lt; bi ubuntu color=rgb(100,0,179) &gt;}} \n{{&lt; bi terminal-fill color=rgba(157,96,50,0.8) &gt;}} \n\n\n3.5 Label\n{{&lt; bi alarm-fill label=\"This is an alarm\"&gt;}}\n\nAll of the Bootstrap icons that work with the bsicons Quarto extension are viewable at\nhttps://icons.getbootstrap.com/#icons\n\n\n3.6 Manual\nManually grabbing the &lt;svg&gt; tag directly from the icon page for the icon. This was taken from the icon URL https://icons.getbootstrap.com/icons/cake/:\n&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-cake\" viewBox=\"0 0 16 16\"&gt;&lt;path d=\"m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z\"/&gt;&lt;/svg&gt;\n\n\n\nStyling up\n[&lt;svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-cake\" viewBox=\"0 0 16 16\"&gt;&lt;path d=\"m7.994.013-.595.79a.747.747 0 0 0 .101 1.01V4H5a2 2 0 0 0-2 2v3H2a2 2 0 0 0-2 2v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a2 2 0 0 0-2-2h-1V6a2 2 0 0 0-2-2H8.5V1.806A.747.747 0 0 0 8.592.802l-.598-.79ZM4 6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.414a.911.911 0 0 1-.646-.268 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0A.911.911 0 0 1 4 6.414V6Zm0 1.414c.49 0 .98-.187 1.354-.56a.914.914 0 0 1 1.292 0c.748.747 1.96.747 2.708 0a.914.914 0 0 1 1.292 0c.374.373.864.56 1.354.56V9H4V7.414ZM1 11a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.793l-.354.354a.914.914 0 0 1-1.293 0 1.914 1.914 0 0 0-2.707 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0 1.914 1.914 0 0 0-2.708 0 .914.914 0 0 1-1.292 0L1 11.793V11Zm11.646 1.854a1.915 1.915 0 0 0 2.354.279V15H1v-1.867c.737.452 1.715.36 2.354-.28a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.708 0a.914.914 0 0 1 1.292 0c.748.748 1.96.748 2.707 0a.914.914 0 0 1 1.293 0Z\"/&gt;&lt;/svg&gt;]{style=\"color: red; opacity: 0.75;\"}"
   },
   {
     "objectID": "documents/icons/index.html#material-icons",
     "href": "documents/icons/index.html#material-icons",
     "title": "Icons in Quarto",
     "section": "4 Material Icons",
-    "text": "4 Material Icons\n\n4.1 Installation\nquarto add shafayetShafee/material-icons\n\n\n4.2 Usage\nSyntax\n{{&lt; mi &lt;icon-name&gt; [additional args] &gt;}}\nExamples\n{{&lt; mi bar_chart &gt;}}\nbar_chart\n{{&lt; mi account_circle &gt;}}\naccount_circle\n{{&lt; mi verified_user &gt;}}\nverified_user\n{{&lt; mi assignment &gt;}}\nassignment\nThe [additional args] allow you to (1) define a size for the icon, (2) change the icon type, (3) change the color of the icon, and (4) define a CSS class for the icon.\n\n\n4.3 Sizing\n{{&lt; mi assignment size=20px &gt;}}\nassignment\n{{&lt; mi assignment size=2em &gt;}}\nassignment\n\n\n4.4 Styling\nYou can style a Material icon in any color. There are styling guidelines available at the material design icons guidelines page; with active icons they recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.\nYou can use predefined CSS classes \"md-dark\", \"md-light\", or \"md-inactive\". Pass one of these classes to the shortcode using class keyword argument. To pass multiple classes, pass them as space separated and wrapped within quotes.\n{{&lt; mi insights class=md-dark &gt;}}\ninsights\n{{&lt; mi insights class=\"md-dark md-inactive\" &gt;}}\ninsights\nYou can also provide any valid CSS color using the color keyword argument. Here are some examples of that:\n{{&lt; mi bubble_chart color=cornflowerblue &gt;}}\nbubble_chart\n{{&lt; mi bubble_chart color=#E86033 &gt;}}\nbubble_chart\n{{&lt; mi bubble_chart color=rgb(232,96,51) &gt;}}\nbubble_chart\nMaterial icons comes in five types. These are: (1) filled (the default used for the shortcode), (2) outlined, (3) sharp, (4) two_tone, and (5) round. You can provide this keyword as the second argument to the shortcode (after the icon name).\nfilled {{&lt; mi analytics &gt;}}\nanalytics\noutlined {{&lt; mi analytics type=outlined &gt;}}\nanalytics\ntow_tone {{&lt; mi analytics type=two_tone &gt;}}\nanalytics\nsharp {{&lt; mi analytics type=sharp &gt;}}\nanalytics\nround {{&lt; mi analytics type=round &gt;}}\nanalytics\nAll of the Material icons that work with the material-icons Quarto extension are viewable at\nhttps://fonts.google.com/icons"
+    "text": "4 Material Icons\n\n4.1 Installation\nquarto add shafayetShafee/material-icons\n\n\n4.2 Usage\nSyntax\n{&lt; mi &lt;icon-name&gt; [additional args] &gt;}\nExamples\n{{&lt; mi bar_chart &gt;}}\nbar_chart\n{{&lt; mi account_circle &gt;}}\naccount_circle\n{{&lt; mi verified_user &gt;}}\nverified_user\n{{&lt; mi assignment &gt;}}\nassignment\nThe [additional args] allow you to (1) define a size for the icon, (2) change the icon type, (3) change the color of the icon, and (4) define a CSS class for the icon.\n\n\n4.3 Sizing\n{{&lt; mi assignment size=20px &gt;}}\nassignment\n{{&lt; mi assignment size=2em &gt;}}\nassignment\n\n\n4.4 Styling\nYou can style a Material icon in any color. There are styling guidelines available at the material design icons guidelines page; with active icons they recommend using either black at 54% opacity or white at 100% opacity when displaying these on light or dark backgrounds, respectively. If an icon is disabled or inactive, using black at 26% or white at 30% for light and dark backgrounds, respectively.\nYou can use predefined CSS classes \"md-dark\", \"md-light\", or \"md-inactive\". Pass one of these classes to the shortcode using class keyword argument. To pass multiple classes, pass them as space separated and wrapped within quotes.\n{{&lt; mi insights class=md-dark &gt;}}\ninsights\n{{&lt; mi insights class=\"md-dark md-inactive\" &gt;}}\ninsights\nYou can also provide any valid CSS color using the color keyword argument. Here are some examples of that:\n{{&lt; mi bubble_chart color=cornflowerblue &gt;}}\nbubble_chart\n{{&lt; mi bubble_chart color=#E86033 &gt;}}\nbubble_chart\n{{&lt; mi bubble_chart color=rgb(232,96,51) &gt;}}\nbubble_chart\nMaterial icons comes in five types. These are: (1) filled (the default used for the shortcode), (2) outlined, (3) sharp, (4) two_tone, and (5) round. You can provide this keyword as the second argument to the shortcode (after the icon name).\nfilled {{&lt; mi analytics &gt;}}\nanalytics\noutlined {{&lt; mi analytics type=outlined &gt;}}\nanalytics\ntow_tone {{&lt; mi analytics type=two_tone &gt;}}\nanalytics\nsharp {{&lt; mi analytics type=sharp &gt;}}\nanalytics\nround {{&lt; mi analytics type=round &gt;}}\nanalytics\nAll of the Material icons that work with the material-icons Quarto extension are viewable at\nhttps://fonts.google.com/icons"
   },
   {
     "objectID": "documents/icons/index.html#iconify",
     "href": "documents/icons/index.html#iconify",
     "title": "Icons in Quarto",
     "section": "5 Iconify",
-    "text": "5 Iconify\n\n5.1 Installation\nquarto add mcanouil/quarto-iconify\n\n\n5.2 Usage\nSyntax\n{{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}}\nAny of the icons from Iconify v1.0.7 can be used. Icons are split into sets and the default set is \"fluent-emoji\". Explore all of the icons at:\nhttps://icon-sets.iconify.design\nExamples\n{{&lt; iconify axe &gt;}} \n{{&lt; iconify chart-increasing &gt;}} \n{{&lt; iconify house &gt;}} \n{{&lt; iconify worried-face &gt;}} \n{{&lt; iconify tdesign address-book &gt;}} \n{{&lt; iconify game-icons whistle &gt;}} \n{{&lt; iconify solar airbuds-case-open-outline &gt;}} \n{{&lt; iconify skill-icons mastodon-light &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.\n\n\n5.3 Sizing\nLiteral sizing\n{{&lt; iconify house size=1x &gt;}} {{&lt; iconify house size=2x &gt;}} {{&lt; iconify house size=3x &gt;}} {{&lt; iconify house size=4x &gt;}} {{&lt; iconify house size=5x &gt;}} {{&lt; iconify house size=6x &gt;}} {{&lt; iconify house size=7x &gt;}} {{&lt; iconify house size=8x &gt;}} {{&lt; iconify house size=9x &gt;}} {{&lt; iconify house size=10x &gt;}}\n         \nRelative sizing\n{{&lt; iconify house size=2xs &gt;}} {{&lt; iconify house size=xs &gt;}} {{&lt; iconify house size=sm &gt;}} {{&lt; iconify house size=lg &gt;}} {{&lt; iconify house size=xl &gt;}} {{&lt; iconify house size=2xl &gt;}}\n     \n\n\n5.4 Styling\n[{{&lt; iconify house &gt;}}]{style=\"color: red; font-size: 3em;\"}\n\n\n\n5.5 Label\n{{&lt; iconify house size=5x title=\"This is my house\"&gt;}}"
+    "text": "5 Iconify\n\n5.1 Installation\nquarto add mcanouil/quarto-iconify\n\n\n5.2 Usage\nSyntax\n{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}\nAny of the icons from Iconify v1.0.7 can be used. Icons are split into sets and the default set is \"fluent-emoji\". Explore all of the icons at:\nhttps://icon-sets.iconify.design\nExamples\n{{&lt; iconify axe &gt;}} \n{{&lt; iconify chart-increasing &gt;}} \n{{&lt; iconify house &gt;}} \n{{&lt; iconify worried-face &gt;}} \n{{&lt; iconify tdesign address-book &gt;}} \n{{&lt; iconify game-icons whistle &gt;}} \n{{&lt; iconify solar airbuds-case-open-outline &gt;}} \n{{&lt; iconify skill-icons mastodon-light &gt;}} \nThe [additional args] allow you to (1) define a size for the icon, and (2) add a ‘title’ to the icon.\n\n\n5.3 Sizing\nLiteral sizing\n{{&lt; iconify house size=1x &gt;}} {{&lt; iconify house size=2x &gt;}} {{&lt; iconify house size=3x &gt;}} {{&lt; iconify house size=4x &gt;}} {{&lt; iconify house size=5x &gt;}} {{&lt; iconify house size=6x &gt;}} {{&lt; iconify house size=7x &gt;}} {{&lt; iconify house size=8x &gt;}} {{&lt; iconify house size=9x &gt;}} {{&lt; iconify house size=10x &gt;}}\n         \nRelative sizing\n{{&lt; iconify house size=2xs &gt;}} {{&lt; iconify house size=xs &gt;}} {{&lt; iconify house size=sm &gt;}} {{&lt; iconify house size=lg &gt;}} {{&lt; iconify house size=xl &gt;}} {{&lt; iconify house size=2xl &gt;}}\n     \n\n\n5.4 Styling\n[{{&lt; iconify house &gt;}}]{style=\"color: red; font-size: 3em;\"}\n\n\n\n5.5 Label\n{{&lt; iconify house size=5x title=\"This is my house\"&gt;}}"
   },
   {
     "objectID": "documents/icons/index.html#lordicon",
     "href": "documents/icons/index.html#lordicon",
     "title": "Icons in Quarto",
     "section": "6 Lordicon",
-    "text": "6 Lordicon\n\n6.1 Installation\nquarto add jmgirard/lordicon\n\n\n6.2 Usage\nSyntax\n{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}\nTo find icon codes, go to Lordicon website, hit the Explore Library button and select the Free Icons filter on the left-hand side. You can choose a style for the icon (possiblities are flat, gradient, lineal, and outline).\nClick on any icon, hit the &lt;/&gt; HTML button on the bottom of that info listing and a popover will appear with the eight-letter code. You need to transpose that to lowercase as using uppercase letters won’t work :( .\n{{&lt; li xxdqfhbi &gt;}}\n\n\n\n6.3 Options\nEach style of icon (flat, gradient, etc.) will have an entirely different eight-letter code.\nThe trigger argument controls the icon’s animation type. When using the loop or loop-on-hover triggers, you can also set an optional delay (in ms) between loops.\n{{&lt; li xxdqfhbi &gt;}} \n{{&lt; li xxdqfhbi trigger=click &gt;}} \n{{&lt; li xxdqfhbi trigger=hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop &gt;}} \n{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=morph &gt;}} \n{{&lt; li xxdqfhbi trigger=boomerang &gt;}} \nThe speed argument controls how quickly the icon’s animation plays.\n{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}} \nThe colors argument controls the icon’s coloring. Outline icons typically have just a primary and secondary color, but \"flat\" and \"lineal\" icons can have many more. Each color should be given in rank:color format (where ranks are \"primary\", \"secondary\", \"tertiary\", etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.\n{{&lt; li lupuorrc &gt;}} \n{{&lt; li lupuorrc colors=primary:gold &gt;}} \n{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}} \n{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}} \nThe stroke argument controls how thick the lines in an icon are.\n{{&lt; li lupuorrc stroke=50 &gt;}} \n{{&lt; li lupuorrc stroke=100 &gt;}} \n{{&lt; li lupuorrc stroke=150 &gt;}} \nThe scale icon controls how large or zoomed in the icon is.\n{{&lt; li lupuorrc scale=25 &gt;}} \n{{&lt; li lupuorrc scale=50 &gt;}} \n{{&lt; li lupuorrc scale=100 &gt;}} \nThe x arg controls the horizontal position of the center of the icon.\n{{&lt; li lupuorrc x=25 &gt;}} \n{{&lt; li lupuorrc x=50 &gt;}} \n{{&lt; li lupuorrc x=100 &gt;}} \nThe y arg controls the vertical position of the center of the icon.\n{{&lt; li lupuorrc y=25 &gt;}} \n{{&lt; li lupuorrc y=50 &gt;}} \n{{&lt; li lupuorrc y=100 &gt;}} \nThe complete version of this document is available at https://github.com/rich-iannone/quarto-icons-examples."
+    "text": "6 Lordicon\n\n6.1 Installation\nquarto add jmgirard/lordicon\n\n\n6.2 Usage\nSyntax\n{&lt; li &lt;icon-name&gt; [additional args] &gt;}\nTo find icon codes, go to Lordicon website, hit the Explore Library button and select the Free Icons filter on the left-hand side. You can choose a style for the icon (possiblities are flat, gradient, lineal, and outline).\nClick on any icon, hit the &lt;/&gt; HTML button on the bottom of that info listing and a popover will appear with the eight-letter code. You need to transpose that to lowercase as using uppercase letters won’t work :( .\n{{&lt; li xxdqfhbi &gt;}}\n\n\n\n6.3 Options\nEach style of icon (flat, gradient, etc.) will have an entirely different eight-letter code.\nThe trigger argument controls the icon’s animation type. When using the loop or loop-on-hover triggers, you can also set an optional delay (in ms) between loops.\n{{&lt; li xxdqfhbi &gt;}} \n{{&lt; li xxdqfhbi trigger=click &gt;}} \n{{&lt; li xxdqfhbi trigger=hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop &gt;}} \n{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=morph &gt;}} \n{{&lt; li xxdqfhbi trigger=boomerang &gt;}} \nThe speed argument controls how quickly the icon’s animation plays.\n{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}} \nThe colors argument controls the icon’s coloring. Outline icons typically have just a primary and secondary color, but \"flat\" and \"lineal\" icons can have many more. Each color should be given in rank:color format (where ranks are \"primary\", \"secondary\", \"tertiary\", etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.\n{{&lt; li lupuorrc &gt;}} \n{{&lt; li lupuorrc colors=primary:gold &gt;}} \n{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}} \n{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}} \nThe stroke argument controls how thick the lines in an icon are.\n{{&lt; li lupuorrc stroke=50 &gt;}} \n{{&lt; li lupuorrc stroke=100 &gt;}} \n{{&lt; li lupuorrc stroke=150 &gt;}} \nThe scale icon controls how large or zoomed in the icon is.\n{{&lt; li lupuorrc scale=25 &gt;}} \n{{&lt; li lupuorrc scale=50 &gt;}} \n{{&lt; li lupuorrc scale=100 &gt;}} \nThe x arg controls the horizontal position of the center of the icon.\n{{&lt; li lupuorrc x=25 &gt;}} \n{{&lt; li lupuorrc x=50 &gt;}} \n{{&lt; li lupuorrc x=100 &gt;}} \nThe y arg controls the vertical position of the center of the icon.\n{{&lt; li lupuorrc y=25 &gt;}} \n{{&lt; li lupuorrc y=50 &gt;}} \n{{&lt; li lupuorrc y=100 &gt;}} \nThe complete version of this document is available at https://github.com/rich-iannone/quarto-icons-examples."
   },
   {
-    "objectID": "documents/param-text/index.html",
-    "href": "documents/param-text/index.html",
-    "title": "Parameterized report",
+    "objectID": "documents/webr/index.html",
+    "href": "documents/webr/index.html",
+    "title": "webR-enabled code cells",
     "section": "",
-    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\n  🟡 Loading\n    webR..."
   },
   {
-    "objectID": "documents/param-text/index.html#meta-topic",
-    "href": "documents/param-text/index.html#meta-topic",
-    "title": "Parameterized report",
-    "section": "Topic A",
-    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
+    "objectID": "documents/webr/index.html#installation",
+    "href": "documents/webr/index.html#installation",
+    "title": "webR-enabled code cells",
+    "section": "",
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\n  🟡 Loading\n    webR..."
+  },
+  {
+    "objectID": "documents/webr/index.html#sample-cases",
+    "href": "documents/webr/index.html#sample-cases",
+    "title": "webR-enabled code cells",
+    "section": "2 Sample cases",
+    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.2 Create a graph with base R\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n\n2.4 Define variables and re-use them in later cells\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.5 Escape characters in a string\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.6 Anonymous function definition\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.7 Empty code cell\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
+  },
+  {
+    "objectID": "documents/webr/index.html#session",
+    "href": "documents/webr/index.html#session",
+    "title": "webR-enabled code cells",
+    "section": "3 Session",
+    "text": "3 Session\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\nwebr extension version: 0.3.6"
   },
   {
     "objectID": "index.html#ojs",
@@ -207,42 +221,70 @@
     "href": "index.html#webr",
     "title": "Quarto experiments",
     "section": "WebR",
-    "text": "WebR\n\nWebR in Quarto using Quarto webr extension"
+    "text": "WebR\n\nWebR in HTML report using Quarto webr extension\n\n\nWebR in RevealJS presentation"
   },
   {
     "objectID": "index.html#other",
     "href": "index.html#other",
     "title": "Quarto experiments",
     "section": "Other",
-    "text": "Other\n\nIcons in quarto\n\n\nUpdated: 07-12-2023. Quarto v1.3.450"
+    "text": "Other\n\nIcons in quarto\n\n\nUpdated: 07-12-2023. Quarto v1.4.521"
   },
   {
-    "objectID": "documents/webr/index.html",
-    "href": "documents/webr/index.html",
-    "title": "webR-enabled code cells",
+    "objectID": "documents/param-text/index.html",
+    "href": "documents/param-text/index.html",
+    "title": "Parameterized report",
     "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
+    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
   },
   {
-    "objectID": "documents/webr/index.html#installation",
-    "href": "documents/webr/index.html#installation",
-    "title": "webR-enabled code cells",
-    "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\nLoading\n  webR..."
+    "objectID": "documents/param-text/index.html#section",
+    "href": "documents/param-text/index.html#section",
+    "title": "Parameterized report",
+    "section": "Topic A",
+    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
   },
   {
-    "objectID": "documents/webr/index.html#sample-cases",
-    "href": "documents/webr/index.html#sample-cases",
-    "title": "webR-enabled code cells",
-    "section": "2 Sample cases",
-    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.2 Create a graph with base R\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\nLoading\n  webR...\n\n\n  \n\n\n\n\n\n2.4 Define variables and re-use them in later cells\nLoading\n  webR...\n\n\n  \n\n\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.5 Escape characters in a string\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.6 Anonymous function definition\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.7 Empty code cell\nLoading\n  webR...\n\n\n  \n\n\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
+    "objectID": "documents/revealjs-webr/index.html#load-packages",
+    "href": "documents/revealjs-webr/index.html#load-packages",
+    "title": "WebR in Quarto presentation",
+    "section": "Load packages",
+    "text": "Load packages\n\n  🟡 Loading\n    webR..."
   },
   {
-    "objectID": "documents/webr/index.html#session",
-    "href": "documents/webr/index.html#session",
-    "title": "webR-enabled code cells",
-    "section": "3 Session",
-    "text": "3 Session\nLoading\n  webR...\n\n\n  \n\n\nwebr extension version: 0.3.6"
+    "objectID": "documents/revealjs-webr/index.html#table",
+    "href": "documents/revealjs-webr/index.html#table",
+    "title": "WebR in Quarto presentation",
+    "section": "Table",
+    "text": "Table\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\n\nThe iris dataset is included in base R."
+  },
+  {
+    "objectID": "documents/revealjs-webr/index.html#plot",
+    "href": "documents/revealjs-webr/index.html#plot",
+    "title": "WebR in Quarto presentation",
+    "section": "Plot",
+    "text": "Plot\nThis is ggplot2.\n\n  🟡 Loading\n    webR..."
+  },
+  {
+    "objectID": "documents/revealjs-webr/index.html#image",
+    "href": "documents/revealjs-webr/index.html#image",
+    "title": "WebR in Quarto presentation",
+    "section": "Image",
+    "text": "Image\nThis is an image.\n\n\nFigure 1: This is iris species."
+  },
+  {
+    "objectID": "documents/revealjs-webr/index.html#code-highlighting",
+    "href": "documents/revealjs-webr/index.html#code-highlighting",
+    "title": "WebR in Quarto presentation",
+    "section": "Code highlighting",
+    "text": "Code highlighting\n\n  🟡 Loading\n    webR...\n  \n    \n    \n      \n    \n  \n  \n  \n\n\n\nThe figure is updated to show petal widths."
+  },
+  {
+    "objectID": "documents/revealjs-webr/index.html#session",
+    "href": "documents/revealjs-webr/index.html#session",
+    "title": "WebR in Quarto presentation",
+    "section": "Session",
+    "text": "Session\n\n  🟡 Loading\n    webR..."
   },
   {
     "objectID": "documents/ojs-linked/index.html",
@@ -270,7 +312,7 @@
     "href": "documents/ojs-linked/index.html#scatterplot",
     "title": "ObservableJS in Quarto",
     "section": "Scatterplot",
-    "text": "Scatterplot\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\nTooltips are documented here."
+    "text": "Scatterplot\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\n\nTooltips are documented here."
   },
   {
     "objectID": "documents/revealjs/index.html#setosa",
@@ -284,14 +326,14 @@
     "href": "documents/revealjs/index.html#layout",
     "title": "setosa presentation",
     "section": "Layout",
-    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
+    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
   },
   {
     "objectID": "documents/revealjs/index.html#code-highlighting",
     "href": "documents/revealjs/index.html#code-highlighting",
     "title": "setosa presentation",
     "section": "Code highlighting",
-    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\nFigure 3: Scatterplot of setosa species.\nThe figure is updated to show petal widths."
+    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\n\nFigure 3: Scatterplot of setosa species.\n\nThe figure is updated to show petal widths."
   },
   {
     "objectID": "documents/ojs-widgets/index.html",
@@ -326,14 +368,14 @@
     "href": "documents/ojs/index.html",
     "title": "ObservableJS in Quarto",
     "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nR code\n\n\nCode\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
   },
   {
     "objectID": "documents/ojs/index.html#passing-data",
     "href": "documents/ojs/index.html#passing-data",
     "title": "ObservableJS in Quarto",
     "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nR code\n\n\nCode\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
   },
   {
     "objectID": "documents/ojs/index.html#table",

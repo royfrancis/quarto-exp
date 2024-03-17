@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/ojs-plots/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/report/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/theme-title/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/icons/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.444Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/webr/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
     <loc>https://royfrancis.github.io/quarto-exp/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/param-text/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/revealjs-webr/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/quarto-exp/documents/ojs-linked/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.452Z</lastmod>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/report/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/ojs-plots/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/quarto-exp/documents/revealjs/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://royfrancis.github.io/quarto-exp/documents/ojs-widgets/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/quarto-exp/documents/ojs/index.html</loc>
-    <lastmod>2023-12-07T17:37:09.456Z</lastmod>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/ojs-widgets/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/param-text/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/shinylive/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/icons/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.101Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/webr-revealjs/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/quarto-exp/documents/webr/index.html</loc>
+    <lastmod>2024-03-17T20:12:36.113Z</lastmod>
   </url>
 </urlset>

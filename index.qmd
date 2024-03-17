@@ -23,6 +23,9 @@ format:
 ### [WebR in HTML report using Quarto webr extension](documents/webr/index.qmd)
 ### [WebR in RevealJS presentation](documents/webr-revealjs/index.qmd)
 
+## Shinylive
+### [Shiny in the browser](documents/shinylive/index.qmd)
+
 ## Other
 ### [Icons in quarto](documents/icons/index.qmd)
 

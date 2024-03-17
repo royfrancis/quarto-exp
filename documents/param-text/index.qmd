@@ -6,8 +6,6 @@ date: 08-Oct-2023
 format:
   html:
     title-block-banner: true
-    theme: pulse
-    highlight: kate
     code-tools: true
 
 params:

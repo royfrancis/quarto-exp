@@ -6,7 +6,6 @@ date:  last-modified
 date-format: "DD-MMM-YYYY"
 format:
   html:
-    theme: materia
     fig-align: left
     title-block-banner: true
     toc: true

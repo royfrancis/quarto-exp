@@ -6,7 +6,7 @@ date:  last-modified
 date-format: "DD-MMM-YYYY"
 format:
   html:
-    theme: materia
+    page-layout: full
     fig-align: left
     title-block-banner: true
     code-tools: true
@@ -55,8 +55,8 @@ viewof tbl_mtcars = Inputs.table(mtcars)
 ```{r}
 #| filename: R
 
-ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
-  geom_text(nudge_x = 0.05)
+ggplot(mtcars, aes(wt, mpg, col = cyl)) + 
+  geom_point()
 ```
 
 :::
@@ -66,53 +66,20 @@ ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) +
 ```{ojs}
 //| filename: OJS
 
-Plot.plot({
+plot_data = Plot.plot({
+  color: { legend: true},
   marks: [
-    Plot.text(
-      mtcars,
-      { x: "wt", y: "mpg", text: "vehicle", textAnchor: "start" }
-    )
+    Plot.dot(mtcars, {
+      x: "wt",
+      y: "mpg",
+      fill: "cyl",
+      tip: true,
+      channels: { Name: "_row" }
+    })
   ],
   grid: true
 })
-```
-:::
-:::
 
-
-### With categorical colors
-
-::: {.grid}
-::: {.g-col-6}
-
-```{r}
-#| filename: R
-
-ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
-  geom_text(aes(colour = factor(cyl)))
-```
-
-:::
-
-::: {.g-col-6}
-
-```{ojs}
-//| filename: OJS
-
-Plot.plot({
-  color: {
-    type: "ordinal",
-    range: [ "#88a2bc", "#d99477", "#586c5c"],
-    legend: true
-  },
-  marks: [
-    Plot.text(
-      mtcars.map(d => { d.cyl = `${d.cyl}`; return d }),
-      { x: "wt", y: "mpg", text: "vehicle", fill: "cyl" }
-    )
-  ],
-  grid: true
-})
 ```
 :::
 :::

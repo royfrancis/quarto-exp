@@ -6,7 +6,6 @@ date:  last-modified
 date-format: "DD-MMM-YYYY"
 format:
   html:
-    theme: materia
     fig-align: left
     title-block-banner: true
     toc: true
@@ -277,9 +276,14 @@ function downloadHtmlAsImage(el, options) {
 }
 ```
 
+Download an image as PNG.
+
 ```{ojs}
 downloadHtmlAsImage(barplot)
 ```
+
+Adjust the scale parameter.
+
 
 ```{ojs}
 downloadHtmlAsImage(barplot, {
@@ -287,6 +291,17 @@ downloadHtmlAsImage(barplot, {
 	filename: "scaled_4x",
 	scale: 4
 })
+```
+
+Download image as SVG.
+
+```{ojs}
+import {serialize} from "@mbostock/saving-svg"
+import {rasterize} from "@mbostock/saving-svg"
+```
+
+```{ojs}
+DOM.download(() => serialize(barplot), undefined, "Save as SVG")
 ```
 
 ### Zip download

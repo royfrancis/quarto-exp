@@ -8,26 +8,40 @@ format:
 ---
 
 ## Parameterized outputs
-### [Parameterized html report](documents/report/index.qmd)
-### [Parameterized html revealjs presentation](documents/revealjs/index.qmd)
-### [Parameterized pdf](documents/pdf/index.pdf)
-### [Parameterized html report from external file](documents/param-text/index.qmd)
+
+In parameterized reports, one or more parameters used in the document are provided to the document at the time of rendering.
+
+- [Parameterized html report](documents/report/index.qmd)
+- [Parameterized html revealjs presentation](documents/revealjs/index.qmd)
+- [Parameterized pdf](documents/pdf/index.pdf)
+- [Parameterized html report from external file](documents/param-text/index.qmd)
 
 ## OJS
-### [OJS and R](documents/ojs/index.qmd)
-### [OJS widgets, upload and download](documents/ojs-widgets/index.qmd)
-### [OJS and ggplot plots](documents/ojs-plots/index.qmd)
-### [OJS linked plots](documents/ojs-linked/index.qmd)
+
+[Observable Plot](https://observablehq.github.io/plot/) is a javascript framework for exploratory data visualization. OJS is supported natively in quarto. Read more about OJS in quarto [here](https://quarto.org/docs/interactive/ojs/).
+
+- [OJS and R](documents/ojs/index.qmd)
+- [OJS widgets, upload and download](documents/ojs-widgets/index.qmd)
+- [OJS and ggplot plots](documents/ojs-plots/index.qmd)
+- [OJS linked plots](documents/ojs-linked/index.qmd)
 
 ## WebR
-### [WebR in HTML report using Quarto webr extension](documents/webr/index.qmd)
-### [WebR in RevealJS presentation](documents/webr-revealjs/index.qmd)
+
+[WebR](https://docs.r-wasm.org/webr/latest/) allows to run R in the browser. Try out a [demo](https://webr.r-wasm.org/latest/) of R IDE running in the browser. R packages need to be specifically compiled for use with webr. He is the current list of [webr R packages](https://repo.r-wasm.org).
+
+- [WebR in HTML report using Quarto webr extension](documents/webr/index.qmd)
+- [WebR in RevealJS presentation](documents/webr-revealjs/index.qmd)
+- Intro to WebR & Shinylive by George Stagg: <https://www.youtube.com/watch?v=GlZKReTx8GA>
 
 ## Shinylive
-### [Shiny in the browser](documents/shinylive/index.qmd)
+
+Shinylive allows shiny applications to run in the browser wthout the need for a Shiny server. Shinylive is available for R and Python.
+
+- [Shiny app in the browser](documents/shinylive/index.qmd)
 
 ## Other
-### [Icons in quarto](documents/icons/index.qmd)
+
+- [Icons in quarto](documents/icons/index.qmd)
 
 <br>
 

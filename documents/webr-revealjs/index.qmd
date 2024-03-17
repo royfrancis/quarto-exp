@@ -5,8 +5,6 @@ subtitle: "Live R code in RevealJS"
 author: "Roy Francis"
 date: last-modified
 format: revealjs
-params:
-  name: setosa
 filters:
   - webr
 engine: knitr

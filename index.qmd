@@ -21,7 +21,7 @@ format:
 
 ## WebR
 ### [WebR in HTML report using Quarto webr extension](documents/webr/index.qmd)
-### [WebR in RevealJS presentation](documents/revealjs-webr/index.qmd)
+### [WebR in RevealJS presentation](documents/webr-revealjs/index.qmd)
 
 ## Other
 ### [Icons in quarto](documents/icons/index.qmd)

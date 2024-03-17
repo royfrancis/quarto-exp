@@ -24,6 +24,7 @@ jobs:
             any::ggplot2
             any::tinytex
             any::hexbin
+            any::shinylive
       - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:

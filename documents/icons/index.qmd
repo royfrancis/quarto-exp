@@ -8,8 +8,6 @@ format:
     title-block-banner: true
     toc: true
     number-sections: true
-    theme: pulse
-    highlight: kate
     code-tools: true
     fig-align: left
 

@@ -56,7 +56,7 @@ shinyApp(ui, server)
 ```
 ````
 
-## Embedded app
+## App in a chunk
 
 ::: {.callout-note}
 The app can take a while to load. For full code, use code-tools, ie; click 'Code' at the top.
@@ -125,6 +125,84 @@ server <- function(input, output, session) {
 }
 
 app <- shinyApp(ui = ui, server = server)
+```
+
+## More options
+
+Adding `#| components: [editor, viewer]` displays code editor and viewer side by side.
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+
+shinyApp(
+  ui=fluidPage(
+    sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
+    textOutput("out")
+  ),
+  server=function(input, output, session) {
+    output$out <- renderText(paste0("Squared: ",input$value^2))
+  }
+)
+```
+
+Adding `#| layout: vertical` displays editor and viewer vertically.
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| layout: vertical
+
+shinyApp(
+  ui=fluidPage(
+    sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
+    textOutput("out")
+  ),
+  server=function(input, output, session) {
+    output$out <- renderText(paste0("Squared: ",input$value^2))
+  }
+)
+```
+
+
+## Multi-file app
+
+The app code can be split into separate files by specifying `## file: filename.r`.
+
+````
+```{{shinylive-r}}
+#| standalone: true
+#| components: [editor, viewer]
+
+## file: ui.r
+ui <- fluidPage(
+  sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
+  textOutput("out")
+)
+
+## file: server.r
+server <- function(input, output, session) {
+  output$out <- renderText(paste0("Squared: ",input$value^2))
+}
+```
+````
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+
+## file: ui.r
+ui <- fluidPage(
+  sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
+  textOutput("out")
+)
+
+## file: server.r
+server <- function(input, output, session) {
+  output$out <- renderText(paste0("Squared: ",input$value^2))
+}
+
+shinyApp(ui=ui,server=server)
 ```
 
 ## Acknowledgements

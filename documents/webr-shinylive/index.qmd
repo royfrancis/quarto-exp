@@ -1,0 +1,54 @@
+---
+pagetitle: "Shinylive with WebR"
+title: "Shinylive with WebR"
+subtitle: "Run shiny apps alongside webr in the browser"
+author: "Roy Francis"
+date: last-modified
+format:
+  html:
+    title-block-banner: true
+    toc: true
+    number-sections: true
+    code-tools: true
+    resources: 
+      - shinylive-sw.js
+filters:
+  - shinylive
+  - webr
+---
+
+WebR and shinylive can work together on the same page, but they have separate environments.
+
+## Shinylive
+
+This is a shinylive app chunk
+
+```{shinylive-r}
+#| standalone: true
+#| components: [editor, viewer]
+#| layout: vertical
+shinyApp(
+  ui=fluidPage(
+    sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
+    textOutput("result"),
+    verbatimTextOutput("session")
+  ),
+  server=function(input, output, session) {
+    output$result <- renderText(paste0("Squared: ",input$value^2))
+    output$session <- renderPrint(capture.output(sessionInfo()))
+  }
+)
+```
+
+## WebR
+
+This is a webr chunk
+
+```{webr-r}
+#| autorun: true
+sessionInfo()
+```
+
+<!--
+docker run --platform linux/amd64 --rm -p 4202:4202 -v ${PWD}:/home/rstudio/raukr ghcr.io/nbisweden/workshop-raukr:latest quarto preview --port 4202 --host 0.0.0.0
+-->

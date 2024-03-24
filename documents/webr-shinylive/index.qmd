@@ -27,6 +27,8 @@ This is a shinylive app chunk
 #| standalone: true
 #| components: [editor, viewer]
 #| layout: vertical
+#| viewerHeight: 680
+
 shinyApp(
   ui=fluidPage(
     sliderInput("value", label="Value", min=1, max=50, step=1, value=2),
@@ -50,5 +52,5 @@ sessionInfo()
 ```
 
 <!--
-docker run --platform linux/amd64 --rm -p 4202:4202 -v ${PWD}:/home/rstudio/raukr ghcr.io/nbisweden/workshop-raukr:latest quarto preview --port 4202 --host 0.0.0.0
+docker run --platform linux/amd64 --rm -e PASSWORD=raukr -p 4202:4202 -p 8788:8787 -v ${PWD}:/home/rstudio/raukr ghcr.io/nbisweden/workshop-raukr:latest
 -->

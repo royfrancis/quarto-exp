@@ -52,5 +52,5 @@ sessionInfo()
 ```
 
 <!--
-docker run --platform linux/amd64 --rm -e PASSWORD=raukr -p 4202:4202 -p 8788:8787 -v ${PWD}:/home/rstudio/raukr ghcr.io/nbisweden/workshop-raukr:latest
+docker run --platform linux/amd64 --rm -e PASSWORD=raukr -p 4202:4202 -p 8788:8787 -v ${PWD}:/home/rstudio/quarto-exp ghcr.io/nbisweden/workshop-raukr:latest
 -->

@@ -50,4 +50,4 @@ Shinylive allows shiny applications to run in the browser wthout the need for a 
 
 ---
 
-Updated: <?lua.date?>. Quarto v<?quarto.version?>
+Updated: {{< meta current_date >}}. Quarto v{{< meta quarto_version >}}

@@ -16,6 +16,118 @@ format:
 
 See the [official OJS documentation](https://observablehq.com/documentation/inputs/overview).
 
+## Define data
+
+```{ojs}
+data_hdi = [
+  {
+    name: "Switzerland",
+    continent: "Europe",
+    hdi: "0.962"
+  },
+  {
+    name: "Norway",
+    continent: "Europe",
+    hdi: "0.961"
+  },
+  {
+    name: "Iceland",
+    continent: "Europe",
+    hdi: "0.959"
+  },
+  {
+    name: "Hong Kong",
+    continent: "Asia",
+    hdi: "0.952"
+  },
+  {
+    name: "Australia",
+    continent: "Oceania",
+    hdi: "0.951"
+  },
+  {
+    name: "Denmark",
+    continent: "Europe",
+    hdi: "0.948"
+  },
+  {
+    name: "Sweden",
+    continent: "Europe",
+    hdi: "0.947"
+  },
+  {
+    name: "Ireland",
+    continent: "Europe",
+    hdi: "0.945"
+  },
+  {
+    name: "Germany",
+    continent: "Europe",
+    hdi: "0.942"
+  },
+  {
+    name: "Netherlands",
+    continent: "Europe",
+    hdi: "0.941"
+  },
+  {
+    name: "Finland",
+    continent: "Europe",
+    hdi: "0.940"
+  },
+  {
+    name: "Singapore",
+    continent: "Asia",
+    hdi: "0.939"
+  },
+  {
+    name: "Belgium",
+    continent: "Europe",
+    hdi: "0.937"
+  },
+  {
+    name: "New Zealand",
+    continent: "Oceania",
+    hdi: "0.937"
+  },
+  {
+    name: "Canada",
+    continent: "North America",
+    hdi: "0.936"
+  }
+]
+```
+
+## Output widgets
+
+### Table
+
+```{ojs}
+viewof table_a = Inputs.table(data_hdi)
+```
+
+### Plot
+
+```{ojs}
+//| label: barplot
+
+Plot.plot({
+  marginLeft: 100,
+  y: {
+
+  },
+  marks: [
+    Plot.barX(data_hdi, {
+      x: "hdi",
+      y: "name",
+      title: (d) =>
+        `Country: ${d.name}`
+    })
+  ],
+  grid: true
+})
+```
+
 ## Input widgets
 
 ### Text
@@ -37,10 +149,15 @@ Your input is ${bio}.
 ### Numeric
 
 ```{ojs}
-viewof gain = Inputs.range([0, 11], {value: 5, step: 0.1, label: "Gain"})
+viewof hdi = Inputs.range([0.90, 1.00], {value: 0.98, step: 0.01, label: "HDI"})
 ```
 
-The current gain is ${gain.toFixed(1)}.
+Below are countries with HDI less than ${hdi.toFixed(3)}.
+
+```{ojs}
+data_numeric = data_hdi.filter(d => d.hdi < hdi)
+viewof table_numeric = Inputs.table(data_numeric)
+```
 
 ### Button
 
@@ -62,10 +179,15 @@ Current state: ${mute}.
 ### Radio button
 
 ```{ojs}
-viewof flavor = Inputs.radio(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavor"})
+viewof cont = Inputs.radio(["Asia", "Europe", "North America", "Oceania"], {label: "Select continent:", value: "Europe"})
 ```
 
-Selected item: ${flavor}.
+The table below is filtered to keep ${cont}.
+
+```{ojs}
+data_radio = data_hdi.filter(d => d.continent == cont)
+viewof table_radio = Inputs.table(data_radio)
+```
 
 ### Checkbox
 
@@ -103,103 +225,14 @@ Selected color: ${color}.
 
 ```{ojs}
 viewof file = Inputs.file({label: "Upload a CSV file:", accept: ".csv", required: true})
-data1 = file.csv({typed: true})
-viewof raw_table = Inputs.table(data1)
+data3 = file.csv({typed: true})
+viewof raw_table = Inputs.table(data3)
 ```
 
-## Output widgets
+### Search
 
 ```{ojs}
-data = [
-  {
-    name: "Switzerland",
-    hdi: "0.962"
-  },
-  {
-    name: "Norway",
-    hdi: "0.961"
-  },
-  {
-    name: "Iceland",
-    hdi: "0.959"
-  },
-  {
-    name: "Hong Kong",
-    hdi: "0.952"
-  },
-  {
-    name: "Australia",
-    hdi: "0.951"
-  },
-  {
-    name: "Denmark",
-    hdi: "0.948"
-  },
-  {
-    name: "Sweden",
-    hdi: "0.947"
-  },
-  {
-    name: "Ireland",
-    hdi: "0.945"
-  },
-  {
-    name: "Germany",
-    hdi: "0.942"
-  },
-  {
-    name: "Netherlands",
-    hdi: "0.941"
-  },
-  {
-    name: "Finland",
-    hdi: "0.940"
-  },
-  {
-    name: "Singapore",
-    hdi: "0.939"
-  },
-  {
-    name: "Belgium",
-    hdi: "0.937"
-  },
-  {
-    name: "New Zealand",
-    hdi: "0.937"
-  },
-  {
-    name: "Canada",
-    hdi: "0.936"
-  }
-]
-```
-
-### Table
-
-```{ojs}
-viewof table = Inputs.table(data)
-```
-
-### Plot
-
-```{ojs}
-//| label: barplot
-
-Plot.plot({
-  marginLeft: 100,
-  y: {
-
-  },
-  marks: [
-    Plot.barX(data, {
-      x: "hdi",
-      y: "name",
-      title: (d) =>
-        `Country: ${d.name}`
-    })
-  ],
-  grid: true
-})
+viewof search = Inputs.search(data_hdi, { placeholder: "Search"})
 ```
 
 ## Downloads
@@ -230,7 +263,7 @@ button = (data, filename = 'data.csv') => {
 ```
 
 ```{ojs}
-button(data, 'hdi.csv')
+button(data_hdi, 'hdi.csv')
 ```
 
 ### Image download
@@ -311,7 +344,7 @@ JSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')
 zip = {
   const zip = new JSZip()
   const folder = zip.folder('website')
-  folder.file('data.txt', data)
+  folder.file('data_hdi.txt', data_hdi)
   return zip.generateAsync({type: 'blob'})
 }
 ```

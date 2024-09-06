@@ -1,0 +1,83 @@
+---
+pagetitle: "QuartoLive with OJS"
+title: "QuartoLive with OJS"
+subtitle: "Interplay between R and OJS in the browser"
+author: "Roy Francis"
+date: last-modified
+title-block-banner: true
+toc: true
+number-sections: true
+code-tools: true
+code-fold: true
+format: live-html
+webr:
+  render-df: paged-table
+---
+
+{{< include ../../_extensions/r-wasm/live/_knitr.qmd >}}
+
+Variables can be interchanged between R and OJS.
+
+## R to OJS
+
+In this example, a data set in R is sent over to OJS to be plotted.
+
+````
+```{{webr}}
+#| define:
+#|   - irism
+
+irism <- iris
+colnames(irism) <- gsub("[.]","_",tolower(colnames(irism)))
+```
+````
+
+```{webr}
+#| define:
+#|   - irism
+
+irism <- iris
+colnames(irism) <- gsub("[.]","_",tolower(colnames(irism)))
+```
+
+```{ojs}
+viewof x = Inputs.select(Object.keys(irism[0]), {value: "petal_width", multiple: false, label: "X axis"})
+viewof y = Inputs.select(Object.keys(irism[0]), {value: "sepal_width", multiple: false, label: "Y axis"})
+```
+
+```{ojs}
+Plot.plot({
+  marks: [
+    Plot.dot(irism, {
+      x: x,
+      y: y,
+      fill: "species",
+      title: (d) =>
+        `${d.species} \n Petal length: ${d.petal_length} \n Sepal length: ${d.sepal_length}`
+    })
+  ],
+  grid: true
+})
+```
+
+## OJS to R
+
+In this example, a dataset in R is filtered in R based on input from OJS.
+
+```{ojs}
+viewof sp = Inputs.radio(["setosa", "versicolor", "virginica"], {label: "Select species:", value: "setosa"})
+```
+
+````
+```{{webr}}
+#| input:
+#|   - sp
+iris[iris$Species %in% sp,]
+```
+````
+
+```{webr}
+#| input:
+#|   - sp
+iris[iris$Species %in% sp,]
+```

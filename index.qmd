@@ -42,6 +42,13 @@ Shinylive allows shiny applications to run in the browser wthout the need for a 
 - [Shiny app in the browser](documents/shinylive/index.html)
 - [WebR with Shinylive](documents/webr-shinylive/index.html)
 
+## QuartoLive
+
+[QuartoLive](https://r-wasm.github.io/quarto-live/) allows to run interactive R and Python code in static quarto documents using WebR.
+
+- [QuartoLive basics](documents/quartolive/index.html)
+- [Interplay between R and OJS](documents/quartolive-ojs/index.html)
+
 ## Other
 
 - [Icons in quarto](documents/icons/index.html)

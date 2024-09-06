@@ -4,3 +4,4 @@ docs/
 /.luarc.json
 /.quarto/
 .DS_Store
+.quarto

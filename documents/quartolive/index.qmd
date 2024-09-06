@@ -1,0 +1,140 @@
+---
+pagetitle: "QuartoLive"
+title: "QuartoLive"
+subtitle: "Rich interactive R and Python content in the browser"
+author: "Roy Francis"
+date: last-modified
+title-block-banner: true
+toc: true
+number-sections: true
+code-tools: true
+format: live-html
+webr:
+  render-df: paged-table
+---
+
+{{< include ../../_extensions/r-wasm/live/_knitr.qmd >}}
+
+QuartoLive allows to run interactive R and Python code in static quarto documents using WebR. QuartoLive supports interactive exercises and rich output. QuartoLive is documented [here](https://r-wasm.github.io/quarto-live/).
+
+## Installation
+
+Install webr extension for quarto by running:
+
+```bash
+quarto add r-wasm/quarto-live
+```
+
+then add to yaml:
+
+```yaml
+format: live-html
+engine: knitr
+```
+
+For knitr, the following line must be added after yaml, for now:
+
+`{{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}}`
+
+## Interactive editor
+
+webR-enabled code cells are established by using `{webr}` or `{pyodide}` in a Quarto HTML document.
+
+````
+```{{webr}}
+for (x in 1:5) {
+  print(x ** 2)
+}
+```
+````
+
+```{webr}
+for (x in 1:5) {
+  print(x ** 2)
+}
+```
+
+````
+```{{pyodide}}
+for x in range(1, 6):
+  print(10 + x)
+```
+````
+
+```{pyodide}
+for x in range(1, 6):
+  print(10 + x)
+```
+
+```{webr}
+iris
+```
+
+Default table style can be set under yaml:
+
+```
+webr:
+  render-df: paged-table
+```
+
+Other options are `kable`, `paged-table`, `gt`, `gt-interactive`, `DT` and `reactable`.
+
+Additional yaml chunk options are 
+
+- `edit: true`: Allow code chunk to be edited?
+- `autorun: true`: Should code chunk be automatically executed?
+- `runbutton: true`: Show run button?
+- `caption: bla`: Chunk title
+- `completion: true`: Allow code completion?
+- `startover: true`: Allow initial code to be reset?
+- `persist: true`: Locally save user entered content?
+- `timelimit`: Set upper bound for execution time. Default is 30 seconds
+- `min-lines`,`max-lines`: Fix editor height
+- `fig-height`,`fig-width`: Figure height and width
+
+## Installing packages
+
+### On setup
+
+To install packages on launch, add to yaml.
+
+```
+webr:
+  packages:
+    - dplyr
+    - ggplot2
+```
+
+### In chunks
+
+````
+```{{webr}}
+install.packages("dplyr", quiet = TRUE)
+library(dplyr)
+```
+````
+
+## Resources
+
+Resources can be defined which are made available to webr.
+
+````
+---
+format: live-html
+resources:
+  - data
+  - https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv
+---
+
+```{{webr}}
+list.files("data")
+mt <- read.csv("data/mtcars.csv")
+mod <- glm(mpg ~ cyl, data = mt)
+summary(mod)
+```
+
+```{{webr}}
+flights <- read.csv("flights.csv")
+with(flights, plot(year, passengers))
+```
+````

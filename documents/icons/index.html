@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.521">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Roy Francis">
-<meta name="dcterms.date" content="2024-03-24">
+<meta name="dcterms.date" content="2024-09-06">
 
 <title>Icons in Quarto</title>
 <style>
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">March 24, 2024</p>
+        <p class="date">September 6, 2024</p>
       </div>
     </div>
     
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="usage"><span class="header-section-number">1.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; fa [brands] &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>Any of the free icons from Font Awesome Version 5 can be used. Some of free icons are in the ‘brands’ set (e.g., <code>"apple"</code>, <code>"uber"</code>, <code>"github"</code>, etc.) and these need to use the sequence of <code>fa brands &lt;icon-name&gt;</code>. Here are some examples:</p>
 <p><code>{{&lt; fa star &gt;}}</code> <i class="fa-solid fa-star" aria-label="star"></i><br>
 <code>{{&lt; fa image &gt;}}</code> <i class="fa-solid fa-image" aria-label="image"></i><br>
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-1" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="usage-1"><span class="header-section-number">2.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; ai &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; ai &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>Some examples</p>
 <p><code>{{&lt; ai jstor &gt;}}</code> <i class="ai  ai-jstor"></i><br>
 <code>{{&lt; ai orcid &gt;}}</code> <i class="ai  ai-orcid"></i><br>
@@ -302,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-2" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="usage-2"><span class="header-section-number">3.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; bi &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; bi &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>Examples</p>
 <p><code>{{&lt; bi box-seam &gt;}}</code> <i class="bi-box-seam " style="" role="img" aria-hidden="true"></i><br>
 <code>{{&lt; bi trophy &gt;}}</code> <i class="bi-trophy " style="" role="img" aria-hidden="true"></i><br>
@@ -361,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-3" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="usage-3"><span class="header-section-number">4.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; mi &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; mi &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>Examples</p>
 <p><code>{{&lt; mi bar_chart &gt;}}</code></p>
 <p><span class="material-icons " style="">bar_chart</span></p>
@@ -419,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-4" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="usage-4"><span class="header-section-number">5.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; iconify &lt;set&gt; &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>Any of the icons from Iconify <code>v1.0.7</code> can be used. Icons are split into sets and the default set is <code>"fluent-emoji"</code>. Explore all of the icons at:</p>
 <p><a href="https://icon-sets.iconify.design" class="uri">https://icon-sets.iconify.design</a></p>
 <p>Examples</p>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-5" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="usage-5"><span class="header-section-number">6.2</span> Usage</h3>
 <p>Syntax</p>
-<p><code>{&lt; li &lt;icon-name&gt; [additional args] &gt;}</code></p>
+<p><code>{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}</code></p>
 <p>To find icon codes, go to <a href="https://lordicon.com">Lordicon website</a>, hit the <code>Explore Library</code> button and select the <em>Free Icons</em> filter on the left-hand side. You can choose a <em>style</em> for the icon (possiblities are <code>flat</code>, <code>gradient</code>, <code>lineal</code>, and <code>outline</code>).</p>
 <p>Click on any icon, hit the <code>&lt;/&gt; HTML</code> button on the bottom of that info listing and a popover will appear with the <strong>eight-letter code</strong>. You need to transpose that to lowercase as using uppercase letters <em>won’t work</em> :( .</p>
 <p><code>{{&lt; li xxdqfhbi &gt;}}</code></p>
@@ -550,18 +550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -593,7 +582,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -645,6 +656,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/royfrancis\.github\.io\/quarto-exp\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -679,7 +708,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -694,27 +727,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -729,10 +741,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -741,8 +757,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1399,7 +1422,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-434"><a href="#cb9-434" aria-hidden="true" tabindex="-1"></a><span class="in">`{{{&lt; li lupuorrc y=100 &gt;}}}`</span>    {{&lt; li lupuorrc y=100 &gt;}}  </span>
 <span id="cb9-435"><a href="#cb9-435" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-436"><a href="#cb9-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-437"><a href="#cb9-437" aria-hidden="true" tabindex="-1"></a>The complete version of this document is available at <span class="co">[</span><span class="ot">https://github.com/rich-iannone/quarto-icons-examples</span><span class="co">](https://github.com/rich-iannone/quarto-icons-examples)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-437"><a href="#cb9-437" aria-hidden="true" tabindex="-1"></a>The complete version of this document is available at <span class="co">[</span><span class="ot">https://github.com/rich-iannone/quarto-icons-examples</span><span class="co">](https://github.com/rich-iannone/quarto-icons-examples)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

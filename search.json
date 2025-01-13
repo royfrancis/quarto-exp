@@ -46,7 +46,147 @@
     "href": "index.html#other",
     "title": "Quarto experiments",
     "section": "Other",
-    "text": "Other\n\nIcons in quarto\n\n\n\nUpdated: 06-09-2024. Quarto v1.5.57"
+    "text": "Other\n\nIcons in quarto\n\n\n\nUpdated: 13-01-2025. Quarto v1.6.40"
+  },
+  {
+    "objectID": "documents/param-text/index.html",
+    "href": "documents/param-text/index.html",
+    "title": "Parameterized report",
+    "section": "",
+    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
+  },
+  {
+    "objectID": "documents/param-text/index.html#section",
+    "href": "documents/param-text/index.html#section",
+    "title": "Parameterized report",
+    "section": "Topic A",
+    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#load-packages",
+    "href": "documents/webr-revealjs/index.html#load-packages",
+    "title": "WebR in Quarto presentation",
+    "section": "Load packages",
+    "text": "Load packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#table",
+    "href": "documents/webr-revealjs/index.html#table",
+    "title": "WebR in Quarto presentation",
+    "section": "Table",
+    "text": "Table\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nThe iris dataset is included in base R."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#plot",
+    "href": "documents/webr-revealjs/index.html#plot",
+    "title": "WebR in Quarto presentation",
+    "section": "Plot",
+    "text": "Plot\nThis is ggplot2.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#image",
+    "href": "documents/webr-revealjs/index.html#image",
+    "title": "WebR in Quarto presentation",
+    "section": "Image",
+    "text": "Image\nThis is an image.\n\n\nFigure 1: This is iris species."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#code-highlighting",
+    "href": "documents/webr-revealjs/index.html#code-highlighting",
+    "title": "WebR in Quarto presentation",
+    "section": "Code highlighting",
+    "text": "Code highlighting\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe figure is updated to show petal widths."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#session",
+    "href": "documents/webr-revealjs/index.html#session",
+    "title": "WebR in Quarto presentation",
+    "section": "Session",
+    "text": "Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr-shinylive/index.html",
+    "href": "documents/webr-shinylive/index.html",
+    "title": "Shinylive with WebR",
+    "section": "",
+    "text": "WebR and shinylive can work together on the same page, but they have separate environments."
+  },
+  {
+    "objectID": "documents/webr-shinylive/index.html#shinylive",
+    "href": "documents/webr-shinylive/index.html#shinylive",
+    "title": "Shinylive with WebR",
+    "section": "1 Shinylive",
+    "text": "1 Shinylive\nThis is a shinylive app chunk\n#| standalone: true\n#| components: [editor, viewer]\n#| layout: vertical\n#| viewerHeight: 680\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"result\"),\n    verbatimTextOutput(\"session\")\n  ),\n  server=function(input, output, session) {\n    output$result &lt;- renderText(paste0(\"Squared: \",input$value^2))\n    output$session &lt;- renderPrint(capture.output(sessionInfo()))\n  }\n)"
+  },
+  {
+    "objectID": "documents/webr-shinylive/index.html#webr",
+    "href": "documents/webr-shinylive/index.html#webr",
+    "title": "Shinylive with WebR",
+    "section": "2 WebR",
+    "text": "2 WebR\nThis is a webr chunk\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html",
+    "href": "documents/quartolive-ojs/index.html",
+    "title": "QuartoLive with OJS",
+    "section": "",
+    "text": "Variables can be interchanged between R and OJS."
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html#r-to-ojs",
+    "href": "documents/quartolive-ojs/index.html#r-to-ojs",
+    "title": "QuartoLive with OJS",
+    "section": "1 R to OJS",
+    "text": "1 R to OJS\nIn this example, a data set in R is sent over to OJS to be plotted.\n```{webr}\n#| define:\n#|   - irism\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\n```\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x = Inputs.select(Object.keys(irism[0]), {value: \"petal_width\", multiple: false, label: \"X axis\"})\nviewof y = Inputs.select(Object.keys(irism[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(irism, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html#ojs-to-r",
+    "href": "documents/quartolive-ojs/index.html#ojs-to-r",
+    "title": "QuartoLive with OJS",
+    "section": "2 OJS to R",
+    "text": "2 OJS to R\nIn this example, a dataset in R is filtered in R based on input from OJS.\n\n\nCode\nviewof sp = Inputs.radio([\"setosa\", \"versicolor\", \"virginica\"], {label: \"Select species:\", value: \"setosa\"})\n\n\n\n\n\n\n\n```{webr}\n#| input:\n#|   - sp\niris[iris$Species %in% sp,]\n```"
+  },
+  {
+    "objectID": "documents/shinylive/index.html",
+    "href": "documents/shinylive/index.html",
+    "title": "Shinylive",
+    "section": "",
+    "text": "The shinylive R package is required locally when building the document.\n\ninstall.packages(\"shinylive\")\n\nFor quarto, add quarto filter shinylive.\n\nquarto add quarto-ext/shinylive\n\nAdd to filters in yaml:\nfilters:\n  - shinylive\nR code block with shiny component must use language shinylive-r rather than r. Packages are installed using webr. Chunk option #| standalone: true must be defined.\nHere is the general structure of a shinylive chunk:\n```{shinylive-r}\n#| standalone: true\n\nwebr::install(\"ggplot2\")\nlibrary(ggplot2)\n\nui &lt;- fluidPage()\nserver &lt;- function(input, output, session) {}\nshinyApp(ui, server)\n```"
+  },
+  {
+    "objectID": "documents/shinylive/index.html#setup",
+    "href": "documents/shinylive/index.html#setup",
+    "title": "Shinylive",
+    "section": "",
+    "text": "The shinylive R package is required locally when building the document.\n\ninstall.packages(\"shinylive\")\n\nFor quarto, add quarto filter shinylive.\n\nquarto add quarto-ext/shinylive\n\nAdd to filters in yaml:\nfilters:\n  - shinylive\nR code block with shiny component must use language shinylive-r rather than r. Packages are installed using webr. Chunk option #| standalone: true must be defined.\nHere is the general structure of a shinylive chunk:\n```{shinylive-r}\n#| standalone: true\n\nwebr::install(\"ggplot2\")\nlibrary(ggplot2)\n\nui &lt;- fluidPage()\nserver &lt;- function(input, output, session) {}\nshinyApp(ui, server)\n```"
+  },
+  {
+    "objectID": "documents/shinylive/index.html#app-in-a-chunk",
+    "href": "documents/shinylive/index.html#app-in-a-chunk",
+    "title": "Shinylive",
+    "section": "2 App in a chunk",
+    "text": "2 App in a chunk\n\n\n\n\n\n\nNote\n\n\n\nThe app can take a while to load. For full code, use code-tools, ie; click ‘Code’ at the top.\n\n\n#| standalone: true\n#| viewerHeight: 450\n\nwebr::install(c(\"ggplot2\", \"bslib\", \"palmerpenguins\", \"htmltools\"))\n\nlibrary(htmltools)\nlibrary(bslib)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\ndata(\"penguins\")\n\npdata &lt;- na.omit(penguins)\npc &lt;- prcomp(pdata[,c(\"bill_length_mm\", \"bill_depth_mm\", \"flipper_length_mm\", \"body_mass_g\")], center = TRUE, scale. = TRUE)\ndfr &lt;- cbind(pdata,as.data.frame(pc$x))\n\nui &lt;- page_sidebar(\n  sidebar = sidebar(\n    selectInput(\"x\",\n      label = \"X axis\",\n      choices = c(\"PC1\",\"PC2\",\"PC3\",\"PC4\"),\n      selected = \"PC1\"\n    ),\n\n    selectInput(\"y\",\n      label = \"Y axis\",\n      choices = c(\"PC1\",\"PC2\",\"PC3\",\"PC4\"),\n      selected = \"PC2\"\n    ),\n    selectInput(\"v\",\n      label = \"Color\",\n      choices = c(\"species\", \"island\", \"sex\"),\n      selected = \"cut\"\n    )\n  ),\n  imageOutput(\"plot\", height = \"350px\")\n)\n\nserver &lt;- function(input, output, session) {\n  \n  output$plot &lt;- renderImage({\n    x &lt;- input$x\n    y &lt;- input$y\n    v &lt;- input$v\n    \n    p &lt;- ggplot(dfr, aes(x = !!sym(x), y = !!sym(y), col = !!sym(v))) +\n      geom_point() +\n      theme_bw() + \n      theme(legend.position = \"top\")\n\n    file &lt;- htmltools::capturePlot(\n      print(p), \n      tempfile(fileext = \".svg\"),\n      grDevices::svg,\n      width = 4, \n      height = 4\n    )\n    \n    list(src = file)\n  }, deleteFile = TRUE)\n}\n\napp &lt;- shinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "documents/shinylive/index.html#more-options",
+    "href": "documents/shinylive/index.html#more-options",
+    "title": "Shinylive",
+    "section": "3 More options",
+    "text": "3 More options\nAdding #| components: [editor, viewer] displays code editor and viewer side by side.\n#| standalone: true\n#| components: [editor, viewer]\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"out\")\n  ),\n  server=function(input, output, session) {\n    output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n  }\n)\nAdding #| layout: vertical displays editor and viewer vertically.\n#| standalone: true\n#| components: [editor, viewer]\n#| layout: vertical\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"out\")\n  ),\n  server=function(input, output, session) {\n    output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n  }\n)"
+  },
+  {
+    "objectID": "documents/shinylive/index.html#multi-file-app",
+    "href": "documents/shinylive/index.html#multi-file-app",
+    "title": "Shinylive",
+    "section": "4 Multi-file app",
+    "text": "4 Multi-file app\nThe app code can be split into separate files by specifying ## file: filename.r.\n```{shinylive-r}\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: ui.r\nui &lt;- fluidPage(\n  sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n  textOutput(\"out\")\n)\n\n## file: server.r\nserver &lt;- function(input, output, session) {\n  output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n}\n```\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: ui.r\nui &lt;- fluidPage(\n  sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n  textOutput(\"out\")\n)\n\n## file: server.r\nserver &lt;- function(input, output, session) {\n  output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n}\n\nshinyApp(ui=ui,server=server)"
+  },
+  {
+    "objectID": "documents/shinylive/index.html#acknowledgements",
+    "href": "documents/shinylive/index.html#acknowledgements",
+    "title": "Shinylive",
+    "section": "5 Acknowledgements",
+    "text": "5 Acknowledgements\n\nhttps://quarto.thecoatlessprofessor.com/r-shinylive-demo/\nhttps://topepo.github.io/shinylive-in-book-test/shiny.html\nhttps://shinylive.io/r/examples/"
   },
   {
     "objectID": "documents/ojs-widgets/index.html",
@@ -82,6 +222,104 @@
     "title": "ObservableJS in Quarto",
     "section": "4 Downloads",
     "text": "4 Downloads\n\n4.1 Text download\n\n\nCode\nbutton = (data, filename = 'data.csv') =&gt; {\n  if (!data) throw new Error('Array of data required as first argument');\n\n  let downloadData;\n  if (filename.includes('.csv')) {\n    downloadData = new Blob([d3.csvFormat(data)], { type: \"text/csv\" });\n  } else {\n    downloadData = new Blob([JSON.stringify(data, null, 2)], {\n      type: \"application/json\"\n    });\n  }\n\n  const size = (downloadData.size / 1024).toFixed(0);\n  const button = DOM.download(\n    downloadData,\n    filename,\n    `Download ${filename} (~${size} KB)`\n  );\n  return button;\n}\n\n\n\n\n\n\n\n\n\nCode\nbutton(data_hdi, 'hdi.csv')\n\n\n\n\n\n\n\n\n\n4.2 Image download\n\n\nCode\nFileSaver = (await import(\"https://cdn.skypack.dev/file-saver@2.0.5?min\"))\n  .default\n\nhtml2canvas = (await import(\"https://esm.sh/html2canvas@1.4.1\")).default\n\nasync function canvas2blob(canvas) {\n  let resolve, reject;\n  const promise = new Promise((y, n) =&gt; ((resolve = y), (reject = n)));\n  canvas.toBlob((blob) =&gt; {\n    if (blob == null) {\n      return reject();\n    }\n    resolve(blob);\n  });\n  return promise;\n}\n\nfunction generateDownloader(el, options) {\n  return async function () {\n    let resolve, reject;\n    const { filename = \"untitled\", ...html2canvasOptions } = options;\n    const canvas = await html2canvas(el, html2canvasOptions);\n    const blob = await canvas2blob(canvas);\n    FileSaver(blob, filename);\n  };\n}\n\nfunction downloadHtmlAsImage(el, options) {\n  const { label, ...restOptions } = Object.assign(\n    { label: \"Download as PNG\", scale: window.devicePixelRatio },\n    options\n  );\n  const ui = Inputs.button(label, {\n    value: null,\n    reduce: generateDownloader(el, restOptions)\n  });\n  return ui;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload an image as PNG.\n\n\nCode\ndownloadHtmlAsImage(barplot)\n\n\n\n\n\n\n\nAdjust the scale parameter.\n\n\nCode\ndownloadHtmlAsImage(barplot, {\n    label: \"Download 4X PNG\",\n    filename: \"scaled_4x\",\n    scale: 4\n})\n\n\n\n\n\n\n\nDownload image as SVG.\n\n\nCode\nimport {serialize} from \"@mbostock/saving-svg\"\nimport {rasterize} from \"@mbostock/saving-svg\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nDOM.download(() =&gt; serialize(barplot), undefined, \"Save as SVG\")\n\n\n\n\n\n\n\n\n\n4.3 Zip download\n\n\nCode\nJSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')\nzip = {\n  const zip = new JSZip()\n  const folder = zip.folder('website')\n  folder.file('data_hdi.txt', data_hdi)\n  return zip.generateAsync({type: 'blob'})\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nDOM.download(zip, 'website.zip')"
+  },
+  {
+    "objectID": "documents/ojs/index.html",
+    "href": "documents/ojs/index.html",
+    "title": "ObservableJS in Quarto",
+    "section": "",
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+  },
+  {
+    "objectID": "documents/ojs/index.html#passing-data",
+    "href": "documents/ojs/index.html#passing-data",
+    "title": "ObservableJS in Quarto",
+    "section": "",
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+  },
+  {
+    "objectID": "documents/ojs/index.html#table",
+    "href": "documents/ojs/index.html#table",
+    "title": "ObservableJS in Quarto",
+    "section": "Table",
+    "text": "Table\nDisplay as table.\n\n\nCode\nviewof raw_table = Inputs.table(ojsdata)\n\n\n\n\n\n\n\nComputing a new variable using an arrow function. ... keeps all old variables and the new variable ratio is added.\n\n\nCode\nojsdatamod = ojsdata.map(d =&gt; ({...d, ratio: d.sepal_width / d.petal_width}))\n\n\n\n\n\n\n\n\n\nCode\nviewof mod_table = Inputs.table(ojsdatamod)"
+  },
+  {
+    "objectID": "documents/ojs/index.html#checkbox-filtering",
+    "href": "documents/ojs/index.html#checkbox-filtering",
+    "title": "ObservableJS in Quarto",
+    "section": "Checkbox filtering",
+    "text": "Checkbox filtering\nDefine checkbox input.\n\n\nCode\nviewof grp = Inputs.select([\"setosa\", \"versicolor\", \"virginica\"], {value: [\"setosa\"], multiple: false, label: \"Species\"})\n\n\n\n\n\n\n\nFilter data based on checkbox inputs.\n\n\nCode\nojsdata_filtered = ojsdata.filter(d =&gt; d.species.includes(grp))\n\n\n\n\n\n\n\nDisplay filtered data as table.\n\n\nCode\nviewof filtered_table = Inputs.table(ojsdata_filtered)"
+  },
+  {
+    "objectID": "documents/ojs/index.html#scatterplot",
+    "href": "documents/ojs/index.html#scatterplot",
+    "title": "ObservableJS in Quarto",
+    "section": "Scatterplot",
+    "text": "Scatterplot\nDisplay a scatterplot. X and Y axes are defined by select inputs.\n\n\nCode\nviewof x = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_length\", multiple: false, label: \"X axis\"})\n\n\n\n\n\n\n\n\n\nCode\nviewof y = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(ojsdata, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
+  },
+  {
+    "objectID": "documents/ojs/index.html#search",
+    "href": "documents/ojs/index.html#search",
+    "title": "ObservableJS in Quarto",
+    "section": "Search",
+    "text": "Search\nSearch through a table.\n\n\nCode\nviewof ojsdata_filtered_search = Inputs.search(ojsdata,\n{ \n  placeholder: \"Search for species\",\n  datalist: ojsdata.map(d =&gt; d.species),\n  label: \"Search for species: \"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof filtered_search_table = Inputs.table(ojsdata_filtered_search)"
+  },
+  {
+    "objectID": "documents/ojs/index.html#arquero",
+    "href": "documents/ojs/index.html#arquero",
+    "title": "ObservableJS in Quarto",
+    "section": "Arquero",
+    "text": "Arquero\nData wrangling using Arquero.\nImport dependencies and convert data to Arquero format.\n\n\nCode\nimport { aq, op } from '@uwdata/arquero'\nojsdata_aq = aq.from(ojsdata)\n\nojsdata_aq\n  .groupby('species')\n  .filter(p =&gt; p.sepal_length &gt; 5)\n  .rollup({\n    count: op.count(),\n    avg_mass: op.average('sepal_length')\n   })\n  .view()"
+  },
+  {
+    "objectID": "documents/webr/index.html",
+    "href": "documents/webr/index.html",
+    "title": "webR-enabled code cells",
+    "section": "",
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr/index.html#installation",
+    "href": "documents/webr/index.html#installation",
+    "title": "webR-enabled code cells",
+    "section": "",
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr/index.html#sample-cases",
+    "href": "documents/webr/index.html#sample-cases",
+    "title": "webR-enabled code cells",
+    "section": "2 Sample cases",
+    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.2 Create a graph with base R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n2.4 Define variables and re-use them in later cells\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.5 Escape characters in a string\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.6 Anonymous function definition\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.7 Empty code cell\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
+  },
+  {
+    "objectID": "documents/webr/index.html#session",
+    "href": "documents/webr/index.html#session",
+    "title": "webR-enabled code cells",
+    "section": "3 Session",
+    "text": "3 Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nwebr extension version: 0.3.6"
+  },
+  {
+    "objectID": "documents/revealjs/index.html#setosa",
+    "href": "documents/revealjs/index.html#setosa",
+    "title": "setosa presentation",
+    "section": "setosa",
+    "text": "setosa\nThe setosa species is subsetted from the data.\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n\nThe iris dataset is included in base R."
+  },
+  {
+    "objectID": "documents/revealjs/index.html#layout",
+    "href": "documents/revealjs/index.html#layout",
+    "title": "setosa presentation",
+    "section": "Layout",
+    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
+  },
+  {
+    "objectID": "documents/revealjs/index.html#code-highlighting",
+    "href": "documents/revealjs/index.html#code-highlighting",
+    "title": "setosa presentation",
+    "section": "Code highlighting",
+    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\n\nFigure 3: Scatterplot of setosa species.\n\nThe figure is updated to show petal widths."
   },
   {
     "objectID": "documents/ojs-plots/index.html",
@@ -196,55 +434,6 @@
     "text": "3 Image\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
   },
   {
-    "objectID": "documents/ojs/index.html",
-    "href": "documents/ojs/index.html",
-    "title": "ObservableJS in Quarto",
-    "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
-  },
-  {
-    "objectID": "documents/ojs/index.html#passing-data",
-    "href": "documents/ojs/index.html#passing-data",
-    "title": "ObservableJS in Quarto",
-    "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
-  },
-  {
-    "objectID": "documents/ojs/index.html#table",
-    "href": "documents/ojs/index.html#table",
-    "title": "ObservableJS in Quarto",
-    "section": "Table",
-    "text": "Table\nDisplay as table.\n\n\nCode\nviewof raw_table = Inputs.table(ojsdata)\n\n\n\n\n\n\n\nComputing a new variable using an arrow function. ... keeps all old variables and the new variable ratio is added.\n\n\nCode\nojsdatamod = ojsdata.map(d =&gt; ({...d, ratio: d.sepal_width / d.petal_width}))\n\n\n\n\n\n\n\n\n\nCode\nviewof mod_table = Inputs.table(ojsdatamod)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#checkbox-filtering",
-    "href": "documents/ojs/index.html#checkbox-filtering",
-    "title": "ObservableJS in Quarto",
-    "section": "Checkbox filtering",
-    "text": "Checkbox filtering\nDefine checkbox input.\n\n\nCode\nviewof grp = Inputs.select([\"setosa\", \"versicolor\", \"virginica\"], {value: [\"setosa\"], multiple: false, label: \"Species\"})\n\n\n\n\n\n\n\nFilter data based on checkbox inputs.\n\n\nCode\nojsdata_filtered = ojsdata.filter(d =&gt; d.species.includes(grp))\n\n\n\n\n\n\n\nDisplay filtered data as table.\n\n\nCode\nviewof filtered_table = Inputs.table(ojsdata_filtered)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#scatterplot",
-    "href": "documents/ojs/index.html#scatterplot",
-    "title": "ObservableJS in Quarto",
-    "section": "Scatterplot",
-    "text": "Scatterplot\nDisplay a scatterplot. X and Y axes are defined by select inputs.\n\n\nCode\nviewof x = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_length\", multiple: false, label: \"X axis\"})\n\n\n\n\n\n\n\n\n\nCode\nviewof y = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(ojsdata, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
-  },
-  {
-    "objectID": "documents/ojs/index.html#search",
-    "href": "documents/ojs/index.html#search",
-    "title": "ObservableJS in Quarto",
-    "section": "Search",
-    "text": "Search\nSearch through a table.\n\n\nCode\nviewof ojsdata_filtered_search = Inputs.search(ojsdata,\n{ \n  placeholder: \"Search for species\",\n  datalist: ojsdata.map(d =&gt; d.species),\n  label: \"Search for species: \"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof filtered_search_table = Inputs.table(ojsdata_filtered_search)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#arquero",
-    "href": "documents/ojs/index.html#arquero",
-    "title": "ObservableJS in Quarto",
-    "section": "Arquero",
-    "text": "Arquero\nData wrangling using Arquero.\nImport dependencies and convert data to Arquero format.\n\n\nCode\nimport { aq, op } from '@uwdata/arquero'\nojsdata_aq = aq.from(ojsdata)\n\nojsdata_aq\n  .groupby('species')\n  .filter(p =&gt; p.sepal_length &gt; 5)\n  .rollup({\n    count: op.count(),\n    avg_mass: op.average('sepal_length')\n   })\n  .view()"
-  },
-  {
     "objectID": "documents/ojs-linked/index.html",
     "href": "documents/ojs-linked/index.html",
     "title": "ObservableJS in Quarto",
@@ -271,97 +460,6 @@
     "title": "ObservableJS in Quarto",
     "section": "Scatterplot",
     "text": "Scatterplot\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\n\nTooltips are documented here."
-  },
-  {
-    "objectID": "documents/shinylive/index.html",
-    "href": "documents/shinylive/index.html",
-    "title": "Shinylive",
-    "section": "",
-    "text": "The shinylive R package is required locally when building the document.\n\ninstall.packages(\"shinylive\")\n\nFor quarto, add quarto filter shinylive.\n\nquarto add quarto-ext/shinylive\n\nAdd to filters in yaml:\nfilters:\n  - shinylive\nR code block with shiny component must use language shinylive-r rather than r. Packages are installed using webr. Chunk option #| standalone: true must be defined.\nHere is the general structure of a shinylive chunk:\n```{shinylive-r}\n#| standalone: true\n\nwebr::install(\"ggplot2\")\nlibrary(ggplot2)\n\nui &lt;- fluidPage()\nserver &lt;- function(input, output, session) {}\nshinyApp(ui, server)\n```"
-  },
-  {
-    "objectID": "documents/shinylive/index.html#setup",
-    "href": "documents/shinylive/index.html#setup",
-    "title": "Shinylive",
-    "section": "",
-    "text": "The shinylive R package is required locally when building the document.\n\ninstall.packages(\"shinylive\")\n\nFor quarto, add quarto filter shinylive.\n\nquarto add quarto-ext/shinylive\n\nAdd to filters in yaml:\nfilters:\n  - shinylive\nR code block with shiny component must use language shinylive-r rather than r. Packages are installed using webr. Chunk option #| standalone: true must be defined.\nHere is the general structure of a shinylive chunk:\n```{shinylive-r}\n#| standalone: true\n\nwebr::install(\"ggplot2\")\nlibrary(ggplot2)\n\nui &lt;- fluidPage()\nserver &lt;- function(input, output, session) {}\nshinyApp(ui, server)\n```"
-  },
-  {
-    "objectID": "documents/shinylive/index.html#app-in-a-chunk",
-    "href": "documents/shinylive/index.html#app-in-a-chunk",
-    "title": "Shinylive",
-    "section": "2 App in a chunk",
-    "text": "2 App in a chunk\n\n\n\n\n\n\nNote\n\n\n\nThe app can take a while to load. For full code, use code-tools, ie; click ‘Code’ at the top.\n\n\n#| standalone: true\n#| viewerHeight: 450\n\nwebr::install(c(\"ggplot2\", \"bslib\", \"palmerpenguins\", \"htmltools\"))\n\nlibrary(htmltools)\nlibrary(bslib)\nlibrary(ggplot2)\nlibrary(palmerpenguins)\ndata(\"penguins\")\n\npdata &lt;- na.omit(penguins)\npc &lt;- prcomp(pdata[,c(\"bill_length_mm\", \"bill_depth_mm\", \"flipper_length_mm\", \"body_mass_g\")], center = TRUE, scale. = TRUE)\ndfr &lt;- cbind(pdata,as.data.frame(pc$x))\n\nui &lt;- page_sidebar(\n  sidebar = sidebar(\n    selectInput(\"x\",\n      label = \"X axis\",\n      choices = c(\"PC1\",\"PC2\",\"PC3\",\"PC4\"),\n      selected = \"PC1\"\n    ),\n\n    selectInput(\"y\",\n      label = \"Y axis\",\n      choices = c(\"PC1\",\"PC2\",\"PC3\",\"PC4\"),\n      selected = \"PC2\"\n    ),\n    selectInput(\"v\",\n      label = \"Color\",\n      choices = c(\"species\", \"island\", \"sex\"),\n      selected = \"cut\"\n    )\n  ),\n  imageOutput(\"plot\", height = \"350px\")\n)\n\nserver &lt;- function(input, output, session) {\n  \n  output$plot &lt;- renderImage({\n    x &lt;- input$x\n    y &lt;- input$y\n    v &lt;- input$v\n    \n    p &lt;- ggplot(dfr, aes(x = !!sym(x), y = !!sym(y), col = !!sym(v))) +\n      geom_point() +\n      theme_bw() + \n      theme(legend.position = \"top\")\n\n    file &lt;- htmltools::capturePlot(\n      print(p), \n      tempfile(fileext = \".svg\"),\n      grDevices::svg,\n      width = 4, \n      height = 4\n    )\n    \n    list(src = file)\n  }, deleteFile = TRUE)\n}\n\napp &lt;- shinyApp(ui = ui, server = server)"
-  },
-  {
-    "objectID": "documents/shinylive/index.html#more-options",
-    "href": "documents/shinylive/index.html#more-options",
-    "title": "Shinylive",
-    "section": "3 More options",
-    "text": "3 More options\nAdding #| components: [editor, viewer] displays code editor and viewer side by side.\n#| standalone: true\n#| components: [editor, viewer]\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"out\")\n  ),\n  server=function(input, output, session) {\n    output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n  }\n)\nAdding #| layout: vertical displays editor and viewer vertically.\n#| standalone: true\n#| components: [editor, viewer]\n#| layout: vertical\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"out\")\n  ),\n  server=function(input, output, session) {\n    output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n  }\n)"
-  },
-  {
-    "objectID": "documents/shinylive/index.html#multi-file-app",
-    "href": "documents/shinylive/index.html#multi-file-app",
-    "title": "Shinylive",
-    "section": "4 Multi-file app",
-    "text": "4 Multi-file app\nThe app code can be split into separate files by specifying ## file: filename.r.\n```{shinylive-r}\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: ui.r\nui &lt;- fluidPage(\n  sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n  textOutput(\"out\")\n)\n\n## file: server.r\nserver &lt;- function(input, output, session) {\n  output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n}\n```\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: ui.r\nui &lt;- fluidPage(\n  sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n  textOutput(\"out\")\n)\n\n## file: server.r\nserver &lt;- function(input, output, session) {\n  output$out &lt;- renderText(paste0(\"Squared: \",input$value^2))\n}\n\nshinyApp(ui=ui,server=server)"
-  },
-  {
-    "objectID": "documents/shinylive/index.html#acknowledgements",
-    "href": "documents/shinylive/index.html#acknowledgements",
-    "title": "Shinylive",
-    "section": "5 Acknowledgements",
-    "text": "5 Acknowledgements\n\nhttps://quarto.thecoatlessprofessor.com/r-shinylive-demo/\nhttps://topepo.github.io/shinylive-in-book-test/shiny.html\nhttps://shinylive.io/r/examples/"
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html",
-    "href": "documents/quartolive-ojs/index.html",
-    "title": "QuartoLive with OJS",
-    "section": "",
-    "text": "Variables can be interchanged between R and OJS."
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html#r-to-ojs",
-    "href": "documents/quartolive-ojs/index.html#r-to-ojs",
-    "title": "QuartoLive with OJS",
-    "section": "1 R to OJS",
-    "text": "1 R to OJS\nIn this example, a data set in R is sent over to OJS to be plotted.\n```{webr}\n#| define:\n#|   - irism\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\n```\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x = Inputs.select(Object.keys(irism[0]), {value: \"petal_width\", multiple: false, label: \"X axis\"})\nviewof y = Inputs.select(Object.keys(irism[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(irism, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html#ojs-to-r",
-    "href": "documents/quartolive-ojs/index.html#ojs-to-r",
-    "title": "QuartoLive with OJS",
-    "section": "2 OJS to R",
-    "text": "2 OJS to R\nIn this example, a dataset in R is filtered in R based on input from OJS.\n\n\nCode\nviewof sp = Inputs.radio([\"setosa\", \"versicolor\", \"virginica\"], {label: \"Select species:\", value: \"setosa\"})\n\n\n\n\n\n\n\n```{webr}\n#| input:\n#|   - sp\niris[iris$Species %in% sp,]\n```"
-  },
-  {
-    "objectID": "documents/webr/index.html",
-    "href": "documents/webr/index.html",
-    "title": "webR-enabled code cells",
-    "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr/index.html#installation",
-    "href": "documents/webr/index.html#installation",
-    "title": "webR-enabled code cells",
-    "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr/index.html#sample-cases",
-    "href": "documents/webr/index.html#sample-cases",
-    "title": "webR-enabled code cells",
-    "section": "2 Sample cases",
-    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.2 Create a graph with base R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n2.4 Define variables and re-use them in later cells\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.5 Escape characters in a string\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.6 Anonymous function definition\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.7 Empty code cell\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
-  },
-  {
-    "objectID": "documents/webr/index.html#session",
-    "href": "documents/webr/index.html#session",
-    "title": "webR-enabled code cells",
-    "section": "3 Session",
-    "text": "3 Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nwebr extension version: 0.3.6"
   },
   {
     "objectID": "documents/icons/index.html",
@@ -413,20 +511,6 @@
     "text": "6 Lordicon\n\n6.1 Installation\nquarto add jmgirard/lordicon\n\n\n6.2 Usage\nSyntax\n{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}\nTo find icon codes, go to Lordicon website, hit the Explore Library button and select the Free Icons filter on the left-hand side. You can choose a style for the icon (possiblities are flat, gradient, lineal, and outline).\nClick on any icon, hit the &lt;/&gt; HTML button on the bottom of that info listing and a popover will appear with the eight-letter code. You need to transpose that to lowercase as using uppercase letters won’t work :( .\n{{&lt; li xxdqfhbi &gt;}}\n\n\n\n6.3 Options\nEach style of icon (flat, gradient, etc.) will have an entirely different eight-letter code.\nThe trigger argument controls the icon’s animation type. When using the loop or loop-on-hover triggers, you can also set an optional delay (in ms) between loops.\n{{&lt; li xxdqfhbi &gt;}} \n{{&lt; li xxdqfhbi trigger=click &gt;}} \n{{&lt; li xxdqfhbi trigger=hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop &gt;}} \n{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=morph &gt;}} \n{{&lt; li xxdqfhbi trigger=boomerang &gt;}} \nThe speed argument controls how quickly the icon’s animation plays.\n{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}} \nThe colors argument controls the icon’s coloring. Outline icons typically have just a primary and secondary color, but \"flat\" and \"lineal\" icons can have many more. Each color should be given in rank:color format (where ranks are \"primary\", \"secondary\", \"tertiary\", etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.\n{{&lt; li lupuorrc &gt;}} \n{{&lt; li lupuorrc colors=primary:gold &gt;}} \n{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}} \n{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}} \nThe stroke argument controls how thick the lines in an icon are.\n{{&lt; li lupuorrc stroke=50 &gt;}} \n{{&lt; li lupuorrc stroke=100 &gt;}} \n{{&lt; li lupuorrc stroke=150 &gt;}} \nThe scale icon controls how large or zoomed in the icon is.\n{{&lt; li lupuorrc scale=25 &gt;}} \n{{&lt; li lupuorrc scale=50 &gt;}} \n{{&lt; li lupuorrc scale=100 &gt;}} \nThe x arg controls the horizontal position of the center of the icon.\n{{&lt; li lupuorrc x=25 &gt;}} \n{{&lt; li lupuorrc x=50 &gt;}} \n{{&lt; li lupuorrc x=100 &gt;}} \nThe y arg controls the vertical position of the center of the icon.\n{{&lt; li lupuorrc y=25 &gt;}} \n{{&lt; li lupuorrc y=50 &gt;}} \n{{&lt; li lupuorrc y=100 &gt;}} \nThe complete version of this document is available at https://github.com/rich-iannone/quarto-icons-examples."
   },
   {
-    "objectID": "documents/param-text/index.html",
-    "href": "documents/param-text/index.html",
-    "title": "Parameterized report",
-    "section": "",
-    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
-  },
-  {
-    "objectID": "documents/param-text/index.html#section",
-    "href": "documents/param-text/index.html#section",
-    "title": "Parameterized report",
-    "section": "Topic A",
-    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
-  },
-  {
     "objectID": "documents/quartolive/index.html",
     "href": "documents/quartolive/index.html",
     "title": "QuartoLive",
@@ -460,89 +544,5 @@
     "title": "QuartoLive",
     "section": "4 Resources",
     "text": "4 Resources\nResources can be defined which are made available to webr.\n---\nformat: live-html\nresources:\n  - data\n  - https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv\n---\n\n```{webr}\nlist.files(\"data\")\nmt &lt;- read.csv(\"data/mtcars.csv\")\nmod &lt;- glm(mpg ~ cyl, data = mt)\nsummary(mod)\n```\n\n```{webr}\nflights &lt;- read.csv(\"flights.csv\")\nwith(flights, plot(year, passengers))\n```"
-  },
-  {
-    "objectID": "documents/revealjs/index.html#setosa",
-    "href": "documents/revealjs/index.html#setosa",
-    "title": "setosa presentation",
-    "section": "setosa",
-    "text": "setosa\nThe setosa species is subsetted from the data.\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n\nThe iris dataset is included in base R."
-  },
-  {
-    "objectID": "documents/revealjs/index.html#layout",
-    "href": "documents/revealjs/index.html#layout",
-    "title": "setosa presentation",
-    "section": "Layout",
-    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
-  },
-  {
-    "objectID": "documents/revealjs/index.html#code-highlighting",
-    "href": "documents/revealjs/index.html#code-highlighting",
-    "title": "setosa presentation",
-    "section": "Code highlighting",
-    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\n\nFigure 3: Scatterplot of setosa species.\n\nThe figure is updated to show petal widths."
-  },
-  {
-    "objectID": "documents/webr-shinylive/index.html",
-    "href": "documents/webr-shinylive/index.html",
-    "title": "Shinylive with WebR",
-    "section": "",
-    "text": "WebR and shinylive can work together on the same page, but they have separate environments."
-  },
-  {
-    "objectID": "documents/webr-shinylive/index.html#shinylive",
-    "href": "documents/webr-shinylive/index.html#shinylive",
-    "title": "Shinylive with WebR",
-    "section": "1 Shinylive",
-    "text": "1 Shinylive\nThis is a shinylive app chunk\n#| standalone: true\n#| components: [editor, viewer]\n#| layout: vertical\n#| viewerHeight: 680\n\nshinyApp(\n  ui=fluidPage(\n    sliderInput(\"value\", label=\"Value\", min=1, max=50, step=1, value=2),\n    textOutput(\"result\"),\n    verbatimTextOutput(\"session\")\n  ),\n  server=function(input, output, session) {\n    output$result &lt;- renderText(paste0(\"Squared: \",input$value^2))\n    output$session &lt;- renderPrint(capture.output(sessionInfo()))\n  }\n)"
-  },
-  {
-    "objectID": "documents/webr-shinylive/index.html#webr",
-    "href": "documents/webr-shinylive/index.html#webr",
-    "title": "Shinylive with WebR",
-    "section": "2 WebR",
-    "text": "2 WebR\nThis is a webr chunk\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#load-packages",
-    "href": "documents/webr-revealjs/index.html#load-packages",
-    "title": "WebR in Quarto presentation",
-    "section": "Load packages",
-    "text": "Load packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#table",
-    "href": "documents/webr-revealjs/index.html#table",
-    "title": "WebR in Quarto presentation",
-    "section": "Table",
-    "text": "Table\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nThe iris dataset is included in base R."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#plot",
-    "href": "documents/webr-revealjs/index.html#plot",
-    "title": "WebR in Quarto presentation",
-    "section": "Plot",
-    "text": "Plot\nThis is ggplot2.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#image",
-    "href": "documents/webr-revealjs/index.html#image",
-    "title": "WebR in Quarto presentation",
-    "section": "Image",
-    "text": "Image\nThis is an image.\n\n\nFigure 1: This is iris species."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#code-highlighting",
-    "href": "documents/webr-revealjs/index.html#code-highlighting",
-    "title": "WebR in Quarto presentation",
-    "section": "Code highlighting",
-    "text": "Code highlighting\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe figure is updated to show petal widths."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#session",
-    "href": "documents/webr-revealjs/index.html#session",
-    "title": "WebR in Quarto presentation",
-    "section": "Session",
-    "text": "Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
   }
 ]

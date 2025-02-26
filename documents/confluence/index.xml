@@ -1,0 +1,1717 @@
+<h2 id="text-formatting">Text formatting<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">text-formatting</ac:parameter></ac:structured-macro></h2>
+<h3 id="headings">Headings<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">headings</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[## Level 2 heading
+### Level 3 heading
+#### Level 4 heading
+##### Level 5 heading
+###### Level 6 heading]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<h3 id="character-styles">Character styles<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">character-styles</ac:parameter></ac:structured-macro></h3>
+<table style="">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Markdown</th>
+<th>Rendered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__Bold text__</code></td>
+<td><strong>Bold text</strong></td>
+</tr>
+<tr>
+<td><code>_Italic text_</code></td>
+<td><em>Italic text</em></td>
+</tr>
+<tr>
+<td><code>~~Strikethrough~~</code></td>
+<td><del>Strikethrough</del></td>
+</tr>
+<tr>
+<td><code>H~2~O</code></td>
+<td>H<sub>2</sub>O</td>
+</tr>
+<tr>
+<td><code>x^2</code></td>
+<td>x^2</td>
+</tr>
+<tr>
+<td><code>--</code></td>
+<td>–</td>
+</tr>
+<tr>
+<td><code>---</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>[link](r-project.org)</code></td>
+<td><ac:link><ri:attachment ri:filename="r-project.org"/><ac:plain-text-link-body><![CDATA[link]]></ac:plain-text-link-body></ac:link></td>
+</tr>
+<tr>
+<td><code>{{&lt; kbd Shift-Ctrl-P &gt;}}</code></td>
+<td><p><code>Shift-Ctrl-P</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="blockquote">Blockquote<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">blockquote</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[> This is a block quote. This
+> paragraph has two lines.
+>
+> 1. This is a list inside a block quote.
+> 2. Second item.]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<blockquote>
+<p>This is a block quote. This paragraph has two lines.</p>
+<ol type="1">
+<li>This is a list inside a block quote.</li>
+<li>Second item.</li>
+</ol>
+</blockquote>
+<h3 id="line-block">Line block<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">line-block</ac:parameter></ac:structured-macro></h3>
+<p>Line block preserves spaces and new lines.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[| This
+|     block
+|          preserves
+|                   formatting]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="line-block">This<br />
+    block<br />
+         preserves<br />
+                  formatting</div>
+<h3 id="rule">Rule<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">rule</ac:parameter></ac:structured-macro></h3>
+<p>A horizontal line can be created using three or more <code>*</code> or <code>-</code>.</p>
+<p><code>***</code></p>
+<hr />
+<h3 id="footnote">Footnote<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">footnote</ac:parameter></ac:structured-macro></h3>
+<p>An example of footnote reference <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="aside">Aside<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">aside</ac:parameter></ac:structured-macro></h3>
+<p><code>[This content lives in the right margin]{.aside}</code></p>
+<p><span class="column-margin margin-aside">This content lives in the right margin</span></p>
+<h2 id="code-formatting">Code formatting<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">code-formatting</ac:parameter></ac:structured-macro></h2>
+<p>Verbatim code is text formatted using monospaced font intended as code. Verbatim code can be defined inline where <code>`date()`</code> looks like <code>date()</code>.</p>
+<p>Code can also be defined inside code blocks.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```
+date()
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[date()]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Source code, ie; code that is highlighted or executed in a quarto document is not covered here.</p>
+<h2 id="code-execution">Code execution<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">code-execution</ac:parameter></ac:structured-macro></h2>
+<p>Code can be defined inline where <code>`r Sys.Date()`</code> renders 2025-02-25.</p>
+<p>Code can be defined inside code blocks.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+Sys.Date()
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>which shows the source code and output.</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[Sys.Date()]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output cell-output-stdout">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[[1] "2025-02-25"]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+</div>
+<p>Here is another example of executed R code with input and output.</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[data(iris)
+head(iris[, 1:2])]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output cell-output-stdout">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[  Sepal.Length Sepal.Width
+1          5.1         3.5
+2          4.9         3.0
+3          4.7         3.2
+4          4.6         3.1
+5          5.0         3.6
+6          5.4         3.9]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+</div>
+<h2 id="chunk-attributes">Chunk attributes<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">chunk-attributes</ac:parameter></ac:structured-macro></h2>
+<p>Properties and behaviour of code chunks can be controlled using chunk attributes. This is specified as comment sign of the language and pipe followed by key: value. So for example, in R: <code>#| eval: false</code>.</p>
+<p>In this example, the R source code and results are hidden but the code is evaluated.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| eval: true
+#| echo: false
+#| results: hide
+Sys.Date()
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>A code chunk can be given a code filename using the chunk attribute <code>filename</code>.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| filename: R code
+Sys.Date()
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[Sys.Date()]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<p>Enable line numbers using <code>code-line-numbers: true</code>.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| code-line-numbers: true
+Sys.Date()
+sessionInfo()
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[Sys.Date()
+sessionInfo()]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<p>An advanced example showing bash code generated from R.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| attr-output: "filename='bash'"
+#| class-output: bash
+#| echo: false
+d <- "custom"
+cat(paste("mkdir​", d))
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">bash</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[mkdir<U+200B> custom]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+</div>
+<p>Code chunk attributes are documented <a href='https://quarto.org/docs/output-formats/html-code.html' title=''>here</a>.</p>
+<h2 id="lists">Lists<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">lists</ac:parameter></ac:structured-macro></h2>
+<h3 id="unordered">Unordered<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">unordered</ac:parameter></ac:structured-macro></h3>
+<p>Unordered lists are created using dashes.</p>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[- Bullet 1
+- Bullet 2
+  - Sub-bullet 2.1
+  - Sub-bullet 2.2
+- Bullet 3]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<ul>
+<li>Bullet 1</li>
+<li>Bullet 2
+<ul>
+<li>Sub-bullet 2.1</li>
+<li>Sub-bullet 2.2</li>
+</ul></li>
+<li>Bullet 3</li>
+</ul>
+</div>
+</div>
+<h3 id="ordered">Ordered<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">ordered</ac:parameter></ac:structured-macro></h3>
+<p>Ordered lists are created using numbers.</p>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[1. Point 1
+2. Point 2
+3. Point 3]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<ol type="1">
+<li>Point 1</li>
+<li>Point 2</li>
+<li>Point 3</li>
+</ol>
+</div>
+</div>
+<h3 id="multiple-lists">Multiple Lists<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">multiple-lists</ac:parameter></ac:structured-macro></h3>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {}
+1. Point 1
+2. Point 2
+:::
+
+:::{}
+1. Point 1
+2. Point 2
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<div>
+<ol type="1">
+<li>Point 1</li>
+<li>Point 2</li>
+</ol>
+</div>
+<div>
+<ol type="1">
+<li>Point 1</li>
+<li>Point 2</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="images">Images<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">images</ac:parameter></ac:structured-macro></h2>
+<p>Images can be inserted using plain markdown or HTML directly. Plain markdown can be embellished with custom quarto adjustments to modify aspects of the image. Clicking the image opens the image in a lightbox. This is made possible using the <a href='https://github.com/quarto-ext/lightbox' title=''>lightbox</a> extension.</p>
+<h3 id="using-markdown">Using Markdown<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">using-markdown</ac:parameter></ac:structured-macro></h3>
+<p>Using regular markdown.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[![](quarto.webp)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p><ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" />
+    </ac:image></p>
+<p>The dimensions are based on image and/or fill up the entire available space. You can control the dimension as shown below.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[![This is a caption](quarto.webp){width=30%}]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<figure>
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:width="30%"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" /><ac:caption>This is a caption</ac:caption>
+    </ac:image>
+<figcaption>This is a caption</figcaption>
+</figure>
+<p>This image above is now 30% of it’s original width.</p>
+<h4 id="figure-layout">Figure layout<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">figure-layout</ac:parameter></ac:structured-macro></h4>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {#fig-mylabel layout-ncol=2}
+![Caption for figure 1](quarto.webp){width="40%"}
+
+![Caption for figure 2](quarto.webp){width="40%"}
+
+These figures are interesting.
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div id="fig-mylabel" data-layout-ncol="2">
+<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">fig-mylabel</ac:parameter></ac:structured-macro>
+<table style="">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
+<figure>
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:width="40%"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" /><ac:caption>Caption for figure 1</ac:caption>
+    </ac:image>
+<figcaption>Caption for figure 1</figcaption>
+</figure>
+</div></td>
+<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
+<figure>
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:width="40%"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" /><ac:caption>Caption for figure 2</ac:caption>
+    </ac:image>
+<figcaption>Caption for figure 2</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>Figure 1: These figures are interesting.</p>
+</div>
+<p>More figure options and layouts are described <a href='https://quarto.org/docs/authoring/figures.html' title=''>here</a>. Cross referencing described <a href='https://quarto.org/docs/authoring/cross-references.html' title=''>here</a>.</p>
+<h3 id="static-images-using-r">Static images using R<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">static-images-using-r</ac:parameter></ac:structured-macro></h3>
+<p>Quarto chunks can be used to control image display size using the argument <code>out.width</code>.</p>
+<p>This image below is displayed at a size of 300 pixels.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| out-width: 300px
+knitr::include_graphics("quarto.webp")
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<div class="cell-output-display">
+<p><ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:width="300px"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" />
+    </ac:image></p>
+</div>
+</div>
+<p>This image below is displayed at a size of 75 pixels and a caption added.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| out-width: 75px
+#| fig-cap: This is a caption
+knitr::include_graphics("quarto.webp")
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<div class="cell-output-display">
+<figure>
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:width="75px"
+    ac:alt="">
+        <ri:attachment ri:filename="quarto.webp" /><ac:caption>This is a caption</ac:caption>
+    </ac:image>
+<figcaption>This is a caption</figcaption>
+</figure>
+</div>
+</div>
+<p>For more information on figures, see <a href='https://quarto.org/docs/authoring/figures.html' title=''>here</a>. For plots generated through R, see section further below.</p>
+<h2 id="math-expressions">Math expressions<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">math-expressions</ac:parameter></ac:structured-macro></h2>
+<p>Some examples of rendering equations.</p>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$e^{i\pi} + 1 = 0$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math inline"><em>e</em><sup><em>i</em><em>π</em></sup> + 1 = 0</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$$\frac{E \times X^2 \prod I}{2+7} = 432$$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math display">$$\frac{E \times X^2 \prod I}{2+7} = 432$$</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$$\sum_{i=1}^n X_i$$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math display">$$\sum_{i=1}^n X_i$$</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$$\int_0^{2\pi} \sin x~dx$$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math display">∫<sub>0</sub><sup>2<em>π</em></sup>sin <em>x</em> <em>d</em><em>x</em></span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$\left( \sum_{i=1}^{n}{i} \right)^2 = \left( \frac{n(n-1)}{2}\right)^2 = \frac{n^2(n-1)^2}{4}$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math inline">$\left( \sum_{i=1}^{n}{i} \right)^2 = \left( \frac{n(n-1)}{2}\right)^2 = \frac{n^2(n-1)^2}{4}$</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$\begin{eqnarray} X & \sim & \mathrm{N}(0,1)\\ Y & \sim & \chi^2_{n-p}\\ R & \equiv & X/Y \sim t_{n-p} \end{eqnarray}$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math inline">$\begin{eqnarray} X &amp; \sim &amp; \mathrm{N}(0,1)\\ Y &amp; \sim &amp; \chi^2_{n-p}\\ R &amp; \equiv &amp; X/Y \sim t_{n-p} \end{eqnarray}$</span></p>
+</div>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[$\begin{eqnarray} P(|X-\mu| > k) & = & P(|X-\mu|^2 > k^2)\\ & \leq & \frac{\mathbb{E}\left[|X-\mu|^2\right]}{k^2}\\ & \leq & \frac{\mathrm{Var}[X]}{k^2} \end{eqnarray}$]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-6">
+<p><span class="math inline">$\begin{eqnarray} P(|X-\mu| &gt; k) &amp; = &amp; P(|X-\mu|^2 &gt; k^2)\\ &amp; \leq &amp; \frac{\mathbb{E}\left[|X-\mu|^2\right]}{k^2}\\ &amp; \leq &amp; \frac{\mathrm{Var}[X]}{k^2} \end{eqnarray}$</span></p>
+</div>
+</div>
+<h2 id="call-outs">Call-Outs<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">call-outs</ac:parameter></ac:structured-macro></h2>
+<p>Call-Out blocks are explained <a href='https://quarto.org/docs/authoring/callouts.html' title=''>here</a>.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {.callout-note}
+This is a call-out.
+:::
+
+::: {.callout-warning}
+This is a call-out.
+:::
+
+::: {.callout-important}
+This is a call-out.
+:::
+
+::: {.callout-tip}
+This is a call-out.
+:::
+
+::: {.callout-caution}
+This is a call-out.
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:structured-macro ac:name="info" ac:schema-version="1" ac:macro-id="1c8062cd-87de-4701-a698-fd435e057468"><ac:rich-text-body><p>This is a call-out.</p></ac:rich-text-body></ac:structured-macro>
+<ac:structured-macro ac:name="note" ac:schema-version="1" ac:macro-id="1049a0d8-470f-4f83-a0d7-b6ad35ea8eda"><ac:rich-text-body><p>This is a call-out.</p></ac:rich-text-body></ac:structured-macro>
+<ac:structured-macro ac:name="warning" ac:schema-version="1" ac:macro-id="0185f821-7aa4-404a-8748-ec59a46357e1"><ac:rich-text-body><p>This is a call-out.</p></ac:rich-text-body></ac:structured-macro>
+<ac:structured-macro ac:name="tip" ac:schema-version="1" ac:macro-id="97c39328-9651-4c56-8a8c-ab5537001d86"><ac:rich-text-body><p>This is a call-out.</p></ac:rich-text-body></ac:structured-macro>
+<ac:structured-macro ac:name="note" ac:schema-version="1" ac:macro-id="1049a0d8-470f-4f83-a0d7-b6ad35ea8eda"><ac:rich-text-body><p>This is a call-out.</p></ac:rich-text-body></ac:structured-macro>
+<h2 id="tables">Tables<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">tables</ac:parameter></ac:structured-macro></h2>
+<h3 id="manual">Manual<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">manual</ac:parameter></ac:structured-macro></h3>
+<p>For simple cases, tables can be manually created in markdown.</p>
+<div class="grid">
+<div class="g-col-7">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[|speed|dist|
+|-----|----|
+|4    |   2|
+|4    |  10|
+|7    |   4|]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<div class="g-col-5">
+<table style="">
+<thead>
+<tr>
+<th>speed</th>
+<th>dist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="kable">kable<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">kable</ac:parameter></ac:structured-macro></h3>
+<p>Simple table using <code>kable</code> from R package <code>knitr</code>. This is the default output for quarto.</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[library(knitr)
+head(iris)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output cell-output-stdout">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+</div>
+<h4 id="layout">Layout<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">layout</ac:parameter></ac:structured-macro></h4>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| column: body-outset
+#| label: tbl-dual-table
+#| tbl-cap: "Example"
+#| tbl-subcap:
+#|   - "Cars"
+#|   - "Pressure"
+#| layout-ncol: 2
+
+kable(head(cars))
+kable(head(pressure))
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div id="tbl-dual-table" class="cell" data-layout-ncol="2">
+<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">tbl-dual-table</ac:parameter></ac:structured-macro>
+<table style="">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: center;"><div class="cell-output-display column-body-outset" width="50.0%" data-layout-align="center">
+<div id="tbl-dual-table-1" class="do-not-create-environment">
+<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">tbl-dual-table-1</ac:parameter></ac:structured-macro>
+<table id="tbl-dual-table-1" class="do-not-create-environment" style="">
+<thead>
+<tr>
+<th style="text-align: right;">speed</th>
+<th style="text-align: right;">dist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+(a) Cars
+</div>
+</div></td>
+<td style="text-align: center;"><div class="cell-output-display column-body-outset" width="50.0%" data-layout-align="center">
+<div id="tbl-dual-table-2" class="do-not-create-environment">
+<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">tbl-dual-table-2</ac:parameter></ac:structured-macro>
+<table id="tbl-dual-table-2" class="do-not-create-environment" style="">
+<thead>
+<tr>
+<th style="text-align: right;">temperature</th>
+<th style="text-align: right;">pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0002</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0.0012</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">0.0060</td>
+</tr>
+<tr>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">0.0300</td>
+</tr>
+<tr>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">0.0900</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.2700</td>
+</tr>
+</tbody>
+</table>
+(b) Pressure
+</div>
+</div></td>
+</tr>
+</tbody>
+</table>
+<p>Table 1: Example</p>
+</div>
+<h4 id="cross-referencing">Cross referencing<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">cross-referencing</ac:parameter></ac:structured-macro></h4>
+<p>Images and tables can be automatically numbered by using <code>label</code> attribute. Image label must start with <code>fig-</code> and tables with <code>tbl-</code>. Tables and images can also be cross-referenced when using the <code>label</code> attribute. For example, the table above can be referenced like <code>@tbl-dual-table</code> which renders as <ac:link><ri:attachment ri:filename="#tbl-dual-table"/><ac:plain-text-link-body><![CDATA[Table 1]]></ac:plain-text-link-body></ac:link>.</p>
+<h4 id="margin-table">Margin table<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">margin-table</ac:parameter></ac:structured-macro></h4>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| fig-caption: This table is in the margin.
+#| column: margin
+
+head(cars)
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell column-margin" data-fig-caption="This table is in the margin.">
+<div class="cell-output cell-output-stdout">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[  speed dist
+1     4    2
+2     4   10
+3     7    4
+4     7   22
+5     8   16
+6     9   10]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+</div>
+<h3 id="gt">gt<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">gt</ac:parameter></ac:structured-macro></h3>
+<p>Tables using the <a href='https://gt.rstudio.com/' title=''>gt</a> package. A structured approach to creating tables using grammar of tables with extensive customization options.</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[library(gt)
+
+iris %>%
+  group_by(Species) %>%
+  slice(1:4) %>%
+  gt() %>%
+  cols_label(
+    Sepal.Length = "Sepal Length", Sepal.Width = "Sepal Width",
+    Petal.Length = "Petal Length", Petal.Width = "Petal Width"
+  ) %>%
+  tab_source_note(
+    source_note = md("Source: Iris data. Anderson, 1936; Fisher, 1936)")
+  )]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output-display">
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="">
+<thead>
+<tr class="gt_col_headings">
+<th id="Sepal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Sepal Length</th>
+<th id="Sepal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Sepal Width</th>
+<th id="Petal.Length" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Petal Length</th>
+<th id="Petal.Width" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Petal Width</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row">
+<td colspan="4" id="setosa" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">setosa</td>
+</tr>
+<tr class="gt_row_group_first">
+<td class="gt_row gt_right" headers="setosa  Sepal.Length">5.1</td>
+<td class="gt_row gt_right" headers="setosa  Sepal.Width">3.5</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Length">1.4</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Width">0.2</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="setosa  Sepal.Length">4.9</td>
+<td class="gt_row gt_right" headers="setosa  Sepal.Width">3.0</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Length">1.4</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Width">0.2</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="setosa  Sepal.Length">4.7</td>
+<td class="gt_row gt_right" headers="setosa  Sepal.Width">3.2</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Length">1.3</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Width">0.2</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="setosa  Sepal.Length">4.6</td>
+<td class="gt_row gt_right" headers="setosa  Sepal.Width">3.1</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Length">1.5</td>
+<td class="gt_row gt_right" headers="setosa  Petal.Width">0.2</td>
+</tr>
+<tr class="gt_group_heading_row">
+<td colspan="4" id="versicolor" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">versicolor</td>
+</tr>
+<tr class="gt_row_group_first">
+<td class="gt_row gt_right" headers="versicolor  Sepal.Length">7.0</td>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Width">3.2</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Length">4.7</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Width">1.4</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Length">6.4</td>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Width">3.2</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Length">4.5</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Width">1.5</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Length">6.9</td>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Width">3.1</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Length">4.9</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Width">1.5</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Length">5.5</td>
+<td class="gt_row gt_right" headers="versicolor  Sepal.Width">2.3</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Length">4.0</td>
+<td class="gt_row gt_right" headers="versicolor  Petal.Width">1.3</td>
+</tr>
+<tr class="gt_group_heading_row">
+<td colspan="4" id="virginica" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">virginica</td>
+</tr>
+<tr class="gt_row_group_first">
+<td class="gt_row gt_right" headers="virginica  Sepal.Length">6.3</td>
+<td class="gt_row gt_right" headers="virginica  Sepal.Width">3.3</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Length">6.0</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Width">2.5</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="virginica  Sepal.Length">5.8</td>
+<td class="gt_row gt_right" headers="virginica  Sepal.Width">2.7</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Length">5.1</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Width">1.9</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="virginica  Sepal.Length">7.1</td>
+<td class="gt_row gt_right" headers="virginica  Sepal.Width">3.0</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Length">5.9</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Width">2.1</td>
+</tr>
+<tr>
+<td class="gt_row gt_right" headers="virginica  Sepal.Length">6.3</td>
+<td class="gt_row gt_right" headers="virginica  Sepal.Width">2.9</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Length">5.6</td>
+<td class="gt_row gt_right" headers="virginica  Petal.Width">1.8</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr>
+<td colspan="4" class="gt_sourcenote">Source: Iris data. Anderson, 1936; Fisher, 1936)</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<h3 id="dt">DT<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">dt</ac:parameter></ac:structured-macro></h3>
+<p>Interactive table using R package <a href='https://rstudio.github.io/DT/' title=''><code>DT</code></a>. DT tables do not work in confluence.</p>
+<div class="cell" data-tbl-cap="Table using datatable.">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[library(DT)
+
+iris %>%
+  slice(1:15) %>%
+  datatable(options = list(pageLength = 7))]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<h3 id="reactable">reactable<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">reactable</ac:parameter></ac:structured-macro></h3>
+<p>Advanced interactive tables with <a href='https://glin.github.io/reactable/index.html' title=''>reactable</a>. reactables do not work in confluence.</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[library(reactable)
+
+reactable(iris[sample(1:150, 10), ],
+  columns = list(
+    Sepal.Length = colDef(name = "Sepal Length"),
+    Sepal.Width = colDef(name = "Sepal Width"),
+    Petal.Width = colDef(name = "Petal Width"),
+    Petal.Width = colDef(name = "Petal Width")
+  ),
+  striped = TRUE,
+  highlight = TRUE,
+  filterable = TRUE
+)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<h2 id="layout-1">Layout<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">layout-1</ac:parameter></ac:structured-macro></h2>
+<h3 id="span">Span<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">span</ac:parameter></ac:structured-macro></h3>
+<p><code>[Content inside span]{style="background-color: gray"}</code></p>
+<p><span style="background-color: gray">Content inside span</span></p>
+<h3 id="div">Div<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">div</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {style="background-color: gray"}
+Content inside div
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div style="background-color: gray">
+<p>Content inside div</p>
+</div>
+<p>Divs can be nested like this:</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[:::: {.class}
+::: {.class}
+:::
+::::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Both spans and divs support attributes in this specific order: identifiers, classes, and then key-value attributes.</p>
+<p><code>[Content inside span]{#id .class key1="val1" key2="val2"}</code></p>
+<h3 id="hidden-div">Hidden div<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">hidden-div</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {.hidden}
+Hidden content
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<h3 id="conditional-content">Conditional content<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">conditional-content</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {{.content-visible when-format="html"}}
+Will only appear in HTML.
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {{.content-hidden when-format="html"}}
+Will not appear in HTML.
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Conditional content is documented <a href='https://quarto.org/docs/authoring/conditional.html' title=''>here</a>.</p>
+<h3 id="inner-columns">Inner columns<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">inner-columns</ac:parameter></ac:structured-macro></h3>
+<p>Organisation of content into columns within the body container.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[:::: {.columns}
+::: {.column style="background-color: aliceblue"}
+Content is left.
+:::
+::: {.column style="background-color:  #f5b7b1"}
+Content is right.
+:::
+::::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="columns">
+<div class="column" style="background-color: aliceblue">
+<p>Content in left column.</p>
+</div><div class="column" style="background-color:  #f5b7b1">
+<p>Content in right column.</p>
+</div>
+</div>
+<p><br/></p>
+<p>This is an example of nested columns.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[:::: {.columns}
+
+::: {.column style="background-color: aliceblue"}
+Content in left column.
+:::
+
+::: {.column}
+Content in right column.
+
+:::: {.columns}
+::: {.column style="background-color: #d0ece7"}
+Nested left.
+:::
+::: {.column style="background-color: #f2d7d5"}
+Nested right.
+:::
+::::
+
+:::
+
+::::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="columns">
+<div class="column" style="background-color: aliceblue">
+<p>Content in left column.</p>
+</div><div class="column">
+<p>Content in right column.</p>
+<div class="columns">
+<div class="column" style="background-color: #d0ece7">
+<p>Nested left.</p>
+</div><div class="column" style="background-color: #f2d7d5">
+<p>Nested right.</p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="outer-columns">Outer columns<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">outer-columns</ac:parameter></ac:structured-macro></h3>
+<p>Extending content outside the body container.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {.column-body style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-body
+:::
+
+::: {.column-body-outset style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-body-outset
+:::
+
+::: {.column-page-inset style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page-inset
+:::
+
+::: {.column-page style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page
+:::
+
+::: {.column-screen-inset style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen-inset
+:::
+
+::: {.column-screen style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen
+:::
+
+::: {.column-body-outset-right style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-body-outset-right
+:::
+
+::: {.column-page-inset-right style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page-inset-right
+:::
+
+::: {.column-page-right style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page-right
+:::
+
+::: {.column-screen-inset-right style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen-inset-right
+:::
+
+::: {.column-screen-right style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen-right
+:::
+
+::: {.column-body-outset-left style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-body-outset-left
+:::
+
+::: {.column-page-inset-left style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page-inset-left
+:::
+
+::: {.column-page-left style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-page-left
+:::
+
+::: {.column-screen-inset-left style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen-inset-left
+:::
+
+::: {.column-screen-left style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-screen-left
+:::
+
+::: {.column-margin style="background-color: lightgray; margin-bottom:0.5em;"}
+.column-margin
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="column-body" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-body</p>
+</div>
+<div class="column-body-outset" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-body-outset</p>
+</div>
+<div class="column-page-inset" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page-inset</p>
+</div>
+<div class="column-page" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page</p>
+</div>
+<div class="column-screen-inset" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen-inset</p>
+</div>
+<div class="column-screen" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen</p>
+</div>
+<div class="column-body-outset-right" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-body-outset-right</p>
+</div>
+<div class="column-page-inset-right" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page-inset-right</p>
+</div>
+<div class="column-page-right" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page-right</p>
+</div>
+<div class="column-screen-inset-right" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen-inset-right</p>
+</div>
+<div class="column-screen-right" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen-right</p>
+</div>
+<div class="column-body-outset-left" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-body-outset-left</p>
+</div>
+<div class="column-page-inset-left" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page-inset-left</p>
+</div>
+<div class="column-page-left" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-page-left</p>
+</div>
+<div class="column-screen-inset-left" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen-inset-left</p>
+</div>
+<div class="column-screen-left" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-screen-left</p>
+</div>
+<div class="column-margin" style="background-color: lightgray; margin-bottom:0.5em;">
+<p>.column-margin</p>
+</div>
+<h3 id="panel-layout">Panel layout<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">panel-layout</ac:parameter></ac:structured-macro></h3>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[::: {.panel-tabset}
+#### Sub topic 1
+
+This is some material for topic 1.
+
+#### Sub topic 2
+
+This is some material for topic 2.
+
+:::]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="panel-tabset">
+<h4>Sub topic 1</h4>
+<p>This is some material for topic 1.</p>
+<h4>Sub topic 2</h4>
+<p>This is some material for topic 2.</p>
+</div>
+<p>More layout settings are described <a href='https://quarto.org/docs/authoring/article-layout.html' title=''>here</a> and <a href='https://quarto.org/docs/output-formats/page-layout.html' title=''>here</a>.</p>
+<h2 id="static-plots">Static plots<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">static-plots</ac:parameter></ac:structured-macro></h2>
+<h3 id="base-plot">Base plot<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">base-plot</ac:parameter></ac:structured-macro></h3>
+<ul>
+<li>Plots using base R are widely used and may be good enough for most situations.</li>
+<li>But they lack a consistent coding framework.</li>
+</ul>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[{
+  plot(x=iris$Sepal.Length,y=iris$Sepal.Width,
+      col=c("coral","steelblue","forestgreen")[iris$Species],
+      xlab="Sepal Length",ylab="Sepal Width",pch=19)
+
+  legend(x=7,y=4.47,legend=c("setosa","versicolor","virginica"),
+        col=c("coral","steelblue","forestgreen"),pch=19)
+}]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output-display">
+<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">fig-plot-base</ac:parameter></ac:structured-macro>
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:alt="">
+        <ri:attachment ri:filename="index_files/figure-publish/fig-plot-base-1.png" /><ac:caption>Figure 2: Static plot using base plot.</ac:caption>
+    </ac:image>
+</div>
+</div>
+<h4 id="multiple-plots">Multiple plots<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">multiple-plots</ac:parameter></ac:structured-macro></h4>
+<p>This does not work.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{r}
+#| eval: false
+#| column: screen-inset-shaded
+#| layout-nrow: 1
+#| fig-cap:
+#|   - "Scatterplot of speed vs distance"
+#|   - "Pairwise scatterplot of all variables"
+#|   - "Scatterplot of temperature vs pressure"
+
+plot(cars)
+plot(iris)
+plot(pressure)
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<h4 id="margin-plot">Margin plot<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">margin-plot</ac:parameter></ac:structured-macro></h4>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">markdown</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{{r}}
+#| column: margin
+
+plot(cars)
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[plot(cars)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output-display column-margin">
+<p><ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:alt="">
+        <ri:attachment ri:filename="index_files/figure-publish/unnamed-chunk-16-1.png" />
+    </ac:image></p>
+</div>
+</div>
+<h3 id="ggplot2">ggplot2<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">ggplot2</ac:parameter></ac:structured-macro></h3>
+<p>R package <a href='http://ggplot2.org/' title=''><code>ggplot2</code></a> is one of the most versatile and complete plotting solutions.</p>
+<div class="cell" data-cap-location="margin">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[library(ggplot2)
+
+iris %>%
+  ggplot(aes(x=Sepal.Length,y=Sepal.Width,col=Species))+
+  geom_point(size=2)+
+  labs(x="Sepal Length",y="Sepal Width")]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<div class="cell-output-display">
+<figure class="margin-caption" data-cap-location="margin">
+<ac:image
+    ac:align="center"
+    ac:layout="center"
+    ac:alt="">
+        <ri:attachment ri:filename="index_files/figure-publish/plot-ggplot-1.png" /><ac:caption>Static plot using ggplot2.</ac:caption>
+    </ac:image>
+<figcaption>Static plot using ggplot2.</figcaption>
+</figure>
+</div>
+</div>
+<h2 id="observablejs">ObservableJS<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">observablejs</ac:parameter></ac:structured-macro></h2>
+<p>Quarto supports <a href='https://observablehq.com/' title=''>ObservableJS</a> for interactive visualisations in the browser.</p>
+<p>Pass data from R to OJS</p>
+<div class="cell">
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">r</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[irism <- iris
+colnames(irism) <- gsub("[.]","_",tolower(colnames(irism)))
+ojs_define(ojsd = irism)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+</div>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">{ojs}</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[ojsdata = transpose(ojsd)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Display as a table</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">{ojs}</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[viewof filtered_table = Inputs.table(ojsdata)]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Define inputs</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">{ojs}</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[viewof x = Inputs.select(Object.keys(ojsdata[0]), {value: "sepal_length", multiple: false, label: "X axis"})]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">{ojs}</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[viewof y = Inputs.select(Object.keys(ojsdata[0]), {value: "sepal_width", multiple: false, label: "Y axis"})]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>Display plot</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language">{ojs}</ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[Plot.plot({
+  marks: [
+    Plot.dot(ojsdata, {
+      x: x,
+      y: y,
+      fill: "species",
+      title: (d) =>
+        `${d.species} \n Petal length: ${d.petal_length} \n Sepal length: ${d.sepal_length}`
+    })
+  ],
+  grid: true
+})]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<p>ObservableJS in quarto <a href='https://quarto.org/docs/interactive/index.html#observable-js' title=''>documentation</a>.</p>
+<h2 id="confluence-storage-format-csf">Confluence Storage Format (CSF)<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">confluence-storage-format-csf</ac:parameter></ac:structured-macro></h2>
+<p><a href='https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html' title=''>CSF</a> is an XML markup language used by Atlassian Confluence to represent content. Quarto supports CSF for creating Confluence documents. It is similar to HTML in many ways but with confluence specific tags.</p>
+<p>Here is an example of a task list.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{=confluence}
+<ac:task-list>
+    <ac:task>
+        <ac:task-id>1</ac:task-id>
+        <ac:task-status>complete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Wake Up</span></ac:task-body>
+    </ac:task>
+    <ac:task>
+        <ac:task-id>2</ac:task-id>
+        <ac:task-status>incomplete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Brush Teeth</span></ac:task-body>
+    </ac:task>
+    <ac:task>
+        <ac:task-id>3</ac:task-id>
+        <ac:task-status>incomplete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Eat Breakfast</span></ac:task-body>
+    </ac:task>
+</ac:task-list>
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:task-list>
+    <ac:task>
+        <ac:task-id>1</ac:task-id>
+        <ac:task-status>complete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Wake Up</span></ac:task-body>
+    </ac:task>
+    <ac:task>
+        <ac:task-id>2</ac:task-id>
+        <ac:task-status>incomplete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Brush Teeth</span></ac:task-body>
+    </ac:task>
+    <ac:task>
+        <ac:task-id>3</ac:task-id>
+        <ac:task-status>incomplete</ac:task-status>
+        <ac:task-body><span class="placeholder-inline-tasks">Eat Breakfast</span></ac:task-body>
+    </ac:task>
+</ac:task-list>
+<p>Here are examples of an emojis.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{=confluence}
+<ac:emoticon ac:name="smile" />
+<ac:emoticon ac:name="cheeky" />
+<ac:emoticon ac:name="tick" />
+<ac:emoticon ac:name="warning" />
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:emoticon ac:name="smile" />
+<ac:emoticon ac:name="cheeky" />
+<ac:emoticon ac:name="tick" />
+<ac:emoticon ac:name="warning" />
+<p>A decision list.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{=confluence}
+<ac:adf-extension>
+    <ac:adf-node type="decision-list">
+        <ac:adf-attribute key="local-id">ad7b0a98-1e3e-4863-8f23-ff44dbd7dfa1</ac:adf-attribute>
+        <ac:adf-node type="decision-item">
+            <ac:adf-attribute key="local-id">c25ea574-62d6-4770-bf11-5a27f3309d56</ac:adf-attribute>
+            <ac:adf-attribute key="state">DECIDED</ac:adf-attribute>
+            <ac:adf-content>Use Quarto</ac:adf-content>
+        </ac:adf-node>
+    </ac:adf-node>
+    <ac:adf-fallback>
+        <ul class="decision-list">
+            <li>Use Quarto</li>
+        </ul>
+    </ac:adf-fallback>
+</ac:adf-extension>
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:adf-extension>
+    <ac:adf-node type="decision-list">
+        <ac:adf-attribute key="local-id">ad7b0a98-1e3e-4863-8f23-ff44dbd7dfa1</ac:adf-attribute>
+        <ac:adf-node type="decision-item">
+            <ac:adf-attribute key="local-id">c25ea574-62d6-4770-bf11-5a27f3309d56</ac:adf-attribute>
+            <ac:adf-attribute key="state">DECIDED</ac:adf-attribute>
+            <ac:adf-content>Use Quarto</ac:adf-content>
+        </ac:adf-node>
+    </ac:adf-node>
+    <ac:adf-fallback>
+        <ul class="decision-list">
+            <li>Use Quarto</li>
+        </ul>
+    </ac:adf-fallback>
+</ac:adf-extension>
+<p>Here is a page tree.</p>
+<ac:structured-macro
+      ac:name="code"
+      ac:schema-version="1"
+      ac:macro-id="1d1a2d13-0179-4d8f-b448-b28dfaceea4a">
+        <ac:parameter ac:name="language"></ac:parameter>
+        <ac:plain-text-body>
+          <![CDATA[```{=confluence}
+<ac:structured-macro ac:name="pagetree" ac:schema-version="1" ac:local-id="19b56ab5-7126-4b5c-bb75-03763218ffc4" ac:macro-id="2889812da02196ef0d0256f347599000">
+    <ac:parameter ac:name="root">
+        <ac:link>
+            <ri:page ri:content-title="@self" />
+        </ac:link>
+    </ac:parameter>
+    <ac:parameter ac:name="startDepth">2</ac:parameter>
+</ac:structured-macro>
+```]]>
+        </ac:plain-text-body>
+    </ac:structured-macro>
+<ac:structured-macro ac:name="pagetree" ac:schema-version="1" ac:local-id="19b56ab5-7126-4b5c-bb75-03763218ffc4" ac:macro-id="2889812da02196ef0d0256f347599000">
+    <ac:parameter ac:name="root">
+        <ac:link>
+            <ri:page ri:content-title="@self" />
+        </ac:link>
+    </ac:parameter>
+    <ac:parameter ac:name="startDepth">2</ac:parameter>
+</ac:structured-macro>
+<h2 id="publishing">Publishing<ac:structured-macro ac:name="anchor" ac:schema-version="1" ac:local-id="a6aa6f25-0bee-4a7f-929b-71fcb7eba592" ac:macro-id="d2cb5be1217ae6e086bc60005e9d27b7"><ac:parameter ac:name="">publishing</ac:parameter></ac:structured-macro></h2>
+<p>A quarto document can be published to a confluence page using the <code>quarto publish</code> command. The command requires a configuration file <code>_publish.yml</code> that specifies the confluence server.</p>
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
+
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>That reference refers to this footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>

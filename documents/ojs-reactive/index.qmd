@@ -1,0 +1,338 @@
+---
+title: ObservableJS in Quarto
+subtitle: "Interactivity and reactivity"
+author: "Roy Francis"
+date:  last-modified
+date-format: "DD-MMM-YYYY"
+format:
+  html:
+    fig-align: left
+    title-block-banner: true
+    code-tools: true
+    code-fold: true
+    toc: true
+execute:
+  echo: true
+---
+
+## Linked plots
+
+```{ojs}
+data = FileAttachment("diamonds.csv").csv({ typed: true})
+data
+viewof raw_table = Inputs.table(data)
+```
+
+Pick the variable for point color.
+
+```{ojs}
+viewof col = Inputs.select(["carat","cut","color","clarity","depth","table","price"],{value: "cut", multiple: false, label: "Color variable"})
+```
+
+::: {.column-page}
+::: {.grid}
+::: {.g-col-6}
+
+```{ojs}
+viewof x1 = Inputs.select(["carat","depth","table","price"], {value: "carat", multiple: false, label: "X1 axis"})
+viewof y1 = Inputs.select(["carat","depth","table","price"], {value: "depth", multiple: false, label: "Y1 axis"})
+```
+
+```{ojs}
+//| label: fig-scatter-1
+//| fig-cap: Scatterplot A.
+
+Plot.plot({
+  color: {legend: true},
+  marks: [
+    Plot.dot(data, {
+      x: x1,
+      y: y1,
+      stroke: col,
+      tip: true,
+      channels: {cut: "cut", color: "color", clarity: "clarity"}
+    })
+  ],
+  grid: true
+})
+```
+
+:::
+
+
+::: {.g-col-6}
+
+```{ojs}
+viewof x2 = Inputs.select(["carat","depth","table","price"], {value: "carat", multiple: false, label: "X2 axis"})
+viewof y2 = Inputs.select(["carat","depth","table","price"], {value: "price", multiple: false, label: "Y2 axis"})
+```
+
+```{ojs}
+//| label: fig-scatter-2
+//| fig-cap: Scatterplot B.
+
+Plot.plot({
+  color: {legend: true},
+  marks: [
+    Plot.dot(data, {
+      x: x2,
+      y: y2,
+      stroke: col,
+      tip: true,
+      channels: {cut: "cut", color: "color", clarity: "clarity"}
+    })
+  ],
+  grid: true
+})
+```
+
+:::
+:::
+:::
+
+Tooltips are documented [here](https://observablehq.com/plot/marks/tip).
+
+## Volcano plot
+
+```{ojs}
+dge = FileAttachment("dge.csv").csv({ typed: true})
+dge
+```
+
+```{ojs}
+contrasts = Array.from(new Set(dge.map(d => d.comparison)));
+viewof contrast = Inputs.select(contrasts, {label: "Contrast", multiple: false})
+dge1 = dge.filter(d => contrast.includes(d.comparison));
+maxLfc = d3.max(dge1, d => d.avg_log2FC)
+maxPval = {
+  let mp = d3.max(dge1, d => d.p_val_adj);
+  mp = mp < 0.05 ? 0.05 : mp;
+  return mp;
+}
+minPval = {
+  let mp = d3.min(dge1, d => d.p_val_adj);
+  mp = mp > 0.05 ? 0.05 : mp;
+  return mp;
+}
+viewof thresPval = Inputs.range([minPval, maxPval], {value: 0.05, step: 0.000000000001, label: "Pvalue threshold"})
+viewof thresLfc = Inputs.range([0, maxLfc], {value: 2, step: 0.1, label: "LogFC threshold"})
+dge2 = processDe(dge1, thresPval, thresLfc)
+dge3 = dge2.filter(d => d.p_val_adj < thresPval && Math.abs(d.avg_log2FC) > thresLfc);
+degs = dge3.length
+```
+
+Number of DEGs: ${degs}
+
+```{ojs}
+//| label: fig-volcano
+//| fig-cap: "Volcano plot of the selected contrast. Colored points denote DEGs. Vertical dashed lines represent log2FC threshold and horizontal dashed line represents p value threshold."
+
+Plot.plot({
+  marks: [
+    Plot.dot(dge2, {
+      x: "avg_log2FC", 
+      y: "nlpadj",
+      fill: "state",
+      fillOpacity: 0.7,
+      tip: true,
+      channels: {
+        Gene: "gene"
+      }
+    }),
+    Plot.ruleY([-Math.log10(thresPval)], {
+      strokeWidth: 1.2,
+      strokeDasharray: "4,3",
+      stroke: "#808b96"
+    }),
+    Plot.ruleX([-thresLfc, thresLfc],{
+      strokeWidth: 1.2,
+      strokeDasharray: "4,3",
+      stroke: ["#0571b0","#ca0020"]
+    })
+  ],
+  color: {
+    legend: true,
+    range: ["#0571b0", "#ca0020", "#D3D3D3"],
+    domain: ["down", "up", "neutral"]
+  },
+  x: {
+    label: "Mean Log2 Fold change"
+  },
+  y: {
+    label: "-Log10 Adj P value",
+    grid: true
+  },
+  title: contrast,
+  //grid: true,
+  height: 400,
+  width: 700,
+  inset: 8,
+})
+```
+
+```{ojs}
+//| label: fig-pval-dist
+//| fig-cap: "P value distribution of the selected contrast."
+//| column: margin
+
+Plot.plot({
+  marks: [
+    Plot.rectY(dge1, Plot.binX({y: "count"}, {x: "pvalue"})),
+  ],
+  y: {grid: true},
+  height: 200,
+  width: 300,
+})
+```
+
+```{ojs}
+//| label: tbl-degs
+//| tbl-cap: "List of DEGs for the selected contrast."
+viewof degTable = Inputs.table(dge3)
+```
+
+```{ojs}
+/**
+* Adds neg log10 padj, score, sig and state to differential expression results
+*
+* @param {Array} data Output from DGE with adjusted p value and log2 fold change
+* @param {Number} [threshold_pval] Adjusted pvalue cutoff for significance
+* @param {Number} [threshold_lfc] Log2 FC cutoff
+* @param {String} [pval] Field name for adjusted p value
+* @param {String} [lfc] Field name for log2 fold change
+* 
+* @return {Array} Returns an Array with additional fields
+**/
+function processDe(
+  data, 
+  threshold_pval = 0.05, 
+  threshold_lfc = 2, 
+  pval = "p_val_adj", 
+  lfc = "avg_log2FC"
+) {
+  return data.map(row => {
+    // Calculate score
+    const score = -Math.log10(row[pval]) * Math.abs(row[lfc]);
+    
+    // Calculate neg log pval
+    const nlpval = -Math.log10(row[pval]);
+    
+    // Determine if the row is significant
+    const sig = row[pval] < threshold_pval && Math.abs(row[lfc]) > threshold_lfc;
+    
+    // Determine the state based on lfc and pval
+    let state;
+    if (row[pval] < threshold_pval) {
+      if (row[lfc] > threshold_lfc) {
+        state = "up";
+      } else if (row[lfc] < -threshold_lfc) {
+        state = "down";
+      } else {
+        state = "neutral";
+      }
+    } else {
+      state = "neutral";
+    }
+    
+    // Return a new object with existing fields and new fields
+    return {
+      ...row,
+      score: score,
+      nlpadj: nlpval,
+      sig: sig,
+      state: state
+    };
+  });
+}
+```
+
+## Dotplot
+
+Dotplots to visualize top DEGs across contrasts.
+
+```{ojs}
+viewof genes = Inputs.range([2, 40], {value: 20, step: 1, label: "Number of genes"})
+exp1 = getTopGenes(dge, genes)
+geneOrder = Array.from(new Set(exp1.map(d => d.gene))).reverse();
+```
+
+```{ojs}
+//| label: fig-dotplot
+//| fig-cap: "Dotplot of the top DEGs across all contrasts. The size of the dots represent the adjusted p value and color denotes log fold change."
+Plot.plot({
+  marks: [
+    Plot.dot(exp1, {
+      x: "comparison", 
+      y: "gene",
+      fill: "avg_log2FC",
+      fillOpacity: 0.6,
+      r: "nlpadj",
+      tip: true,
+      channels: {
+        Gene: "gene", AdjPVal: "p_val_adj"
+      }
+    })
+  ],
+  color: {
+    legend: true,
+    scheme: "BuRd"
+  },
+  x: {label: "Comparison"},
+  y: {label: "Genes", domain: geneOrder},
+  r: {range: [3, 15], label: "Adjusted p value"},
+  grid: true,
+  height: 600,
+  width: 400,
+  marginLeft: 100,
+  inset: 8,
+})
+```
+
+```{ojs}
+/**
+* Filters and returns the top N genes based on score
+*
+* @param {Array} data Output from DGE with adjusted p value and log2 fold change
+* @param {Number} [topN] Number of top genes to return
+* 
+* @return {Array} Returns an Array
+**/
+function getTopGenes(data, topN = 20) {
+  // Calculate scores
+  const scoredData = data.map(d => {
+    const nlpadj = -Math.log10(d.p_val_adj);
+    const score = -Math.log10(d.p_val_adj) * Math.abs(d.avg_log2FC);
+
+    return {
+      ...d,
+      nlpadj: nlpadj,
+      score: score
+    };
+  });
+
+  // Group by comparison and find top N genes
+  const topGenesByComparison = {};
+
+  scoredData.forEach(d => {
+    if (!topGenesByComparison[d.comparison]) {
+      topGenesByComparison[d.comparison] = [];
+    }
+    topGenesByComparison[d.comparison].push(d);
+  });
+
+  const result = [];
+
+  for (const comparison in topGenesByComparison) {
+    // Sort by score in descending order
+    topGenesByComparison[comparison].sort((a, b) => b.score - a.score);
+    
+    // Get top N entries
+    const topNGenes = topGenesByComparison[comparison].slice(0, topN);
+
+    // Add the top N genes to the result array
+    result.push(...topNGenes);
+  }
+
+  return result;
+}
+```

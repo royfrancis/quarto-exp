@@ -4,7 +4,6 @@ project:
   render:
     - "*.qmd"
     - "!documents/confluence/index.qmd"
-    - "!documents/webr-ojs/index.qmd"
 
 website:
   navbar:

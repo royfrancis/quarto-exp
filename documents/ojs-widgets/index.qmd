@@ -16,7 +16,13 @@ format:
 
 See the [official OJS documentation](https://observablehq.com/documentation/inputs/overview).
 
+:::{.callout-note}
+Note that OJS does not work when opening a static local HTML file in the browser. It requires a live server. For local viewing, use `quarto preview`, `python -m http.server` etc. It will just work when hosted on a server/hosting service such as Github pages etc.
+:::
+
 ## Define data
+
+Data is defined as JSON arrays.
 
 ```{ojs}
 data_hdi = [
@@ -98,7 +104,7 @@ data_hdi = [
 ]
 ```
 
-## Output widgets
+## Widgets
 
 ### Table
 
@@ -106,37 +112,13 @@ data_hdi = [
 viewof table_a = Inputs.table(data_hdi)
 ```
 
-### Plot
-
-```{ojs}
-//| label: barplot
-
-Plot.plot({
-  marginLeft: 100,
-  y: {
-
-  },
-  marks: [
-    Plot.barX(data_hdi, {
-      x: "hdi",
-      y: "name",
-      title: (d) =>
-        `Country: ${d.name}`
-    })
-  ],
-  grid: true
-})
-```
-
-## Input widgets
-
 ### Text
 
 ```{ojs}
 viewof name = Inputs.text({label: "Name", placeholder: "What’s your name?"})
 ```
 
-Your input is ${name}.
+Your input is ${name}
 
 ### Text area input
 
@@ -144,15 +126,15 @@ Your input is ${name}.
 viewof bio = Inputs.textarea({label: "Biography", placeholder: "What’s your story?"})
 ```
 
-Your input is ${bio}.
+Your input is ${bio}
 
-### Numeric
+### Range (Numeric)
 
 ```{ojs}
 viewof hdi = Inputs.range([0.90, 1.00], {value: 0.98, step: 0.01, label: "HDI"})
 ```
 
-Below are countries with HDI less than ${hdi.toFixed(3)}.
+Below are countries with HDI less than ${hdi.toFixed(3)}
 
 ```{ojs}
 data_numeric = data_hdi.filter(d => d.hdi < hdi)
@@ -165,16 +147,15 @@ viewof table_numeric = Inputs.table(data_numeric)
 viewof clicks = Inputs.button("Click me")
 ```
 
-Number of clicks: ${clicks}.
+Number of clicks: ${clicks}
 
 ### Toggle button
-
 
 ```{ojs}
 viewof mute = Inputs.toggle({label: "Mute"})
 ```
 
-Current state: ${mute}.
+Current state: ${mute}
 
 ### Radio button
 
@@ -195,15 +176,25 @@ viewof table_radio = Inputs.table(data_radio)
 viewof flavors = Inputs.checkbox(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors"})
 ```
 
-Selected items: ${flavors}.
+Selected items: ${flavors}
 
 ### Dropdown selection
 
+#### Single selection
+
 ```{ojs}
-viewof dflavors = Inputs.select(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors", multiple: true})
+viewof dflavors1 = Inputs.select(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors", multiple: false})
 ```
 
-Selected items: ${dflavors}.
+Selected items: ${dflavors1}
+
+#### Multiple selection
+
+```{ojs}
+viewof dflavors2 = Inputs.select(["salty", "sweet", "bitter", "sour", "umami"], {label: "Flavors", multiple: true})
+```
+
+Selected items: ${dflavors2}
 
 ### Date
 
@@ -211,7 +202,7 @@ Selected items: ${dflavors}.
 viewof birthday = Inputs.date({label: "Select date"})
 ```
 
-Selected date: ${birthday}.
+Selected date: ${birthday}
 
 ### Color
 
@@ -219,7 +210,7 @@ Selected date: ${birthday}.
 viewof color = Inputs.color({label: "Favorite color", value: "#4682b4"})
 ```
 
-Selected color: ${color}.
+Selected color: ${color}
 
 ### File upload
 
@@ -232,11 +223,56 @@ viewof raw_table = Inputs.table(data3)
 ### Search
 
 ```{ojs}
-viewof search = Inputs.search(data_hdi, { placeholder: "Search"})
+//viewof search = Inputs.search(data_hdi, { placeholder: "Search"})
+viewof search = Inputs.search(data_hdi, { 
+  placeholder: "Search",
+  value: "", 
+  oninput: function(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const filteredData = data_hdi.filter(item => 
+      item.name.toLowerCase().includes(searchTerm)
+    );
+    return filteredData;
+  }
+});
+viewof table_b = Inputs.table(search)
 ```
 
-## Downloads
+### Forms
 
+Forms can be used to combine multiple inputs as a set.
+
+```{ojs}
+viewof rgb = Inputs.form([
+  Inputs.range([0, 255], {step: 1, label: "r"}),
+  Inputs.range([0, 255], {step: 1, label: "g"}),
+  Inputs.range([0, 255], {step: 1, label: "b"})
+]);
+rgb
+```
+
+```{ojs}
+function rgbString (array) {
+  return 'rgb(' + array.join(', ') + ')';
+}
+
+displayColor = function (rgb) {
+  return html`
+    <section style="width: 400px; display: grid; grid-gap: 10px;">
+      <div class="color" style="grid-column: 1;">
+        <div class="swatch" style="background: ${rgbString(rgb)}; padding: 10px; border-radius:5px;">
+          <span>${rgbString(rgb)}</span>
+        </div>
+      </div>
+    </section>`
+}
+
+displayColor(rgb);
+```
+
+OJS input widgets are documented [here](https://observablehq.com/framework/inputs).
+
+## Downloads
 ### Text download
 
 ```{ojs}
@@ -266,7 +302,127 @@ button = (data, filename = 'data.csv') => {
 button(data_hdi, 'hdi.csv')
 ```
 
+### Zip download
+
+Download table as a zipped file.
+
+```{ojs}
+JSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')
+zip = {
+  const zip = new JSZip()
+  const folder = zip.folder('data')
+  folder.file('data_hdi.txt', data_hdi)
+  return zip.generateAsync({type: 'blob'})
+}
+```
+
+```{ojs}
+DOM.download(zip, 'data.zip')
+```
+
+### Plot
+
+```{ojs}
+//| label: barplot
+
+barplot = Plot.plot({
+  marginLeft: 100,
+  y: {
+
+  },
+  marks: [
+    Plot.barX(data_hdi, {
+      x: "hdi",
+      y: "name"
+    })
+  ],
+  grid: true
+})
+
+barplot
+```
+
+Now with interactive tooltips.
+
+```{ojs}
+//| label: barplot-1
+
+barplot1 = Plot.plot({
+  marginLeft: 100,
+  y: {
+
+  },
+  marks: [
+    Plot.barX(data_hdi, {
+      x: "hdi",
+      y: "name",
+      tip: true,
+      channels: {country: "name"}
+    })
+  ],
+  grid: true
+})
+
+barplot1
+```
+
 ### Image download
+
+This is based on [mbostock/saving-svg](https://observablehq.com/@mbostock/saving-svg).
+
+Download image as SVG.
+
+```{ojs}
+DOM.download(() => serialize(barplot), undefined, "Save as SVG")
+```
+
+Download image as PNG.
+
+```{ojs}
+DOM.download(() => rasterize(barplot), undefined, "Save as PNG")
+```
+
+```{ojs}
+serialize = {
+  const xmlns = "http://www.w3.org/2000/xmlns/";
+  const xlinkns = "http://www.w3.org/1999/xlink";
+  const svgns = "http://www.w3.org/2000/svg";
+  return function serialize(svg) {
+    svg = svg.cloneNode(true);
+    const fragment = window.location.href + "#";
+    const walker = document.createTreeWalker(svg, NodeFilter.SHOW_ELEMENT);
+    while (walker.nextNode()) {
+      for (const attr of walker.currentNode.attributes) {
+        if (attr.value.includes(fragment)) {
+          attr.value = attr.value.replace(fragment, "#");
+        }
+      }
+    }
+    svg.setAttributeNS(xmlns, "xmlns", svgns);
+    svg.setAttributeNS(xmlns, "xmlns:xlink", xlinkns);
+    const serializer = new window.XMLSerializer;
+    const string = serializer.serializeToString(svg);
+    return new Blob([string], {type: "image/svg+xml"});
+  };
+}
+
+function rasterize(svg) {
+  let resolve, reject;
+  const promise = new Promise((y, n) => (resolve = y, reject = n));
+  const image = new Image;
+  image.onerror = reject;
+  image.onload = () => {
+    const rect = svg.getBoundingClientRect();
+    const context = DOM.context2d(rect.width, rect.height);
+    context.drawImage(image, 0, 0, rect.width, rect.height);
+    context.canvas.toBlob(resolve);
+  };
+  image.src = URL.createObjectURL(serialize(svg));
+  return promise;
+}
+```
+
+### HTML download
 
 ```{ojs}
 FileSaver = (await import("https://cdn.skypack.dev/file-saver@2.0.5?min"))
@@ -309,46 +465,19 @@ function downloadHtmlAsImage(el, options) {
 }
 ```
 
-Download an image as PNG.
+Download HTML element as PNG.
 
 ```{ojs}
-downloadHtmlAsImage(barplot)
+downloadHtmlAsImage(barplot1)
 ```
 
 Adjust the scale parameter.
 
-
 ```{ojs}
-downloadHtmlAsImage(barplot, {
+downloadHtmlAsImage(barplot1, {
 	label: "Download 4X PNG",
 	filename: "scaled_4x",
 	scale: 4
 })
 ```
 
-Download image as SVG.
-
-```{ojs}
-import {serialize} from "@mbostock/saving-svg"
-import {rasterize} from "@mbostock/saving-svg"
-```
-
-```{ojs}
-DOM.download(() => serialize(barplot), undefined, "Save as SVG")
-```
-
-### Zip download
-
-```{ojs}
-JSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')
-zip = {
-  const zip = new JSZip()
-  const folder = zip.folder('website')
-  folder.file('data_hdi.txt', data_hdi)
-  return zip.generateAsync({type: 'blob'})
-}
-```
-
-```{ojs}
-DOM.download(zip, 'website.zip')
-```

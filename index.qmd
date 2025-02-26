@@ -1,5 +1,5 @@
 ---
-title: "Quarto experiments"
+title: "Quarto Experiments"
 subtitle: "Testing quarto documents"
 format:
   html:
@@ -20,10 +20,10 @@ In parameterized reports, one or more parameters used in the document are provid
 
 [Observable Plot](https://observablehq.github.io/plot/) is a javascript framework for exploratory data visualization. OJS is supported natively in quarto. Read more about OJS in quarto [here](https://quarto.org/docs/interactive/ojs/).
 
-- [OJS and R](documents/ojs/index.html)
 - [OJS widgets, upload and download](documents/ojs-widgets/index.html)
-- [OJS and ggplot plots](documents/ojs-plots/index.html)
-- [OJS linked plots](documents/ojs-linked/index.html)
+- [OJS Interactivity and reactivity](documents/ojs-reactive/index.html)
+- [OJS and R](documents/ojs-r/index.html)
+- [OJS and ggplot visualization](documents/ojs-plots/index.html)
 
 ## WebR
 

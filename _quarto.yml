@@ -1,6 +1,25 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!documents/confluence/index.qmd"
+    - "!documents/webr-ojs/index.qmd"
+
+website:
+  navbar:
+    title: "QE"
+    left:
+      - text: "Home"
+        href: "index.html"
+    right:
+      - icon: "github"
+        href: "https://github.com/royfrancis/quarto-exp"
+        aria-label: "GitHub"
+  page-footer:
+    border: false
+    left: "{{< meta current_year >}} Roy Francis"
+    right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
 
 filters:
   - assets/custom.lua

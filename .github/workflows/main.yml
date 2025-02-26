@@ -25,10 +25,14 @@ jobs:
             any::tinytex
             any::hexbin
             any::shinylive
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
       - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.6.40
+          version: 1.6.42
           tinytex: true
       - run: |
           quarto --version

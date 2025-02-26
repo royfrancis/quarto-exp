@@ -2,107 +2,51 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "",
     "text": "In parameterized reports, one or more parameters used in the document are provided to the document at the time of rendering.\n\nParameterized html report\nParameterized html revealjs presentation\nParameterized pdf\nParameterized html report from external file"
   },
   {
     "objectID": "index.html#parameterized-outputs",
     "href": "index.html#parameterized-outputs",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "",
     "text": "In parameterized reports, one or more parameters used in the document are provided to the document at the time of rendering.\n\nParameterized html report\nParameterized html revealjs presentation\nParameterized pdf\nParameterized html report from external file"
   },
   {
     "objectID": "index.html#ojs",
     "href": "index.html#ojs",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "OJS",
-    "text": "OJS\nObservable Plot is a javascript framework for exploratory data visualization. OJS is supported natively in quarto. Read more about OJS in quarto here.\n\nOJS and R\nOJS widgets, upload and download\nOJS and ggplot plots\nOJS linked plots"
+    "text": "OJS\nObservable Plot is a javascript framework for exploratory data visualization. OJS is supported natively in quarto. Read more about OJS in quarto here.\n\nOJS widgets, upload and download\nOJS Interactivity and reactivity\nOJS and R\nOJS and ggplot visualization"
   },
   {
     "objectID": "index.html#webr",
     "href": "index.html#webr",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "WebR",
     "text": "WebR\nWebR allows to run R in the browser. Try out a demo of R IDE running in the browser. R packages need to be specifically compiled for use with webr. He is the current list of webr R packages.\n\nWebR in HTML report using Quarto webr extension\nWebR in RevealJS presentation\nWebR with Shinylive\n\nIntro to WebR & Shinylive by George Stagg: https://www.youtube.com/watch?v=GlZKReTx8GA"
   },
   {
     "objectID": "index.html#shinylive",
     "href": "index.html#shinylive",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "Shinylive",
     "text": "Shinylive\nShinylive allows shiny applications to run in the browser wthout the need for a Shiny server. Shinylive is available for R and Python.\n\nShiny app in the browser\nWebR with Shinylive"
   },
   {
     "objectID": "index.html#quartolive",
     "href": "index.html#quartolive",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "QuartoLive",
     "text": "QuartoLive\nQuartoLive allows to run interactive R and Python code in static quarto documents using WebR.\n\nQuartoLive basics\nInterplay between R and OJS"
   },
   {
     "objectID": "index.html#other",
     "href": "index.html#other",
-    "title": "Quarto experiments",
+    "title": "Quarto Experiments",
     "section": "Other",
-    "text": "Other\n\nIcons in quarto\n\n\n\nUpdated: 13-01-2025. Quarto v1.6.40"
-  },
-  {
-    "objectID": "documents/param-text/index.html",
-    "href": "documents/param-text/index.html",
-    "title": "Parameterized report",
-    "section": "",
-    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
-  },
-  {
-    "objectID": "documents/param-text/index.html#section",
-    "href": "documents/param-text/index.html#section",
-    "title": "Parameterized report",
-    "section": "Topic A",
-    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#load-packages",
-    "href": "documents/webr-revealjs/index.html#load-packages",
-    "title": "WebR in Quarto presentation",
-    "section": "Load packages",
-    "text": "Load packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#table",
-    "href": "documents/webr-revealjs/index.html#table",
-    "title": "WebR in Quarto presentation",
-    "section": "Table",
-    "text": "Table\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nThe iris dataset is included in base R."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#plot",
-    "href": "documents/webr-revealjs/index.html#plot",
-    "title": "WebR in Quarto presentation",
-    "section": "Plot",
-    "text": "Plot\nThis is ggplot2.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#image",
-    "href": "documents/webr-revealjs/index.html#image",
-    "title": "WebR in Quarto presentation",
-    "section": "Image",
-    "text": "Image\nThis is an image.\n\n\nFigure 1: This is iris species."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#code-highlighting",
-    "href": "documents/webr-revealjs/index.html#code-highlighting",
-    "title": "WebR in Quarto presentation",
-    "section": "Code highlighting",
-    "text": "Code highlighting\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe figure is updated to show petal widths."
-  },
-  {
-    "objectID": "documents/webr-revealjs/index.html#session",
-    "href": "documents/webr-revealjs/index.html#session",
-    "title": "WebR in Quarto presentation",
-    "section": "Session",
-    "text": "Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+    "text": "Other\n\nIcons in quarto\n\n\n\nUpdated: 26-02-2025. Quarto v1.6.42"
   },
   {
     "objectID": "documents/webr-shinylive/index.html",
@@ -124,27 +68,6 @@
     "title": "Shinylive with WebR",
     "section": "2 WebR",
     "text": "2 WebR\nThis is a webr chunk\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html",
-    "href": "documents/quartolive-ojs/index.html",
-    "title": "QuartoLive with OJS",
-    "section": "",
-    "text": "Variables can be interchanged between R and OJS."
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html#r-to-ojs",
-    "href": "documents/quartolive-ojs/index.html#r-to-ojs",
-    "title": "QuartoLive with OJS",
-    "section": "1 R to OJS",
-    "text": "1 R to OJS\nIn this example, a data set in R is sent over to OJS to be plotted.\n```{webr}\n#| define:\n#|   - irism\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\n```\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x = Inputs.select(Object.keys(irism[0]), {value: \"petal_width\", multiple: false, label: \"X axis\"})\nviewof y = Inputs.select(Object.keys(irism[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(irism, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
-  },
-  {
-    "objectID": "documents/quartolive-ojs/index.html#ojs-to-r",
-    "href": "documents/quartolive-ojs/index.html#ojs-to-r",
-    "title": "QuartoLive with OJS",
-    "section": "2 OJS to R",
-    "text": "2 OJS to R\nIn this example, a dataset in R is filtered in R based on input from OJS.\n\n\nCode\nviewof sp = Inputs.radio([\"setosa\", \"versicolor\", \"virginica\"], {label: \"Select species:\", value: \"setosa\"})\n\n\n\n\n\n\n\n```{webr}\n#| input:\n#|   - sp\niris[iris$Species %in% sp,]\n```"
   },
   {
     "objectID": "documents/shinylive/index.html",
@@ -189,137 +112,95 @@
     "text": "5 Acknowledgements\n\nhttps://quarto.thecoatlessprofessor.com/r-shinylive-demo/\nhttps://topepo.github.io/shinylive-in-book-test/shiny.html\nhttps://shinylive.io/r/examples/"
   },
   {
-    "objectID": "documents/ojs-widgets/index.html",
-    "href": "documents/ojs-widgets/index.html",
+    "objectID": "documents/report/index.html",
+    "href": "documents/report/index.html",
+    "title": "setosa report",
+    "section": "",
+    "text": "library(ggplot2)"
+  },
+  {
+    "objectID": "documents/report/index.html#setosa",
+    "href": "documents/report/index.html#setosa",
+    "title": "setosa report",
+    "section": "1 setosa",
+    "text": "1 setosa\nThe setosa species is subsetted from the data.\n\niris_filtered &lt;- subset(iris, iris$Species == params$name)\n\n\nhead(iris_filtered)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
+  },
+  {
+    "objectID": "documents/report/index.html#plots",
+    "href": "documents/report/index.html#plots",
+    "title": "setosa report",
+    "section": "2 Plots",
+    "text": "2 Plots\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+\n    geom_point()+\n    labs(title=params$name)\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species."
+  },
+  {
+    "objectID": "documents/report/index.html#image",
+    "href": "documents/report/index.html#image",
+    "title": "setosa report",
+    "section": "3 Image",
+    "text": "3 Image\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html",
+    "href": "documents/quartolive-ojs/index.html",
+    "title": "QuartoLive with OJS",
+    "section": "",
+    "text": "Variables can be interchanged between R and OJS."
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html#r-to-ojs",
+    "href": "documents/quartolive-ojs/index.html#r-to-ojs",
+    "title": "QuartoLive with OJS",
+    "section": "1 R to OJS",
+    "text": "1 R to OJS\nIn this example, a data set in R is sent over to OJS to be plotted.\n```{webr}\n#| define:\n#|   - irism\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\n```\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x = Inputs.select(Object.keys(irism[0]), {value: \"petal_width\", multiple: false, label: \"X axis\"})\nviewof y = Inputs.select(Object.keys(irism[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(irism, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
+  },
+  {
+    "objectID": "documents/quartolive-ojs/index.html#ojs-to-r",
+    "href": "documents/quartolive-ojs/index.html#ojs-to-r",
+    "title": "QuartoLive with OJS",
+    "section": "2 OJS to R",
+    "text": "2 OJS to R\nIn this example, a dataset in R is filtered in R based on input from OJS.\n\n\nCode\nviewof sp = Inputs.radio([\"setosa\", \"versicolor\", \"virginica\"], {label: \"Select species:\", value: \"setosa\"})\n\n\n\n\n\n\n\n```{webr}\n#| input:\n#|   - sp\niris[iris$Species %in% sp,]\n```"
+  },
+  {
+    "objectID": "documents/param-text/index.html",
+    "href": "documents/param-text/index.html",
+    "title": "Parameterized report",
+    "section": "",
+    "text": "In this parameterized report, code parameters are specified in an external yaml file named _params.yml.\n_params.yml\n\ndfr: \"setosa\"\nText metadata is specified in an external yaml file named _metadata.yml.\n_metadata.yml\n\ntopic: \"Topic A\"\nblock: |\n  This is a multiline block. the first part of the **analysis**. More information. bla bla.\nindex.qmd is this file. See code-tools icons at the top of this document to see the code.\nThe document is rendered in the following ways:"
+  },
+  {
+    "objectID": "documents/param-text/index.html#section",
+    "href": "documents/param-text/index.html#section",
+    "title": "Parameterized report",
+    "section": "Topic A",
+    "text": "Topic A\nThis is a multiline block. the first part of the analysis. More information. bla bla.\nThe virginica species is subsetted from the data.\n\n\n\nR\n\nhead(subset(iris, iris$Species == params$dfr))\n\n\n    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species\n101          6.3         3.3          6.0         2.5 virginica\n102          5.8         2.7          5.1         1.9 virginica\n103          7.1         3.0          5.9         2.1 virginica\n104          6.3         2.9          5.6         1.8 virginica\n105          6.5         3.0          5.8         2.2 virginica\n106          7.6         3.0          6.6         2.1 virginica"
+  },
+  {
+    "objectID": "documents/ojs-reactive/index.html",
+    "href": "documents/ojs-reactive/index.html",
     "title": "ObservableJS in Quarto",
     "section": "",
-    "text": "See the official OJS documentation."
+    "text": "Code\ndata = FileAttachment(\"diamonds.csv\").csv({ typed: true})\ndata\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof raw_table = Inputs.table(data)\n\n\n\n\n\n\n\n\n\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\n\nTooltips are documented here."
   },
   {
-    "objectID": "documents/ojs-widgets/index.html#define-data",
-    "href": "documents/ojs-widgets/index.html#define-data",
-    "title": "ObservableJS in Quarto",
-    "section": "1 Define data",
-    "text": "1 Define data\n\n\nCode\ndata_hdi = [\n  {\n    name: \"Switzerland\",\n    continent: \"Europe\",\n    hdi: \"0.962\"\n  },\n  {\n    name: \"Norway\",\n    continent: \"Europe\",\n    hdi: \"0.961\"\n  },\n  {\n    name: \"Iceland\",\n    continent: \"Europe\",\n    hdi: \"0.959\"\n  },\n  {\n    name: \"Hong Kong\",\n    continent: \"Asia\",\n    hdi: \"0.952\"\n  },\n  {\n    name: \"Australia\",\n    continent: \"Oceania\",\n    hdi: \"0.951\"\n  },\n  {\n    name: \"Denmark\",\n    continent: \"Europe\",\n    hdi: \"0.948\"\n  },\n  {\n    name: \"Sweden\",\n    continent: \"Europe\",\n    hdi: \"0.947\"\n  },\n  {\n    name: \"Ireland\",\n    continent: \"Europe\",\n    hdi: \"0.945\"\n  },\n  {\n    name: \"Germany\",\n    continent: \"Europe\",\n    hdi: \"0.942\"\n  },\n  {\n    name: \"Netherlands\",\n    continent: \"Europe\",\n    hdi: \"0.941\"\n  },\n  {\n    name: \"Finland\",\n    continent: \"Europe\",\n    hdi: \"0.940\"\n  },\n  {\n    name: \"Singapore\",\n    continent: \"Asia\",\n    hdi: \"0.939\"\n  },\n  {\n    name: \"Belgium\",\n    continent: \"Europe\",\n    hdi: \"0.937\"\n  },\n  {\n    name: \"New Zealand\",\n    continent: \"Oceania\",\n    hdi: \"0.937\"\n  },\n  {\n    name: \"Canada\",\n    continent: \"North America\",\n    hdi: \"0.936\"\n  }\n]"
-  },
-  {
-    "objectID": "documents/ojs-widgets/index.html#output-widgets",
-    "href": "documents/ojs-widgets/index.html#output-widgets",
-    "title": "ObservableJS in Quarto",
-    "section": "2 Output widgets",
-    "text": "2 Output widgets\n\n2.1 Table\n\n\nCode\nviewof table_a = Inputs.table(data_hdi)\n\n\n\n\n\n\n\n\n\n2.2 Plot\n\n\nCode\nPlot.plot({\n  marginLeft: 100,\n  y: {\n\n  },\n  marks: [\n    Plot.barX(data_hdi, {\n      x: \"hdi\",\n      y: \"name\",\n      title: (d) =&gt;\n        `Country: ${d.name}`\n    })\n  ],\n  grid: true\n})"
-  },
-  {
-    "objectID": "documents/ojs-widgets/index.html#input-widgets",
-    "href": "documents/ojs-widgets/index.html#input-widgets",
-    "title": "ObservableJS in Quarto",
-    "section": "3 Input widgets",
-    "text": "3 Input widgets\n\n3.1 Text\n\n\nCode\nviewof name = Inputs.text({label: \"Name\", placeholder: \"What’s your name?\"})\n\n\n\n\n\n\n\nYour input is .\n\n\n3.2 Text area input\n\n\nCode\nviewof bio = Inputs.textarea({label: \"Biography\", placeholder: \"What’s your story?\"})\n\n\n\n\n\n\n\nYour input is .\n\n\n3.3 Numeric\n\n\nCode\nviewof hdi = Inputs.range([0.90, 1.00], {value: 0.98, step: 0.01, label: \"HDI\"})\n\n\n\n\n\n\n\nBelow are countries with HDI less than .\n\n\nCode\ndata_numeric = data_hdi.filter(d =&gt; d.hdi &lt; hdi)\nviewof table_numeric = Inputs.table(data_numeric)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.4 Button\n\n\nCode\nviewof clicks = Inputs.button(\"Click me\")\n\n\n\n\n\n\n\nNumber of clicks: .\n\n\n3.5 Toggle button\n\n\nCode\nviewof mute = Inputs.toggle({label: \"Mute\"})\n\n\n\n\n\n\n\nCurrent state: .\n\n\n3.6 Radio button\n\n\nCode\nviewof cont = Inputs.radio([\"Asia\", \"Europe\", \"North America\", \"Oceania\"], {label: \"Select continent:\", value: \"Europe\"})\n\n\n\n\n\n\n\nThe table below is filtered to keep .\n\n\nCode\ndata_radio = data_hdi.filter(d =&gt; d.continent == cont)\nviewof table_radio = Inputs.table(data_radio)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.7 Checkbox\n\n\nCode\nviewof flavors = Inputs.checkbox([\"salty\", \"sweet\", \"bitter\", \"sour\", \"umami\"], {label: \"Flavors\"})\n\n\n\n\n\n\n\nSelected items: .\n\n\n3.8 Dropdown selection\n\n\nCode\nviewof dflavors = Inputs.select([\"salty\", \"sweet\", \"bitter\", \"sour\", \"umami\"], {label: \"Flavors\", multiple: true})\n\n\n\n\n\n\n\nSelected items: .\n\n\n3.9 Date\n\n\nCode\nviewof birthday = Inputs.date({label: \"Select date\"})\n\n\n\n\n\n\n\nSelected date: .\n\n\n3.10 Color\n\n\nCode\nviewof color = Inputs.color({label: \"Favorite color\", value: \"#4682b4\"})\n\n\n\n\n\n\n\nSelected color: .\n\n\n3.11 File upload\n\n\nCode\nviewof file = Inputs.file({label: \"Upload a CSV file:\", accept: \".csv\", required: true})\ndata3 = file.csv({typed: true})\nviewof raw_table = Inputs.table(data3)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.12 Search\n\n\nCode\nviewof search = Inputs.search(data_hdi, { placeholder: \"Search\"})"
-  },
-  {
-    "objectID": "documents/ojs-widgets/index.html#downloads",
-    "href": "documents/ojs-widgets/index.html#downloads",
-    "title": "ObservableJS in Quarto",
-    "section": "4 Downloads",
-    "text": "4 Downloads\n\n4.1 Text download\n\n\nCode\nbutton = (data, filename = 'data.csv') =&gt; {\n  if (!data) throw new Error('Array of data required as first argument');\n\n  let downloadData;\n  if (filename.includes('.csv')) {\n    downloadData = new Blob([d3.csvFormat(data)], { type: \"text/csv\" });\n  } else {\n    downloadData = new Blob([JSON.stringify(data, null, 2)], {\n      type: \"application/json\"\n    });\n  }\n\n  const size = (downloadData.size / 1024).toFixed(0);\n  const button = DOM.download(\n    downloadData,\n    filename,\n    `Download ${filename} (~${size} KB)`\n  );\n  return button;\n}\n\n\n\n\n\n\n\n\n\nCode\nbutton(data_hdi, 'hdi.csv')\n\n\n\n\n\n\n\n\n\n4.2 Image download\n\n\nCode\nFileSaver = (await import(\"https://cdn.skypack.dev/file-saver@2.0.5?min\"))\n  .default\n\nhtml2canvas = (await import(\"https://esm.sh/html2canvas@1.4.1\")).default\n\nasync function canvas2blob(canvas) {\n  let resolve, reject;\n  const promise = new Promise((y, n) =&gt; ((resolve = y), (reject = n)));\n  canvas.toBlob((blob) =&gt; {\n    if (blob == null) {\n      return reject();\n    }\n    resolve(blob);\n  });\n  return promise;\n}\n\nfunction generateDownloader(el, options) {\n  return async function () {\n    let resolve, reject;\n    const { filename = \"untitled\", ...html2canvasOptions } = options;\n    const canvas = await html2canvas(el, html2canvasOptions);\n    const blob = await canvas2blob(canvas);\n    FileSaver(blob, filename);\n  };\n}\n\nfunction downloadHtmlAsImage(el, options) {\n  const { label, ...restOptions } = Object.assign(\n    { label: \"Download as PNG\", scale: window.devicePixelRatio },\n    options\n  );\n  const ui = Inputs.button(label, {\n    value: null,\n    reduce: generateDownloader(el, restOptions)\n  });\n  return ui;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload an image as PNG.\n\n\nCode\ndownloadHtmlAsImage(barplot)\n\n\n\n\n\n\n\nAdjust the scale parameter.\n\n\nCode\ndownloadHtmlAsImage(barplot, {\n    label: \"Download 4X PNG\",\n    filename: \"scaled_4x\",\n    scale: 4\n})\n\n\n\n\n\n\n\nDownload image as SVG.\n\n\nCode\nimport {serialize} from \"@mbostock/saving-svg\"\nimport {rasterize} from \"@mbostock/saving-svg\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nDOM.download(() =&gt; serialize(barplot), undefined, \"Save as SVG\")\n\n\n\n\n\n\n\n\n\n4.3 Zip download\n\n\nCode\nJSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')\nzip = {\n  const zip = new JSZip()\n  const folder = zip.folder('website')\n  folder.file('data_hdi.txt', data_hdi)\n  return zip.generateAsync({type: 'blob'})\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nDOM.download(zip, 'website.zip')"
-  },
-  {
-    "objectID": "documents/ojs/index.html",
-    "href": "documents/ojs/index.html",
+    "objectID": "documents/ojs-reactive/index.html#linked-plots",
+    "href": "documents/ojs-reactive/index.html#linked-plots",
     "title": "ObservableJS in Quarto",
     "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+    "text": "Code\ndata = FileAttachment(\"diamonds.csv\").csv({ typed: true})\ndata\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof raw_table = Inputs.table(data)\n\n\n\n\n\n\n\n\n\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\n\nTooltips are documented here."
   },
   {
-    "objectID": "documents/ojs/index.html#passing-data",
-    "href": "documents/ojs/index.html#passing-data",
+    "objectID": "documents/ojs-reactive/index.html#volcano-plot",
+    "href": "documents/ojs-reactive/index.html#volcano-plot",
     "title": "ObservableJS in Quarto",
-    "section": "",
-    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+    "section": "Volcano plot",
+    "text": "Volcano plot\n\n\nCode\ndge = FileAttachment(\"dge.csv\").csv({ typed: true})\ndge\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncontrasts = Array.from(new Set(dge.map(d =&gt; d.comparison)));\nviewof contrast = Inputs.select(contrasts, {label: \"Contrast\", multiple: false})\ndge1 = dge.filter(d =&gt; contrast.includes(d.comparison));\nmaxLfc = d3.max(dge1, d =&gt; d.avg_log2FC)\nmaxPval = {\n  let mp = d3.max(dge1, d =&gt; d.p_val_adj);\n  mp = mp &lt; 0.05 ? 0.05 : mp;\n  return mp;\n}\nminPval = {\n  let mp = d3.min(dge1, d =&gt; d.p_val_adj);\n  mp = mp &gt; 0.05 ? 0.05 : mp;\n  return mp;\n}\nviewof thresPval = Inputs.range([minPval, maxPval], {value: 0.05, step: 0.000000000001, label: \"Pvalue threshold\"})\nviewof thresLfc = Inputs.range([0, maxLfc], {value: 2, step: 0.1, label: \"LogFC threshold\"})\ndge2 = processDe(dge1, thresPval, thresLfc)\ndge3 = dge2.filter(d =&gt; d.p_val_adj &lt; thresPval && Math.abs(d.avg_log2FC) &gt; thresLfc);\ndegs = dge3.length\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNumber of DEGs: \n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(dge2, {\n      x: \"avg_log2FC\", \n      y: \"nlpadj\",\n      fill: \"state\",\n      fillOpacity: 0.7,\n      tip: true,\n      channels: {\n        Gene: \"gene\"\n      }\n    }),\n    Plot.ruleY([-Math.log10(thresPval)], {\n      strokeWidth: 1.2,\n      strokeDasharray: \"4,3\",\n      stroke: \"#808b96\"\n    }),\n    Plot.ruleX([-thresLfc, thresLfc],{\n      strokeWidth: 1.2,\n      strokeDasharray: \"4,3\",\n      stroke: [\"#0571b0\",\"#ca0020\"]\n    })\n  ],\n  color: {\n    legend: true,\n    range: [\"#0571b0\", \"#ca0020\", \"#D3D3D3\"],\n    domain: [\"down\", \"up\", \"neutral\"]\n  },\n  x: {\n    label: \"Mean Log2 Fold change\"\n  },\n  y: {\n    label: \"-Log10 Adj P value\",\n    grid: true\n  },\n  title: contrast,\n  //grid: true,\n  height: 400,\n  width: 700,\n  inset: 8,\n})\n\n\n\n\n\n\n\n\n\nFigure 3: Volcano plot of the selected contrast. Colored points denote DEGs. Vertical dashed lines represent log2FC threshold and horizontal dashed line represents p value threshold.\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.rectY(dge1, Plot.binX({y: \"count\"}, {x: \"pvalue\"})),\n  ],\n  y: {grid: true},\n  height: 200,\n  width: 300,\n})\n\n\n\n\n\n\n\n\n\nFigure 4: P value distribution of the selected contrast.\n\n\n\n\n\nCode\nviewof degTable = Inputs.table(dge3)\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\n\nCode\n/**\n* Adds neg log10 padj, score, sig and state to differential expression results\n*\n* @param {Array} data Output from DGE with adjusted p value and log2 fold change\n* @param {Number} [threshold_pval] Adjusted pvalue cutoff for significance\n* @param {Number} [threshold_lfc] Log2 FC cutoff\n* @param {String} [pval] Field name for adjusted p value\n* @param {String} [lfc] Field name for log2 fold change\n* \n* @return {Array} Returns an Array with additional fields\n**/\nfunction processDe(\n  data, \n  threshold_pval = 0.05, \n  threshold_lfc = 2, \n  pval = \"p_val_adj\", \n  lfc = \"avg_log2FC\"\n) {\n  return data.map(row =&gt; {\n    // Calculate score\n    const score = -Math.log10(row[pval]) * Math.abs(row[lfc]);\n    \n    // Calculate neg log pval\n    const nlpval = -Math.log10(row[pval]);\n    \n    // Determine if the row is significant\n    const sig = row[pval] &lt; threshold_pval && Math.abs(row[lfc]) &gt; threshold_lfc;\n    \n    // Determine the state based on lfc and pval\n    let state;\n    if (row[pval] &lt; threshold_pval) {\n      if (row[lfc] &gt; threshold_lfc) {\n        state = \"up\";\n      } else if (row[lfc] &lt; -threshold_lfc) {\n        state = \"down\";\n      } else {\n        state = \"neutral\";\n      }\n    } else {\n      state = \"neutral\";\n    }\n    \n    // Return a new object with existing fields and new fields\n    return {\n      ...row,\n      score: score,\n      nlpadj: nlpval,\n      sig: sig,\n      state: state\n    };\n  });\n}"
   },
   {
-    "objectID": "documents/ojs/index.html#table",
-    "href": "documents/ojs/index.html#table",
+    "objectID": "documents/ojs-reactive/index.html#dotplot",
+    "href": "documents/ojs-reactive/index.html#dotplot",
     "title": "ObservableJS in Quarto",
-    "section": "Table",
-    "text": "Table\nDisplay as table.\n\n\nCode\nviewof raw_table = Inputs.table(ojsdata)\n\n\n\n\n\n\n\nComputing a new variable using an arrow function. ... keeps all old variables and the new variable ratio is added.\n\n\nCode\nojsdatamod = ojsdata.map(d =&gt; ({...d, ratio: d.sepal_width / d.petal_width}))\n\n\n\n\n\n\n\n\n\nCode\nviewof mod_table = Inputs.table(ojsdatamod)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#checkbox-filtering",
-    "href": "documents/ojs/index.html#checkbox-filtering",
-    "title": "ObservableJS in Quarto",
-    "section": "Checkbox filtering",
-    "text": "Checkbox filtering\nDefine checkbox input.\n\n\nCode\nviewof grp = Inputs.select([\"setosa\", \"versicolor\", \"virginica\"], {value: [\"setosa\"], multiple: false, label: \"Species\"})\n\n\n\n\n\n\n\nFilter data based on checkbox inputs.\n\n\nCode\nojsdata_filtered = ojsdata.filter(d =&gt; d.species.includes(grp))\n\n\n\n\n\n\n\nDisplay filtered data as table.\n\n\nCode\nviewof filtered_table = Inputs.table(ojsdata_filtered)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#scatterplot",
-    "href": "documents/ojs/index.html#scatterplot",
-    "title": "ObservableJS in Quarto",
-    "section": "Scatterplot",
-    "text": "Scatterplot\nDisplay a scatterplot. X and Y axes are defined by select inputs.\n\n\nCode\nviewof x = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_length\", multiple: false, label: \"X axis\"})\n\n\n\n\n\n\n\n\n\nCode\nviewof y = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(ojsdata, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
-  },
-  {
-    "objectID": "documents/ojs/index.html#search",
-    "href": "documents/ojs/index.html#search",
-    "title": "ObservableJS in Quarto",
-    "section": "Search",
-    "text": "Search\nSearch through a table.\n\n\nCode\nviewof ojsdata_filtered_search = Inputs.search(ojsdata,\n{ \n  placeholder: \"Search for species\",\n  datalist: ojsdata.map(d =&gt; d.species),\n  label: \"Search for species: \"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof filtered_search_table = Inputs.table(ojsdata_filtered_search)"
-  },
-  {
-    "objectID": "documents/ojs/index.html#arquero",
-    "href": "documents/ojs/index.html#arquero",
-    "title": "ObservableJS in Quarto",
-    "section": "Arquero",
-    "text": "Arquero\nData wrangling using Arquero.\nImport dependencies and convert data to Arquero format.\n\n\nCode\nimport { aq, op } from '@uwdata/arquero'\nojsdata_aq = aq.from(ojsdata)\n\nojsdata_aq\n  .groupby('species')\n  .filter(p =&gt; p.sepal_length &gt; 5)\n  .rollup({\n    count: op.count(),\n    avg_mass: op.average('sepal_length')\n   })\n  .view()"
-  },
-  {
-    "objectID": "documents/webr/index.html",
-    "href": "documents/webr/index.html",
-    "title": "webR-enabled code cells",
-    "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr/index.html#installation",
-    "href": "documents/webr/index.html#installation",
-    "title": "webR-enabled code cells",
-    "section": "",
-    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
-  },
-  {
-    "objectID": "documents/webr/index.html#sample-cases",
-    "href": "documents/webr/index.html#sample-cases",
-    "title": "webR-enabled code cells",
-    "section": "2 Sample cases",
-    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.2 Create a graph with base R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n2.4 Define variables and re-use them in later cells\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.5 Escape characters in a string\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.6 Anonymous function definition\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.7 Empty code cell\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
-  },
-  {
-    "objectID": "documents/webr/index.html#session",
-    "href": "documents/webr/index.html#session",
-    "title": "webR-enabled code cells",
-    "section": "3 Session",
-    "text": "3 Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nwebr extension version: 0.3.6"
-  },
-  {
-    "objectID": "documents/revealjs/index.html#setosa",
-    "href": "documents/revealjs/index.html#setosa",
-    "title": "setosa presentation",
-    "section": "setosa",
-    "text": "setosa\nThe setosa species is subsetted from the data.\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n\nThe iris dataset is included in base R."
-  },
-  {
-    "objectID": "documents/revealjs/index.html#layout",
-    "href": "documents/revealjs/index.html#layout",
-    "title": "setosa presentation",
-    "section": "Layout",
-    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
-  },
-  {
-    "objectID": "documents/revealjs/index.html#code-highlighting",
-    "href": "documents/revealjs/index.html#code-highlighting",
-    "title": "setosa presentation",
-    "section": "Code highlighting",
-    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\n\nFigure 3: Scatterplot of setosa species.\n\nThe figure is updated to show petal widths."
+    "section": "Dotplot",
+    "text": "Dotplot\nDotplots to visualize top DEGs across contrasts.\n\n\nCode\nviewof genes = Inputs.range([2, 40], {value: 20, step: 1, label: \"Number of genes\"})\nexp1 = getTopGenes(dge, genes)\ngeneOrder = Array.from(new Set(exp1.map(d =&gt; d.gene))).reverse();\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(exp1, {\n      x: \"comparison\", \n      y: \"gene\",\n      fill: \"avg_log2FC\",\n      fillOpacity: 0.6,\n      r: \"nlpadj\",\n      tip: true,\n      channels: {\n        Gene: \"gene\", AdjPVal: \"p_val_adj\"\n      }\n    })\n  ],\n  color: {\n    legend: true,\n    scheme: \"BuRd\"\n  },\n  x: {label: \"Comparison\"},\n  y: {label: \"Genes\", domain: geneOrder},\n  r: {range: [3, 15], label: \"Adjusted p value\"},\n  grid: true,\n  height: 600,\n  width: 400,\n  marginLeft: 100,\n  inset: 8,\n})\n\n\n\n\n\n\n\n\n\nFigure 5: Dotplot of the top DEGs across all contrasts. The size of the dots represent the adjusted p value and color denotes log fold change.\n\n\n\n\n\n\nCode\n/**\n* Filters and returns the top N genes based on score\n*\n* @param {Array} data Output from DGE with adjusted p value and log2 fold change\n* @param {Number} [topN] Number of top genes to return\n* \n* @return {Array} Returns an Array\n**/\nfunction getTopGenes(data, topN = 20) {\n  // Calculate scores\n  const scoredData = data.map(d =&gt; {\n    const nlpadj = -Math.log10(d.p_val_adj);\n    const score = -Math.log10(d.p_val_adj) * Math.abs(d.avg_log2FC);\n\n    return {\n      ...d,\n      nlpadj: nlpadj,\n      score: score\n    };\n  });\n\n  // Group by comparison and find top N genes\n  const topGenesByComparison = {};\n\n  scoredData.forEach(d =&gt; {\n    if (!topGenesByComparison[d.comparison]) {\n      topGenesByComparison[d.comparison] = [];\n    }\n    topGenesByComparison[d.comparison].push(d);\n  });\n\n  const result = [];\n\n  for (const comparison in topGenesByComparison) {\n    // Sort by score in descending order\n    topGenesByComparison[comparison].sort((a, b) =&gt; b.score - a.score);\n    \n    // Get top N entries\n    const topNGenes = topGenesByComparison[comparison].slice(0, topN);\n\n    // Add the top N genes to the result array\n    result.push(...topNGenes);\n  }\n\n  return result;\n}"
   },
   {
     "objectID": "documents/ojs-plots/index.html",
@@ -406,62 +287,6 @@
     "text": "Path\n\n\n\n\n\nR\n\nggplot(economics, aes(unemploy/pop, psavert)) + \n  geom_path()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS\n\nPlot.plot({\n  marks: [\n    Plot.line(economics, {\n      x: (d) =&gt; d.unemploy / d.pop,\n      y: \"psavert\",\n      z: null,\n      stroke: (d) =&gt; d.date\n    })\n  ],\n  grid: true,\n})"
   },
   {
-    "objectID": "documents/report/index.html",
-    "href": "documents/report/index.html",
-    "title": "setosa report",
-    "section": "",
-    "text": "library(ggplot2)"
-  },
-  {
-    "objectID": "documents/report/index.html#setosa",
-    "href": "documents/report/index.html#setosa",
-    "title": "setosa report",
-    "section": "1 setosa",
-    "text": "1 setosa\nThe setosa species is subsetted from the data.\n\niris_filtered &lt;- subset(iris, iris$Species == params$name)\n\n\nhead(iris_filtered)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
-  },
-  {
-    "objectID": "documents/report/index.html#plots",
-    "href": "documents/report/index.html#plots",
-    "title": "setosa report",
-    "section": "2 Plots",
-    "text": "2 Plots\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+\n    geom_point()+\n    labs(title=params$name)\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species."
-  },
-  {
-    "objectID": "documents/report/index.html#image",
-    "href": "documents/report/index.html#image",
-    "title": "setosa report",
-    "section": "3 Image",
-    "text": "3 Image\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
-  },
-  {
-    "objectID": "documents/ojs-linked/index.html",
-    "href": "documents/ojs-linked/index.html",
-    "title": "ObservableJS in Quarto",
-    "section": "",
-    "text": "Code\ndata = FileAttachment(\"diamonds.csv\").csv({ typed: true})\ndata"
-  },
-  {
-    "objectID": "documents/ojs-linked/index.html#read-csv",
-    "href": "documents/ojs-linked/index.html#read-csv",
-    "title": "ObservableJS in Quarto",
-    "section": "",
-    "text": "Code\ndata = FileAttachment(\"diamonds.csv\").csv({ typed: true})\ndata"
-  },
-  {
-    "objectID": "documents/ojs-linked/index.html#table",
-    "href": "documents/ojs-linked/index.html#table",
-    "title": "ObservableJS in Quarto",
-    "section": "Table",
-    "text": "Table\n\n\nCode\nviewof raw_table = Inputs.table(data)"
-  },
-  {
-    "objectID": "documents/ojs-linked/index.html#scatterplot",
-    "href": "documents/ojs-linked/index.html#scatterplot",
-    "title": "ObservableJS in Quarto",
-    "section": "Scatterplot",
-    "text": "Scatterplot\nPick the variable for point color.\n\n\nCode\nviewof col = Inputs.select([\"carat\",\"cut\",\"color\",\"clarity\",\"depth\",\"table\",\"price\"],{value: \"cut\", multiple: false, label: \"Color variable\"})\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof x1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X1 axis\"})\nviewof y1 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"depth\", multiple: false, label: \"Y1 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x1,\n      y: y1,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot A.\n\n\n\n\n\n\n\n\nCode\nviewof x2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"carat\", multiple: false, label: \"X2 axis\"})\nviewof y2 = Inputs.select([\"carat\",\"depth\",\"table\",\"price\"], {value: \"price\", multiple: false, label: \"Y2 axis\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  color: {legend: true},\n  marks: [\n    Plot.dot(data, {\n      x: x2,\n      y: y2,\n      stroke: col,\n      tip: true,\n      channels: {cut: \"cut\", color: \"color\", clarity: \"clarity\"}\n    })\n  ],\n  grid: true\n})\n\n\n\n\n\n\n\n\n\nFigure 2: Scatterplot B.\n\n\n\n\n\n\n\nTooltips are documented here."
-  },
-  {
     "objectID": "documents/icons/index.html",
     "href": "documents/icons/index.html",
     "title": "Icons in Quarto",
@@ -511,6 +336,83 @@
     "text": "6 Lordicon\n\n6.1 Installation\nquarto add jmgirard/lordicon\n\n\n6.2 Usage\nSyntax\n{{&lt; li &lt;icon-name&gt; [additional args] &gt;}}\nTo find icon codes, go to Lordicon website, hit the Explore Library button and select the Free Icons filter on the left-hand side. You can choose a style for the icon (possiblities are flat, gradient, lineal, and outline).\nClick on any icon, hit the &lt;/&gt; HTML button on the bottom of that info listing and a popover will appear with the eight-letter code. You need to transpose that to lowercase as using uppercase letters won’t work :( .\n{{&lt; li xxdqfhbi &gt;}}\n\n\n\n6.3 Options\nEach style of icon (flat, gradient, etc.) will have an entirely different eight-letter code.\nThe trigger argument controls the icon’s animation type. When using the loop or loop-on-hover triggers, you can also set an optional delay (in ms) between loops.\n{{&lt; li xxdqfhbi &gt;}} \n{{&lt; li xxdqfhbi trigger=click &gt;}} \n{{&lt; li xxdqfhbi trigger=hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop &gt;}} \n{{&lt; li xxdqfhbi trigger=loop delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover &gt;}} \n{{&lt; li xxdqfhbi trigger=loop-on-hover delay=1000 &gt;}} \n{{&lt; li xxdqfhbi trigger=morph &gt;}} \n{{&lt; li xxdqfhbi trigger=boomerang &gt;}} \nThe speed argument controls how quickly the icon’s animation plays.\n{{&lt; li lupuorrc trigger=loop speed=0.5 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=1.0 &gt;}} \n{{&lt; li lupuorrc trigger=loop speed=2.0 &gt;}} \nThe colors argument controls the icon’s coloring. Outline icons typically have just a primary and secondary color, but \"flat\" and \"lineal\" icons can have many more. Each color should be given in rank:color format (where ranks are \"primary\", \"secondary\", \"tertiary\", etc.) and multiple colors should be separated by commas. Colors can be given as CSS color names or as hexadecimal colors.\n{{&lt; li lupuorrc &gt;}} \n{{&lt; li lupuorrc colors=primary:gold &gt;}} \n{{&lt; li lupuorrc colors=primary:gray,secondary:orange &gt;}} \n{{&lt; li lupuorrc colors=primary:#4030e8,secondary:#ee66aa &gt;}} \nThe stroke argument controls how thick the lines in an icon are.\n{{&lt; li lupuorrc stroke=50 &gt;}} \n{{&lt; li lupuorrc stroke=100 &gt;}} \n{{&lt; li lupuorrc stroke=150 &gt;}} \nThe scale icon controls how large or zoomed in the icon is.\n{{&lt; li lupuorrc scale=25 &gt;}} \n{{&lt; li lupuorrc scale=50 &gt;}} \n{{&lt; li lupuorrc scale=100 &gt;}} \nThe x arg controls the horizontal position of the center of the icon.\n{{&lt; li lupuorrc x=25 &gt;}} \n{{&lt; li lupuorrc x=50 &gt;}} \n{{&lt; li lupuorrc x=100 &gt;}} \nThe y arg controls the vertical position of the center of the icon.\n{{&lt; li lupuorrc y=25 &gt;}} \n{{&lt; li lupuorrc y=50 &gt;}} \n{{&lt; li lupuorrc y=100 &gt;}} \nThe complete version of this document is available at https://github.com/rich-iannone/quarto-icons-examples."
   },
   {
+    "objectID": "documents/ojs-r/index.html",
+    "href": "documents/ojs-r/index.html",
+    "title": "ObservableJS in Quarto",
+    "section": "",
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#passing-data",
+    "href": "documents/ojs-r/index.html#passing-data",
+    "title": "ObservableJS in Quarto",
+    "section": "",
+    "text": "Convert R data.frame to OJS object. This is the only code chunk that is R. All other chunks are ojs.\n\n\n\nCode\n\nR code\n\nirism &lt;- iris\ncolnames(irism) &lt;- gsub(\"[.]\",\"_\",tolower(colnames(irism)))\nojs_define(ojsd = irism)\n\n\n\nTranspose JS object.\n\n\nCode\nojsdata = transpose(ojsd)\n\n\n\n\n\n\n\nRaw JSON object.\n\n\nCode\nojsdata"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#table",
+    "href": "documents/ojs-r/index.html#table",
+    "title": "ObservableJS in Quarto",
+    "section": "Table",
+    "text": "Table\nDisplay as table.\n\n\nCode\nviewof raw_table = Inputs.table(ojsdata)\n\n\n\n\n\n\n\nComputing a new variable using an arrow function. ... keeps all old variables and the new variable ratio is added.\n\n\nCode\nojsdatamod = ojsdata.map(d =&gt; ({...d, ratio: d.sepal_width / d.petal_width}))\n\n\n\n\n\n\n\n\n\nCode\nviewof mod_table = Inputs.table(ojsdatamod)"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#checkbox-filtering",
+    "href": "documents/ojs-r/index.html#checkbox-filtering",
+    "title": "ObservableJS in Quarto",
+    "section": "Checkbox filtering",
+    "text": "Checkbox filtering\nDefine checkbox input.\n\n\nCode\nviewof grp = Inputs.select([\"setosa\", \"versicolor\", \"virginica\"], {value: [\"setosa\"], multiple: false, label: \"Species\"})\n\n\n\n\n\n\n\nFilter data based on checkbox inputs.\n\n\nCode\nojsdata_filtered = ojsdata.filter(d =&gt; d.species.includes(grp))\n\n\n\n\n\n\n\nDisplay filtered data as table.\n\n\nCode\nviewof filtered_table = Inputs.table(ojsdata_filtered)"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#scatterplot",
+    "href": "documents/ojs-r/index.html#scatterplot",
+    "title": "ObservableJS in Quarto",
+    "section": "Scatterplot",
+    "text": "Scatterplot\nDisplay a scatterplot. X and Y axes are defined by select inputs.\n\n\nCode\nviewof x = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_length\", multiple: false, label: \"X axis\"})\n\n\n\n\n\n\n\n\n\nCode\nviewof y = Inputs.select(Object.keys(ojsdata[0]), {value: \"sepal_width\", multiple: false, label: \"Y axis\"})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  marks: [\n    Plot.dot(ojsdata, {\n      x: x,\n      y: y,\n      fill: \"species\",\n      title: (d) =&gt;\n        `${d.species} \\n Petal length: ${d.petal_length} \\n Sepal length: ${d.sepal_length}`\n    })\n  ],\n  grid: true\n})"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#search",
+    "href": "documents/ojs-r/index.html#search",
+    "title": "ObservableJS in Quarto",
+    "section": "Search",
+    "text": "Search\nSearch through a table.\n\n\nCode\nviewof ojsdata_filtered_search = Inputs.search(ojsdata,\n{ \n  placeholder: \"Search for species\",\n  datalist: ojsdata.map(d =&gt; d.species),\n  label: \"Search for species: \"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof filtered_search_table = Inputs.table(ojsdata_filtered_search)"
+  },
+  {
+    "objectID": "documents/ojs-r/index.html#arquero",
+    "href": "documents/ojs-r/index.html#arquero",
+    "title": "ObservableJS in Quarto",
+    "section": "Arquero",
+    "text": "Arquero\nData wrangling using Arquero.\nImport dependencies and convert data to Arquero format.\n\n\nCode\nimport { aq, op } from '@uwdata/arquero'\nojsdata_aq = aq.from(ojsdata)\n\nojsdata_aq\n  .groupby('species')\n  .filter(p =&gt; p.sepal_length &gt; 5)\n  .rollup({\n    count: op.count(),\n    avg_mass: op.average('sepal_length')\n   })\n  .view()"
+  },
+  {
+    "objectID": "documents/ojs-widgets/index.html",
+    "href": "documents/ojs-widgets/index.html",
+    "title": "ObservableJS in Quarto",
+    "section": "",
+    "text": "See the official OJS documentation."
+  },
+  {
+    "objectID": "documents/ojs-widgets/index.html#define-data",
+    "href": "documents/ojs-widgets/index.html#define-data",
+    "title": "ObservableJS in Quarto",
+    "section": "1 Define data",
+    "text": "1 Define data\nData is defined as JSON arrays.\n\n\nCode\ndata_hdi = [\n  {\n    name: \"Switzerland\",\n    continent: \"Europe\",\n    hdi: \"0.962\"\n  },\n  {\n    name: \"Norway\",\n    continent: \"Europe\",\n    hdi: \"0.961\"\n  },\n  {\n    name: \"Iceland\",\n    continent: \"Europe\",\n    hdi: \"0.959\"\n  },\n  {\n    name: \"Hong Kong\",\n    continent: \"Asia\",\n    hdi: \"0.952\"\n  },\n  {\n    name: \"Australia\",\n    continent: \"Oceania\",\n    hdi: \"0.951\"\n  },\n  {\n    name: \"Denmark\",\n    continent: \"Europe\",\n    hdi: \"0.948\"\n  },\n  {\n    name: \"Sweden\",\n    continent: \"Europe\",\n    hdi: \"0.947\"\n  },\n  {\n    name: \"Ireland\",\n    continent: \"Europe\",\n    hdi: \"0.945\"\n  },\n  {\n    name: \"Germany\",\n    continent: \"Europe\",\n    hdi: \"0.942\"\n  },\n  {\n    name: \"Netherlands\",\n    continent: \"Europe\",\n    hdi: \"0.941\"\n  },\n  {\n    name: \"Finland\",\n    continent: \"Europe\",\n    hdi: \"0.940\"\n  },\n  {\n    name: \"Singapore\",\n    continent: \"Asia\",\n    hdi: \"0.939\"\n  },\n  {\n    name: \"Belgium\",\n    continent: \"Europe\",\n    hdi: \"0.937\"\n  },\n  {\n    name: \"New Zealand\",\n    continent: \"Oceania\",\n    hdi: \"0.937\"\n  },\n  {\n    name: \"Canada\",\n    continent: \"North America\",\n    hdi: \"0.936\"\n  }\n]"
+  },
+  {
+    "objectID": "documents/ojs-widgets/index.html#widgets",
+    "href": "documents/ojs-widgets/index.html#widgets",
+    "title": "ObservableJS in Quarto",
+    "section": "2 Widgets",
+    "text": "2 Widgets\n\n2.1 Table\n\n\nCode\nviewof table_a = Inputs.table(data_hdi)\n\n\n\n\n\n\n\n\n\n2.2 Text\n\n\nCode\nviewof name = Inputs.text({label: \"Name\", placeholder: \"What’s your name?\"})\n\n\n\n\n\n\n\nYour input is \n\n\n2.3 Text area input\n\n\nCode\nviewof bio = Inputs.textarea({label: \"Biography\", placeholder: \"What’s your story?\"})\n\n\n\n\n\n\n\nYour input is \n\n\n2.4 Range (Numeric)\n\n\nCode\nviewof hdi = Inputs.range([0.90, 1.00], {value: 0.98, step: 0.01, label: \"HDI\"})\n\n\n\n\n\n\n\nBelow are countries with HDI less than \n\n\nCode\ndata_numeric = data_hdi.filter(d =&gt; d.hdi &lt; hdi)\nviewof table_numeric = Inputs.table(data_numeric)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.5 Button\n\n\nCode\nviewof clicks = Inputs.button(\"Click me\")\n\n\n\n\n\n\n\nNumber of clicks: \n\n\n2.6 Toggle button\n\n\nCode\nviewof mute = Inputs.toggle({label: \"Mute\"})\n\n\n\n\n\n\n\nCurrent state: \n\n\n2.7 Radio button\n\n\nCode\nviewof cont = Inputs.radio([\"Asia\", \"Europe\", \"North America\", \"Oceania\"], {label: \"Select continent:\", value: \"Europe\"})\n\n\n\n\n\n\n\nThe table below is filtered to keep .\n\n\nCode\ndata_radio = data_hdi.filter(d =&gt; d.continent == cont)\nviewof table_radio = Inputs.table(data_radio)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.8 Checkbox\n\n\nCode\nviewof flavors = Inputs.checkbox([\"salty\", \"sweet\", \"bitter\", \"sour\", \"umami\"], {label: \"Flavors\"})\n\n\n\n\n\n\n\nSelected items: \n\n\n2.9 Dropdown selection\n\n2.9.1 Single selection\n\n\nCode\nviewof dflavors1 = Inputs.select([\"salty\", \"sweet\", \"bitter\", \"sour\", \"umami\"], {label: \"Flavors\", multiple: false})\n\n\n\n\n\n\n\nSelected items: \n\n\n2.9.2 Multiple selection\n\n\nCode\nviewof dflavors2 = Inputs.select([\"salty\", \"sweet\", \"bitter\", \"sour\", \"umami\"], {label: \"Flavors\", multiple: true})\n\n\n\n\n\n\n\nSelected items: \n\n\n\n2.10 Date\n\n\nCode\nviewof birthday = Inputs.date({label: \"Select date\"})\n\n\n\n\n\n\n\nSelected date: \n\n\n2.11 Color\n\n\nCode\nviewof color = Inputs.color({label: \"Favorite color\", value: \"#4682b4\"})\n\n\n\n\n\n\n\nSelected color: \n\n\n2.12 File upload\n\n\nCode\nviewof file = Inputs.file({label: \"Upload a CSV file:\", accept: \".csv\", required: true})\ndata3 = file.csv({typed: true})\nviewof raw_table = Inputs.table(data3)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.13 Search\n\n\nCode\nviewof search = Inputs.search(data_hdi, { \n  placeholder: \"Search\",\n  value: \"\", \n  oninput: function(event) {\n    const searchTerm = event.target.value.toLowerCase();\n    const filteredData = data_hdi.filter(item =&gt; \n      item.name.toLowerCase().includes(searchTerm)\n    );\n    return filteredData;\n  }\n});\nviewof table_b = Inputs.table(search)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.14 Forms\nForms can be used to combine multiple inputs as a set.\n\n\nCode\nviewof rgb = Inputs.form([\n  Inputs.range([0, 255], {step: 1, label: \"r\"}),\n  Inputs.range([0, 255], {step: 1, label: \"g\"}),\n  Inputs.range([0, 255], {step: 1, label: \"b\"})\n]);\nrgb\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfunction rgbString (array) {\n  return 'rgb(' + array.join(', ') + ')';\n}\n\ndisplayColor = function (rgb) {\n  return html`\n    &lt;section style=\"width: 400px; display: grid; grid-gap: 10px;\"&gt;\n      &lt;div class=\"color\" style=\"grid-column: 1;\"&gt;\n        &lt;div class=\"swatch\" style=\"background: ${rgbString(rgb)}; padding: 10px; border-radius:5px;\"&gt;\n          &lt;span&gt;${rgbString(rgb)}&lt;/span&gt;\n        &lt;/div&gt;\n      &lt;/div&gt;\n    &lt;/section&gt;`\n}\n\ndisplayColor(rgb);\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOJS input widgets are documented here."
+  },
+  {
+    "objectID": "documents/ojs-widgets/index.html#downloads",
+    "href": "documents/ojs-widgets/index.html#downloads",
+    "title": "ObservableJS in Quarto",
+    "section": "3 Downloads",
+    "text": "3 Downloads\n\n3.1 Text download\n\n\nCode\nbutton = (data, filename = 'data.csv') =&gt; {\n  if (!data) throw new Error('Array of data required as first argument');\n\n  let downloadData;\n  if (filename.includes('.csv')) {\n    downloadData = new Blob([d3.csvFormat(data)], { type: \"text/csv\" });\n  } else {\n    downloadData = new Blob([JSON.stringify(data, null, 2)], {\n      type: \"application/json\"\n    });\n  }\n\n  const size = (downloadData.size / 1024).toFixed(0);\n  const button = DOM.download(\n    downloadData,\n    filename,\n    `Download ${filename} (~${size} KB)`\n  );\n  return button;\n}\n\n\n\n\n\n\n\n\n\nCode\nbutton(data_hdi, 'hdi.csv')\n\n\n\n\n\n\n\n\n\n3.2 Zip download\nDownload table as a zipped file.\n\n\nCode\nJSZip = require('https://unpkg.com/jszip@3.1.5/dist/jszip.min.js')\nzip = {\n  const zip = new JSZip()\n  const folder = zip.folder('data')\n  folder.file('data_hdi.txt', data_hdi)\n  return zip.generateAsync({type: 'blob'})\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nDOM.download(zip, 'data.zip')\n\n\n\n\n\n\n\n\n\n3.3 Plot\n\n\nCode\nbarplot = Plot.plot({\n  marginLeft: 100,\n  y: {\n\n  },\n  marks: [\n    Plot.barX(data_hdi, {\n      x: \"hdi\",\n      y: \"name\"\n    })\n  ],\n  grid: true\n})\n\nbarplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow with interactive tooltips.\n\n\nCode\nbarplot1 = Plot.plot({\n  marginLeft: 100,\n  y: {\n\n  },\n  marks: [\n    Plot.barX(data_hdi, {\n      x: \"hdi\",\n      y: \"name\",\n      tip: true,\n      channels: {country: \"name\"}\n    })\n  ],\n  grid: true\n})\n\nbarplot1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.4 Image download\nThis is based on mbostock/saving-svg.\nDownload image as SVG.\n\n\nCode\nDOM.download(() =&gt; serialize(barplot), undefined, \"Save as SVG\")\n\n\n\n\n\n\n\nDownload image as PNG.\n\n\nCode\nDOM.download(() =&gt; rasterize(barplot), undefined, \"Save as PNG\")\n\n\n\n\n\n\n\n\n\nCode\nserialize = {\n  const xmlns = \"http://www.w3.org/2000/xmlns/\";\n  const xlinkns = \"http://www.w3.org/1999/xlink\";\n  const svgns = \"http://www.w3.org/2000/svg\";\n  return function serialize(svg) {\n    svg = svg.cloneNode(true);\n    const fragment = window.location.href + \"#\";\n    const walker = document.createTreeWalker(svg, NodeFilter.SHOW_ELEMENT);\n    while (walker.nextNode()) {\n      for (const attr of walker.currentNode.attributes) {\n        if (attr.value.includes(fragment)) {\n          attr.value = attr.value.replace(fragment, \"#\");\n        }\n      }\n    }\n    svg.setAttributeNS(xmlns, \"xmlns\", svgns);\n    svg.setAttributeNS(xmlns, \"xmlns:xlink\", xlinkns);\n    const serializer = new window.XMLSerializer;\n    const string = serializer.serializeToString(svg);\n    return new Blob([string], {type: \"image/svg+xml\"});\n  };\n}\n\nfunction rasterize(svg) {\n  let resolve, reject;\n  const promise = new Promise((y, n) =&gt; (resolve = y, reject = n));\n  const image = new Image;\n  image.onerror = reject;\n  image.onload = () =&gt; {\n    const rect = svg.getBoundingClientRect();\n    const context = DOM.context2d(rect.width, rect.height);\n    context.drawImage(image, 0, 0, rect.width, rect.height);\n    context.canvas.toBlob(resolve);\n  };\n  image.src = URL.createObjectURL(serialize(svg));\n  return promise;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.5 HTML download\n\n\nCode\nFileSaver = (await import(\"https://cdn.skypack.dev/file-saver@2.0.5?min\"))\n  .default\n\nhtml2canvas = (await import(\"https://esm.sh/html2canvas@1.4.1\")).default\n\nasync function canvas2blob(canvas) {\n  let resolve, reject;\n  const promise = new Promise((y, n) =&gt; ((resolve = y), (reject = n)));\n  canvas.toBlob((blob) =&gt; {\n    if (blob == null) {\n      return reject();\n    }\n    resolve(blob);\n  });\n  return promise;\n}\n\nfunction generateDownloader(el, options) {\n  return async function () {\n    let resolve, reject;\n    const { filename = \"untitled\", ...html2canvasOptions } = options;\n    const canvas = await html2canvas(el, html2canvasOptions);\n    const blob = await canvas2blob(canvas);\n    FileSaver(blob, filename);\n  };\n}\n\nfunction downloadHtmlAsImage(el, options) {\n  const { label, ...restOptions } = Object.assign(\n    { label: \"Download as PNG\", scale: window.devicePixelRatio },\n    options\n  );\n  const ui = Inputs.button(label, {\n    value: null,\n    reduce: generateDownloader(el, restOptions)\n  });\n  return ui;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload HTML element as PNG.\n\n\nCode\ndownloadHtmlAsImage(barplot1)\n\n\n\n\n\n\n\nAdjust the scale parameter.\n\n\nCode\ndownloadHtmlAsImage(barplot1, {\n    label: \"Download 4X PNG\",\n    filename: \"scaled_4x\",\n    scale: 4\n})"
+  },
+  {
     "objectID": "documents/quartolive/index.html",
     "href": "documents/quartolive/index.html",
     "title": "QuartoLive",
@@ -544,5 +446,96 @@
     "title": "QuartoLive",
     "section": "4 Resources",
     "text": "4 Resources\nResources can be defined which are made available to webr.\n---\nformat: live-html\nresources:\n  - data\n  - https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv\n---\n\n```{webr}\nlist.files(\"data\")\nmt &lt;- read.csv(\"data/mtcars.csv\")\nmod &lt;- glm(mpg ~ cyl, data = mt)\nsummary(mod)\n```\n\n```{webr}\nflights &lt;- read.csv(\"flights.csv\")\nwith(flights, plot(year, passengers))\n```"
+  },
+  {
+    "objectID": "documents/revealjs/index.html#setosa",
+    "href": "documents/revealjs/index.html#setosa",
+    "title": "setosa presentation",
+    "section": "setosa",
+    "text": "setosa\nThe setosa species is subsetted from the data.\n\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\n\nThe iris dataset is included in base R."
+  },
+  {
+    "objectID": "documents/revealjs/index.html#layout",
+    "href": "documents/revealjs/index.html#layout",
+    "title": "setosa presentation",
+    "section": "Layout",
+    "text": "Layout\nThis slide shows a two column layout.\n\n\n\n\n\n\n\n\n\n\nFigure 1: Scatterplot of setosa species.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Photograph of setosa species."
+  },
+  {
+    "objectID": "documents/revealjs/index.html#code-highlighting",
+    "href": "documents/revealjs/index.html#code-highlighting",
+    "title": "setosa presentation",
+    "section": "Code highlighting",
+    "text": "Code highlighting\n\nggplot(iris_filtered,aes(Sepal.Length,Petal.Length))+\n    geom_point(aes(size=Petal.Width))+\n    labs(title=params$name)\n\n\n\nFigure 3: Scatterplot of setosa species.\n\nThe figure is updated to show petal widths."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#load-packages",
+    "href": "documents/webr-revealjs/index.html#load-packages",
+    "title": "WebR in Quarto presentation",
+    "section": "Load packages",
+    "text": "Load packages\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#table",
+    "href": "documents/webr-revealjs/index.html#table",
+    "title": "WebR in Quarto presentation",
+    "section": "Table",
+    "text": "Table\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nThe iris dataset is included in base R."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#plot",
+    "href": "documents/webr-revealjs/index.html#plot",
+    "title": "WebR in Quarto presentation",
+    "section": "Plot",
+    "text": "Plot\nThis is ggplot2.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#image",
+    "href": "documents/webr-revealjs/index.html#image",
+    "title": "WebR in Quarto presentation",
+    "section": "Image",
+    "text": "Image\nThis is an image.\n\n\nFigure 1: This is iris species."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#code-highlighting",
+    "href": "documents/webr-revealjs/index.html#code-highlighting",
+    "title": "WebR in Quarto presentation",
+    "section": "Code highlighting",
+    "text": "Code highlighting\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe figure is updated to show petal widths."
+  },
+  {
+    "objectID": "documents/webr-revealjs/index.html#session",
+    "href": "documents/webr-revealjs/index.html#session",
+    "title": "WebR in Quarto presentation",
+    "section": "Session",
+    "text": "Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr/index.html",
+    "href": "documents/webr/index.html",
+    "title": "webR-enabled code cells",
+    "section": "",
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr/index.html#installation",
+    "href": "documents/webr/index.html#installation",
+    "title": "webR-enabled code cells",
+    "section": "",
+    "text": "Install webr extension for quarto by running:\nquarto add coatless/quarto-webr\nthen add to yaml:\nwebr:\n   channel-type: \"post-message\"\nengine: knitr\nfilters:\n  - webr\nwebR-enabled code cell are established by using {webr-r} in a Quarto HTML document.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "documents/webr/index.html#sample-cases",
+    "href": "documents/webr/index.html#sample-cases",
+    "title": "webR-enabled code cells",
+    "section": "2 Sample cases",
+    "text": "2 Sample cases\n\n2.1 Fit a linear regression model\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.2 Create a graph with base R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3 Packages\n\n2.3.1 Available Packages\nYou can view what packages are available for webR by either executing the following R code (either with WebR or just R). This chunk is an R chunk that is not evaluated.\n\navailable.packages(\n  repos = \"https://repo.r-wasm.org/\",\n  type = \"source\"\n)[, c(\"Package\", \"Version\")]\n\nOr, by navigating to the WebR repository:\nhttps://github.com/r-wasm/webr-repo/blob/main/repo-packages\n\n\n2.3.2 Installing a Package\nInstalling ggplot2 may take at least 2 minutes to run.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.3.3 Using a Package\nOnce ggplot2 is loaded, then use the package as normal.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n2.4 Define variables and re-use them in later cells\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.5 Escape characters in a string\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.6 Anonymous function definition\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.7 Empty code cell\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n2.8 Pre-rendered R code cell\n\nmessage(\"Hello!\")\n\nHello!"
+  },
+  {
+    "objectID": "documents/webr/index.html#session",
+    "href": "documents/webr/index.html#session",
+    "title": "webR-enabled code cells",
+    "section": "3 Session",
+    "text": "3 Session\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nwebr extension version: 0.3.6"
   }
 ]

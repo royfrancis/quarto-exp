@@ -25,19 +25,20 @@ library(ggplot2)
 cat("## ",params$name)
 ```
 
+## Table
+
 The `r params$name` species is subsetted from the data.
 
 ```{r}
+#| label: tbl-data
+#| tbl-cap: !expr paste0("Data for ",params$name," species.")
 iris_filtered <- subset(iris, iris$Species == params$name)
-```
-
-```{r}
 head(iris_filtered)
 ```
 
 ## Plots
 
-```{r,fig.cap="This is a scatterplot."}
+```{r}
 #| label: fig-scatterplot
 #| fig-cap: !expr paste0("Scatterplot of ",params$name," species.")
 ggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+
@@ -58,5 +59,7 @@ imgs <- c(
     "virginica" = "assets/virginica.jpg"
 )
 
-knitr::include_graphics(imgs[match(params$name, names(imgs))])
+knitr::include_graphics(imgs[[params$name]])
 ```
+
+The first rows of the subsetted dataset are shown in @tbl-data. The relationship between Sepal.Length and Petal.Length is shown in @fig-scatterplot.

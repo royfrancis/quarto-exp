@@ -60,12 +60,12 @@ ggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+
 #| fig-cap: !expr paste0("Photograph of ",params$name," species.")
 
 imgs <- c(
-    "setosa" = "assets/setosa.jpg",
-    "versicolor" = "assets/versicolor.jpg",
-    "virginica" = "assets/virginica.jpg"
+  "setosa" = "assets/setosa.jpg",
+  "versicolor" = "assets/versicolor.jpg",
+  "virginica" = "assets/virginica.jpg"
 )
 
-knitr::include_graphics(imgs[match(params$name, names(imgs))])
+knitr::include_graphics(imgs[[params$name]])
 ```
 
 :::

@@ -66,12 +66,11 @@ The app can take a while to load. For full code, use code-tools, ie; click 'Code
 #| standalone: true
 #| viewerHeight: 450
 
-webr::install(c("ggplot2", "bslib", "palmerpenguins", "htmltools"))
+webr::install(c("ggplot2", "bslib", "htmltools"))
 
 library(htmltools)
 library(bslib)
 library(ggplot2)
-library(palmerpenguins)
 data("penguins")
 
 pdata <- na.omit(penguins)

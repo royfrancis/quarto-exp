@@ -1,0 +1,63 @@
+---
+title: '`r paste0(params$name," report")`'
+subtitle: "Parameterized Typst PDF"
+author: "Roy Francis"
+date: last-modified
+format:
+  typst:
+    toc: true
+    number-sections: true
+    fig-align: left
+
+params:
+  name: setosa
+---
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+#| echo: false
+#| output: asis
+cat("## ",params$name)
+```
+
+## Table
+
+The `r params$name` species is subsetted from the data.
+
+```{r}
+#| label: tbl-data
+#| tbl-cap: !expr paste0("Data for ",params$name," species.")
+iris_filtered <- subset(iris, iris$Species == params$name)
+head(iris_filtered)
+```
+
+## Plots
+
+```{r}
+#| label: fig-scatterplot
+#| fig-cap: !expr paste0("Scatterplot of ",params$name," species.")
+ggplot(iris_filtered,aes(Sepal.Length,Petal.Length,col=Species))+
+    geom_point()+
+    labs(title=params$name)
+```
+
+## Image
+
+```{r}
+#| echo: false
+#| label: fig-species
+#| fig-cap: !expr paste0("Photograph of ",params$name," species.")
+
+imgs <- c(
+    "setosa" = "assets/setosa.jpg",
+    "versicolor" = "assets/versicolor.jpg",
+    "virginica" = "assets/virginica.jpg"
+)
+
+knitr::include_graphics(imgs[[params$name]])
+```
+
+The first rows of the subsetted dataset are shown in @tbl-data. The relationship between Sepal.Length and Petal.Length is shown in @fig-scatterplot.
